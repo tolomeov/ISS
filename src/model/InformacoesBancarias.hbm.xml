@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/08/2016 15:51:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.InformacoesBancarias" table="InformacoesBancarias" catalog="plasnedo" optimistic-lock="version">
+        <id name="idInformacoesBancarias" type="int">
+            <column name="idInformacoesBancarias" />
+            <generator class="foreign">
+                <param name="property">pessoa</param>
+            </generator>
+        </id>
+        <one-to-one name="pessoa" class="model.Pessoa" constrained="true"></one-to-one>
+        <property name="banco" type="string">
+            <column name="banco" length="45" />
+        </property>
+        <property name="agencia" type="string">
+            <column name="agencia" length="45" />
+        </property>
+        <property name="contaCorrente" type="string">
+            <column name="contaCorrente" length="45" />
+        </property>
+        <property name="titular" type="string">
+            <column name="titular" length="45" />
+        </property>
+        <property name="cnpj" type="string">
+            <column name="cnpj" length="45" />
+        </property>
+        <property name="cpf" type="string">
+            <column name="cpf" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
