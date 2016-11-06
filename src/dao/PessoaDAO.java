@@ -32,7 +32,7 @@ public class PessoaDAO {
             if (trns != null) {
                 trns.rollback();
             }
-            e.printStackTrace();
+            
             throw new Exception("Error ao criar pessoa");
         } finally {
             session.flush();
@@ -67,7 +67,7 @@ public class PessoaDAO {
             if (trns != null) {
                 trns.rollback();
             }
-            e.printStackTrace();
+            
             throw new Exception("Error ao excluir pessoa");
         } finally {
             session.flush();
@@ -84,7 +84,7 @@ public class PessoaDAO {
             pessoas = session.createQuery("from Pessoa").list();
 
         } catch (RuntimeException e) {
-            e.printStackTrace();
+            
         } finally {
             session.flush();
             session.close();
@@ -175,7 +175,7 @@ public class PessoaDAO {
             infos = session.createQuery(q).list();
 
         } catch (RuntimeException e) {
-            e.printStackTrace();
+            System.err.println("Erro buscando informações bancárias: " + e.getMessage());
         } finally {
             session.flush();
             session.close();
@@ -185,14 +185,13 @@ public class PessoaDAO {
     
     @SuppressWarnings("unchecked")
     public static List<InformacoesBancarias> listInformacoesBancarias(){
-        List<InformacoesBancarias> infos = new ArrayList<InformacoesBancarias>();
+        List<InformacoesBancarias> infos = new ArrayList<>();
                                      
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             infos = session.createQuery("from InformacoesBancarias").list();
-
         } catch (RuntimeException e) {
-            e.printStackTrace();
+            System.err.println("Erro listando informações bancárias: " + e.getMessage());
         } finally {
             session.flush();
             session.close();
@@ -211,8 +210,8 @@ public class PessoaDAO {
             if (trns != null) {
                 trns.rollback();
             }
-            e.printStackTrace();
-            throw new Exception("Error ao atualizar informacoes bancárias");
+            
+            System.err.println("Erro atualizando informacoes bancárias: " + e.getMessage());
         } finally {
             session.flush();
             session.close();
