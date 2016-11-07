@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author pauloapanucci
+ * @author viviane
  */
 public class PessoaControl {
     
@@ -135,15 +135,4 @@ public class PessoaControl {
                 throw new Exception("email invalido");
     }
 
-  /*public static String imprimeCNPJ(String CNPJ) {
-// máscara do CNPJ: 99.999.999.9999-99
-    return(CNPJ.substring(0, 2) + "." + CNPJ.substring(2, 5) + "." +
-      CNPJ.substring(5, 8) + "." + CNPJ.substring(8, 12) + "-" +
-      CNPJ.substring(12, 14));
-  }*/
-
-  /*public static String imprimeCPF(String CPF) {
-    return(CPF.substring(0, 3) + "." + CPF.substring(3, 6) + "." +
-      CPF.substring(6, 9) + "-" + CPF.substring(9, 11));
-  }*/
 }

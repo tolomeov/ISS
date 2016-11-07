@@ -11,16 +11,7 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
-    <mapping resource="model/Pessoa.hbm.xml"/>
-    <mapping resource="model/ContaPagar.hbm.xml"/>
-    <mapping resource="model/PessoaFisica.hbm.xml"/>
-    <mapping resource="model/ItemPedido.hbm.xml"/>
-    <mapping resource="model/Pedidos.hbm.xml"/>
-    <mapping resource="model/PessoaJuridica.hbm.xml"/>
-    <mapping resource="model/ParcelasReceber.hbm.xml"/>
-    <mapping resource="model/ContaReceber.hbm.xml"/>
-    <mapping resource="model/ParcelasPagar.hbm.xml"/>
-    <mapping class="model.Produto" file="" jar="" package="model" resource="model/Produto.hbm.xml"/>
+    <mapping class="model.Pessoa" file="" jar="" package="model" resource="model/Pessoa.hbm.xml"/>
     <mapping class="model.InformacoesBancarias" file="" jar="" package="model" resource="model/InformacoesBancarias.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

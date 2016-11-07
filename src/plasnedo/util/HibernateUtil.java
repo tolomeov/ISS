@@ -5,6 +5,9 @@
  */
 package plasnedo.util;
 
+import java.util.Hashtable;
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -13,7 +16,6 @@ import org.hibernate.cfg.Configuration;
  * Hibernate Utility class with a convenient method to get Session Factory
  * object.
  *
- * @author pauloapanucci
  */
 public class HibernateUtil {
 

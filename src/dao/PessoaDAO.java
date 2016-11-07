@@ -15,7 +15,7 @@ import plasnedo.util.HibernateUtil;
 
 /**
  *
- * @author Paulo Alexandre e André Menegazzo
+ * @author viviane
  */
 public class PessoaDAO {
     
