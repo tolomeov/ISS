@@ -22,9 +22,10 @@ public class Pessoa  implements java.io.Serializable {
      private String cep;
      private String cidade;
      private String estado;
-     private String email;
      private String telefone;
      private String celular; 
+     private String email;
+
      
     public Pessoa(Integer idPessoa, String endereco, String complemento, String numero, String bairro, String cep, String cidade, String estado, String email, String telefone, String celular) {
         this.idPessoa = idPessoa;
