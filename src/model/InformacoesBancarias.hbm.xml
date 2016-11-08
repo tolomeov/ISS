@@ -7,8 +7,11 @@
         <id name="idInformacoesBancarias" type="int">
             <column name="idInformacoesBancarias" />
         </id>
-        <one-to-one name="pessoa" class="model.Pessoa" constrained="true"></one-to-one>
 
+        <property name="pessoa" type="int">
+            <column name="pessoa" />
+        </property>
+        
         <property name="banco" type="string">
             <column name="banco" length="75" />
         </property>

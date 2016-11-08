@@ -18,7 +18,7 @@ public class InformacoesBancarias  implements java.io.Serializable {
 
      private int idInformacoesBancarias;
      @OneToOne
-     private Pessoa pessoa;
+     private int pessoa;
      private String banco;
      private String agencia;
      private String contaCorrente;
@@ -30,11 +30,11 @@ public class InformacoesBancarias  implements java.io.Serializable {
     }
 
 	
-    public InformacoesBancarias(Pessoa pessoa) {
+    public InformacoesBancarias(int pessoa) {
         this.pessoa = pessoa;
     }
     
-    public InformacoesBancarias(int idInformacoesBancarias, Pessoa pessoa, String banco, String agencia, String contaCorrente, String titular, String cnpj, String cpf) {
+    public InformacoesBancarias(int idInformacoesBancarias, int pessoa, String banco, String agencia, String contaCorrente, String titular, String cnpj, String cpf) {
        this.idInformacoesBancarias = idInformacoesBancarias;
        this.pessoa = pessoa;
        this.banco = banco;
@@ -53,11 +53,11 @@ public class InformacoesBancarias  implements java.io.Serializable {
     public void setIdInformacoesBancarias(int idInformacoesBancarias) {
         this.idInformacoesBancarias = idInformacoesBancarias;
     }
-    public Pessoa getPessoa() {
+    public int getPessoa() {
         return this.pessoa;
     }
     
-    public void setPessoa(Pessoa pessoa) {
+    public void setPessoa(int pessoa) {
         this.pessoa = pessoa;
     }
     public String getBanco() {
