@@ -1,21 +1,23 @@
 package model;
 // Generated 06/08/2016 14:48:22 by Hibernate Tools 4.3.1
 
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 
 
 
 /**
- * author viviane
+ * @author viviane
  */
 public class InformacoesBancarias  implements java.io.Serializable {
 
 
-     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
      private int idInformacoesBancarias;
+     @OneToOne
      private Pessoa pessoa;
      private String banco;
      private String agencia;
@@ -32,18 +34,8 @@ public class InformacoesBancarias  implements java.io.Serializable {
         this.pessoa = pessoa;
     }
     
-    public InformacoesBancarias(int idInformacoesBancarias, String banco, String agencia, String contaCorrente, String titular, String cnpj, String cpf) {
+    public InformacoesBancarias(int idInformacoesBancarias, Pessoa pessoa, String banco, String agencia, String contaCorrente, String titular, String cnpj, String cpf) {
        this.idInformacoesBancarias = idInformacoesBancarias;
-       this.banco = banco;
-       this.agencia = agencia;
-       this.contaCorrente = contaCorrente;
-       this.titular = titular;
-       this.cnpj = cnpj;
-       this.cpf = cpf;
-    }
-   
-    
-    public InformacoesBancarias(Pessoa pessoa, String banco, String agencia, String contaCorrente, String titular, String cnpj, String cpf) {
        this.pessoa = pessoa;
        this.banco = banco;
        this.agencia = agencia;
@@ -52,6 +44,7 @@ public class InformacoesBancarias  implements java.io.Serializable {
        this.cnpj = cnpj;
        this.cpf = cpf;
     }
+   
    
     public int getIdInformacoesBancarias() {
         return this.idInformacoesBancarias;

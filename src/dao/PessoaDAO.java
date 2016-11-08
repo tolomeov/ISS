@@ -9,6 +9,7 @@ import model.InformacoesBancarias;
 import model.Pessoa;
 import java.util.ArrayList;
 import java.util.List;
+import javax.transaction.Transactional;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import plasnedo.util.HibernateUtil;
@@ -130,6 +131,7 @@ public class PessoaDAO {
     
     
     //INFOS BANCÁRIAS
+     @Transactional
     public static void createInformacoesBancarias(InformacoesBancarias infos) throws Exception{
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();

@@ -6,11 +6,9 @@
     <class name="model.InformacoesBancarias" table="InformacoesBancarias" catalog="plasnedo" optimistic-lock="version">
         <id name="idInformacoesBancarias" type="int">
             <column name="idInformacoesBancarias" />
-            <generator class="foreign">
-                <param name="property">pessoa</param>
-            </generator>
         </id>
         <one-to-one name="pessoa" class="model.Pessoa" constrained="true"></one-to-one>
+
         <property name="banco" type="string">
             <column name="banco" length="75" />
         </property>
