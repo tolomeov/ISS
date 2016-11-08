@@ -120,37 +120,48 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jPanel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jPanel13" alignment="0" min="-2" pref="580" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jPanel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jPanel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jPanel13" alignment="0" min="-2" pref="580" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jPanel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
                                               </Group>
+                                              <EmptySpace pref="476" max="32767" attributes="0"/>
+                                              <Component id="jScrollBar1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="476" max="32767" attributes="0"/>
-                                      <Component id="jScrollBar1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
+                                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
-                              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="290" max="-2" attributes="0"/>
+                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="idCadastroEndereco" min="-2" pref="89" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -158,7 +169,12 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="idCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="jPanel7" min="-2" pref="75" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Component id="jPanel8" min="-2" pref="75" max="-2" attributes="0"/>
@@ -196,7 +212,7 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="416" max="-2" attributes="0"/>
+                                  <Component id="logradouroCadastroEndereco" min="-2" pref="416" max="-2" attributes="0"/>
                                   <EmptySpace pref="105" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -207,7 +223,7 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField1" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="logradouroCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -220,9 +236,9 @@
                             <Property name="text" type="java.lang.String" value="Logradouro"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField1">
+                        <Component class="javax.swing.JTextField" name="logradouroCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logradouroCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -236,11 +252,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField2" min="-2" pref="89" max="-2" attributes="0"/>
+                                  <Component id="numeroCadastroEndereco" min="-2" pref="89" max="-2" attributes="0"/>
                                   <EmptySpace pref="43" max="32767" attributes="0"/>
                                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField3" min="-2" pref="153" max="-2" attributes="0"/>
+                                  <Component id="complementoCadastroEndereco" min="-2" pref="153" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -252,11 +268,11 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField3" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                          <Component id="complementoCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField2" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                          <Component id="numeroCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
@@ -270,14 +286,14 @@
                             <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField2">
+                        <Component class="javax.swing.JTextField" name="numeroCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numeroCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField3">
+                        <Component class="javax.swing.JTextField" name="complementoCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="complementoCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel13">
@@ -296,11 +312,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField4" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <Component id="telefoneCadastroEndereco" min="-2" pref="152" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                   <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField5" min="-2" pref="153" max="-2" attributes="0"/>
+                                  <Component id="celularCadastroEndereco" min="-2" pref="153" max="-2" attributes="0"/>
                                   <EmptySpace pref="140" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -311,9 +327,9 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField4" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="telefoneCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField5" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="celularCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -326,14 +342,14 @@
                             <Property name="text" type="java.lang.String" value="Telefone"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField4">
+                        <Component class="javax.swing.JTextField" name="telefoneCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="telefoneCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField5">
+                        <Component class="javax.swing.JTextField" name="celularCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="celularCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel15">
@@ -352,11 +368,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField6" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Component id="cidadeCadastroEndereco" min="-2" pref="195" max="-2" attributes="0"/>
                                   <EmptySpace pref="101" max="32767" attributes="0"/>
                                   <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField7" min="-2" pref="106" max="-2" attributes="0"/>
+                                  <Component id="ufCadastroEndereco" min="-2" pref="106" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -367,9 +383,9 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField6" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="cidadeCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField7" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="ufCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -382,14 +398,14 @@
                             <Property name="text" type="java.lang.String" value="Cidade"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField6">
+                        <Component class="javax.swing.JTextField" name="cidadeCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cidadeCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField7">
+                        <Component class="javax.swing.JTextField" name="ufCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField7ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ufCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel17">
@@ -408,11 +424,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField8" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Component id="bairroCadastroEndereco" min="-2" pref="195" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                   <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField9" min="-2" pref="153" max="-2" attributes="0"/>
+                                  <Component id="cepCadastroEndereco" min="-2" pref="153" max="-2" attributes="0"/>
                                   <EmptySpace pref="86" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -423,9 +439,9 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField8" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="bairroCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField9" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="cepCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -438,14 +454,14 @@
                             <Property name="text" type="java.lang.String" value="Bairro"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField8">
+                        <Component class="javax.swing.JTextField" name="bairroCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bairroCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField9">
+                        <Component class="javax.swing.JTextField" name="cepCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField9ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cepCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel19">
@@ -466,7 +482,7 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField11" min="-2" pref="492" max="-2" attributes="0"/>
+                                  <Component id="emailCadastroEndereco" min="-2" pref="492" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -477,7 +493,7 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField11" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="emailCadastroEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -490,9 +506,9 @@
                             <Property name="text" type="java.lang.String" value="Email"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField11">
+                        <Component class="javax.swing.JTextField" name="emailCadastroEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField11ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailCadastroEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -504,6 +520,16 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
                       </Events>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="idCadastroEndereco">
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idCadastroEnderecoActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel33">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="ID"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -566,7 +592,7 @@
                                               <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
                                               <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField22" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <Component id="idConsultaEndereco" min="-2" pref="89" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -582,7 +608,7 @@
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField22" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                  <Component id="idConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Component id="jPanel15" min="-2" pref="75" max="-2" attributes="0"/>
@@ -628,7 +654,7 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField12" min="-2" pref="416" max="-2" attributes="0"/>
+                                  <Component id="logradouroConsultaEndereco" min="-2" pref="416" max="-2" attributes="0"/>
                                   <EmptySpace pref="105" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -639,7 +665,7 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField12" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="logradouroConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -652,9 +678,9 @@
                             <Property name="text" type="java.lang.String" value="Logradouro"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField12">
+                        <Component class="javax.swing.JTextField" name="logradouroConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField12ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logradouroConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -668,11 +694,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField13" min="-2" pref="89" max="-2" attributes="0"/>
+                                  <Component id="numeroConsultaEndereco" min="-2" pref="89" max="-2" attributes="0"/>
                                   <EmptySpace pref="43" max="32767" attributes="0"/>
                                   <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField14" min="-2" pref="153" max="-2" attributes="0"/>
+                                  <Component id="complementoConsultaEndereco" min="-2" pref="153" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -683,9 +709,9 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField13" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="numeroConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField14" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="complementoConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -698,14 +724,14 @@
                             <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField13">
+                        <Component class="javax.swing.JTextField" name="numeroConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField13ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numeroConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField14">
+                        <Component class="javax.swing.JTextField" name="complementoConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField14ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="complementoConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel24">
@@ -724,11 +750,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField15" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <Component id="telefoneConsultaEndereco" min="-2" pref="152" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                   <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField16" min="-2" pref="153" max="-2" attributes="0"/>
+                                  <Component id="celularConsultaEndereco" min="-2" pref="153" max="-2" attributes="0"/>
                                   <EmptySpace pref="140" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -739,9 +765,9 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField15" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="telefoneConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField16" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="celularConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -754,14 +780,14 @@
                             <Property name="text" type="java.lang.String" value="Telefone"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField15">
+                        <Component class="javax.swing.JTextField" name="telefoneConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField15ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="telefoneConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField16">
+                        <Component class="javax.swing.JTextField" name="celularConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField16ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="celularConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel26">
@@ -780,11 +806,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField17" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Component id="cidadeConsultaEndereco" min="-2" pref="195" max="-2" attributes="0"/>
                                   <EmptySpace pref="101" max="32767" attributes="0"/>
                                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField18" min="-2" pref="106" max="-2" attributes="0"/>
+                                  <Component id="ufConsultaEndereco" min="-2" pref="106" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -795,9 +821,9 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField17" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="cidadeConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField18" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="ufConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -810,14 +836,14 @@
                             <Property name="text" type="java.lang.String" value="Cidade"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField17">
+                        <Component class="javax.swing.JTextField" name="cidadeConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField17ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cidadeConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField18">
+                        <Component class="javax.swing.JTextField" name="ufConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField18ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ufConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel28">
@@ -836,11 +862,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField19" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Component id="bairroConsultaEndereco" min="-2" pref="195" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                   <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField20" min="-2" pref="153" max="-2" attributes="0"/>
+                                  <Component id="cepConsultaEndereco" min="-2" pref="153" max="-2" attributes="0"/>
                                   <EmptySpace pref="86" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -851,9 +877,9 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField19" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="bairroConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField20" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="cepConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -866,14 +892,14 @@
                             <Property name="text" type="java.lang.String" value="Bairro"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField19">
+                        <Component class="javax.swing.JTextField" name="bairroConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField19ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bairroConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField20">
+                        <Component class="javax.swing.JTextField" name="cepConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField20ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cepConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel30">
@@ -894,7 +920,7 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField21" min="-2" pref="492" max="-2" attributes="0"/>
+                                  <Component id="emailConsultaEndereco" min="-2" pref="492" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -905,7 +931,7 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField21" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="emailConsultaEndereco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -918,9 +944,9 @@
                             <Property name="text" type="java.lang.String" value="Email"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField21">
+                        <Component class="javax.swing.JTextField" name="emailConsultaEndereco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField21ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailConsultaEnderecoActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -929,6 +955,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Consultar"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton8">
                       <Properties>
@@ -948,9 +977,9 @@
                         <Property name="text" type="java.lang.String" value="ID"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField22">
+                    <Component class="javax.swing.JTextField" name="idConsultaEndereco">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField22ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idConsultaEnderecoActionPerformed"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane7">
@@ -960,7 +989,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="resultTable5">
+                        <Component class="javax.swing.JTable" name="tabelaEndereco">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
@@ -1019,34 +1048,53 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="67" pref="1197" max="32767" attributes="0"/>
-                                  <Component id="jScrollBar4" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="67" pref="1197" max="32767" attributes="0"/>
+                                          <Component id="jScrollBar4" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jPanel33" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jPanel29" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jPanel32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jPanel33" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel29" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
+                                          <Component id="jButton13" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
+                                          <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="idCadastroBanco" min="-2" pref="89" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
-                          <Component id="jButton13" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="idCadastroBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           <Component id="jPanel29" min="-2" pref="75" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -1078,7 +1126,7 @@
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField33" min="-2" pref="442" max="-2" attributes="0"/>
+                              <Component id="titularCadastroBanco" min="-2" pref="442" max="-2" attributes="0"/>
                               <EmptySpace pref="79" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -1089,7 +1137,7 @@
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField33" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                  <Component id="titularCadastroBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -1102,9 +1150,9 @@
                         <Property name="text" type="java.lang.String" value="Titular"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField33">
+                    <Component class="javax.swing.JTextField" name="titularCadastroBanco">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField33ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="titularCadastroBancoActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1118,7 +1166,7 @@
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jTextField38" pref="285" max="32767" attributes="0"/>
+                              <Component id="cpfCadastroBanco" pref="285" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1129,7 +1177,7 @@
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField38" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                  <Component id="cpfCadastroBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -1142,9 +1190,9 @@
                         <Property name="text" type="java.lang.String" value="CPF/CNPJ"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField38">
+                    <Component class="javax.swing.JTextField" name="cpfCadastroBanco">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField38ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpfCadastroBancoActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1160,11 +1208,11 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField44" min="-2" pref="89" max="-2" attributes="0"/>
+                                      <Component id="pessoaCadastroBanco" min="-2" pref="89" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                       <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField40" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="bancoCadastroBanco" min="-2" pref="195" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="159" max="32767" attributes="0"/>
@@ -1178,8 +1226,8 @@
                                   <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField40" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
-                                      <Component id="jTextField44" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="bancoCadastroBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="pessoaCadastroBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1195,14 +1243,14 @@
                         <Property name="text" type="java.lang.String" value="Banco"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField40">
+                    <Component class="javax.swing.JTextField" name="bancoCadastroBanco">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField40ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bancoCadastroBancoActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField44">
+                    <Component class="javax.swing.JTextField" name="pessoaCadastroBanco">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField44ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pessoaCadastroBancoActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel54">
@@ -1219,11 +1267,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField34" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <Component id="agenciaCadastroBanco" min="-2" pref="108" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField35" min="-2" pref="151" max="-2" attributes="0"/>
+                                  <Component id="contaCadastroBanco" min="-2" pref="151" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1234,9 +1282,9 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField34" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="agenciaCadastroBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField35" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="contaCadastroBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -1249,14 +1297,14 @@
                             <Property name="text" type="java.lang.String" value="Ag&#xea;ncia"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField34">
+                        <Component class="javax.swing.JTextField" name="agenciaCadastroBanco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField34ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agenciaCadastroBancoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField35">
+                        <Component class="javax.swing.JTextField" name="contaCadastroBanco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField35ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contaCadastroBancoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel45">
@@ -1277,6 +1325,16 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton13ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="idCadastroBanco">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idCadastroBancoActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel57">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ID"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -1317,7 +1375,7 @@
                                           <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
                                           <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextField46" min="-2" pref="89" max="-2" attributes="0"/>
+                                          <Component id="idConsultaBanco" min="-2" pref="89" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
@@ -1345,7 +1403,7 @@
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField46" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                              <Component id="idConsultaBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           <Component id="jPanel34" min="-2" pref="75" max="-2" attributes="0"/>
@@ -1385,7 +1443,7 @@
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField36" min="-2" pref="442" max="-2" attributes="0"/>
+                              <Component id="titularConsultaBanco" min="-2" pref="442" max="-2" attributes="0"/>
                               <EmptySpace pref="79" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -1396,7 +1454,7 @@
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField36" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                  <Component id="titularConsultaBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -1409,9 +1467,9 @@
                         <Property name="text" type="java.lang.String" value="Titular"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField36">
+                    <Component class="javax.swing.JTextField" name="titularConsultaBanco">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField36ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="titularConsultaBancoActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1425,7 +1483,7 @@
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jTextField39" pref="285" max="32767" attributes="0"/>
+                              <Component id="cpf" pref="285" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1436,7 +1494,7 @@
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField39" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                  <Component id="cpf" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -1449,9 +1507,9 @@
                         <Property name="text" type="java.lang.String" value="CPF/CNPJ"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField39">
+                    <Component class="javax.swing.JTextField" name="cpf">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField39ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpfActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1467,11 +1525,11 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField45" min="-2" pref="89" max="-2" attributes="0"/>
+                                      <Component id="pessoaConsultaBanco" min="-2" pref="89" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                       <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField41" min="-2" pref="195" max="-2" attributes="0"/>
+                                      <Component id="bancoConsultaBanco" min="-2" pref="195" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="159" max="32767" attributes="0"/>
@@ -1485,8 +1543,8 @@
                                   <Component id="jLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField41" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
-                                      <Component id="jTextField45" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="bancoConsultaBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="pessoaConsultaBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1502,14 +1560,14 @@
                         <Property name="text" type="java.lang.String" value="Banco"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField41">
+                    <Component class="javax.swing.JTextField" name="bancoConsultaBanco">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField41ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bancoConsultaBancoActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField45">
+                    <Component class="javax.swing.JTextField" name="pessoaConsultaBanco">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField45ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pessoaConsultaBancoActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel55">
@@ -1526,11 +1584,11 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField37" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <Component id="agenciaConsultaBanco" min="-2" pref="108" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField42" min="-2" pref="151" max="-2" attributes="0"/>
+                                  <Component id="contaConsultaBanco" min="-2" pref="151" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1541,9 +1599,9 @@
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField37" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="agenciaConsultaBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField42" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="contaConsultaBanco" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -1556,14 +1614,14 @@
                             <Property name="text" type="java.lang.String" value="Ag&#xea;ncia"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField37">
+                        <Component class="javax.swing.JTextField" name="agenciaConsultaBanco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField37ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agenciaConsultaBancoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField42">
+                        <Component class="javax.swing.JTextField" name="contaConsultaBanco">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField42ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contaConsultaBancoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel52">
@@ -1581,6 +1639,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Consultar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton15">
                   <Properties>
@@ -1600,9 +1661,9 @@
                     <Property name="text" type="java.lang.String" value="ID"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField46">
+                <Component class="javax.swing.JTextField" name="idConsultaBanco">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField46ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idConsultaBancoActionPerformed"/>
                   </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane9">
@@ -1612,7 +1673,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="resultTable7">
+                    <Component class="javax.swing.JTable" name="tabelaBanco">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="2" rowCount="4">

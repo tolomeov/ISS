@@ -6,7 +6,6 @@
     <class name="model.Pessoa" table="Pessoa" catalog="plasnedo" optimistic-lock="version">
         <id name="idPessoa" type="java.lang.Integer">
             <column name="idPessoa" />
-            <generator class="identity" />
         </id>
         <property name="endereco" type="string">
             <column name="endereco" length="255" />

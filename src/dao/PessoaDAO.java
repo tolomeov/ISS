@@ -113,6 +113,22 @@ public class PessoaDAO {
     }
     
     
+        public static List<Pessoa> pessoaQuery(String q){
+        List<Pessoa> infos = new ArrayList<>();                             
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            infos = session.createQuery(q).list();
+
+        } catch (RuntimeException e) {
+            System.err.println("Erro buscando pessoas: " + e.getMessage());
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return infos;
+    }
+    
+    
     //INFOS BANCÁRIAS
     public static void createInformacoesBancarias(InformacoesBancarias infos) throws Exception{
         Transaction trns = null;

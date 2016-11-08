@@ -9,11 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * author viviane
+ * @author viviane
  */
 public class Pessoa  implements java.io.Serializable {
 
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
      private Integer idPessoa;
      private String endereco;
      private String complemento;
