@@ -5,22 +5,17 @@
  */
 package model;
 
-import org.hibernate.annotations.NaturalId;
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Table;
-import org.hibernate.annotations.Where;
-
 /**
  *
  * @author pedro
  */
-//anotações para não deletar um produto do sistema, apenas escondê-lo. Deleção lógica.
-@Table(appliesTo = "PRODUTO")
-@SQLDelete(sql = "UPDATE Produto SET deleted = '1' WHERE id = ?")
-@Where(clause = "deleted <> 1")
 public class Produto {
 
-    public Produto(int codigo, String nome, String grupo, String subgrupo, String unidade, double largura, double altura, double espessura) {
+    public Produto() {
+        
+    }
+    
+    public Produto(int codigo, String nome, String grupo, String subgrupo, String unidade, double largura, double altura, double espessura, int deleted) {
         this.codigo = codigo;
         this.nome = nome;
         this.grupo = grupo;
@@ -29,19 +24,26 @@ public class Produto {
         this.largura = largura;
         this.altura = altura;
         this.espessura = espessura;
+        this.deleted = deleted;
     }
     
     /**
-     * Codigo do produto, nao pode ser modificado após criado.
+     * 
      */
-    @NaturalId
-    private final int codigo;
+    private int idProduto;
+    public int getIdProduto(){ return idProduto; }
+    public void setIdProduto(int idProduto) { this.idProduto = idProduto; }
+    
+    
+    /**
+     * Codigo do produto
+     */
+    private int codigo;
     
     /**
      * Nome do produto em questão
      * @NaturalId significa que o hibernate irá buscar por nome de forma mais fácil
      */
-    @NaturalId(mutable = true)
     private String nome;
     
     /**
@@ -71,8 +73,17 @@ public class Produto {
      */
     private double espessura;
 
+    /**
+     * Deleção lógica
+     */
+    private int deleted;
+
     public int getCodigo() {
         return codigo;
+    }
+    
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
@@ -180,5 +191,11 @@ public class Produto {
     }
     
 
-    
+    public int getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(int deleted) {
+        this.deleted = deleted;
+    }
 }
