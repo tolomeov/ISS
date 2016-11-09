@@ -69,6 +69,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         plasnedoMenuBar.add(produtoMenu);
 
         pedido.setText("Pedido");
+        pedido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pedidoMouseClicked(evt);
+            }
+        });
         plasnedoMenuBar.add(pedido);
 
         financeiro.setText("Financeiro");
@@ -133,6 +138,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
       // new FinanceiroFrame().setVisible(true);
        dispose();
     }//GEN-LAST:event_financeiroMouseClicked
+
+    private void pedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pedidoMouseClicked
+        new PedidoFrame().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_pedidoMouseClicked
 
     /**
      * @param args the command line arguments
