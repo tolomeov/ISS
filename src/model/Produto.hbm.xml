@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.Produto" table="Produto" catalog="plasnedo" where="deleted != 1" optimistic-lock="none">
+        <id name="idProduto" type="int" >
+            <column name="idProduto" default="0"/>
+            <generator class="native"/>
+        </id>
+        <property name="codigo" type="int" column="codigo"/>
+        <property name="nome" type="string">
+            <column name="nome" length="60" />
+        </property>
+        <property name="grupo" type="string">
+            <column name="grupo" length="60" />
+        </property>
+        <property name="subgrupo" type="string">
+            <column name="subgrupo" length="60" />
+        </property>
+        <property name="unidade" type="string">
+            <column name="unidade" length="60" />
+        </property>
+
+        <property name="largura" type="double" column="largura"/>
+        <property name="altura" type="double" column="altura"/>
+        <property name="espessura" type="double" column="espessura"/>
+        <property name="deleted" type="int" column="deleted" />
+        
+        <sql-delete>UPDATE Produto SET deleted = 1 WHERE idProduto=?</sql-delete>
+
+
+    </class>
+</hibernate-mapping>
