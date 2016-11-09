@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/08/2016 15:51:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.PessoaJuridica" table="PessoaJuridica" catalog="plasnedo" optimistic-lock="version">
+        <id name="idPessoaJuridica" type="int">
+            <column name="IdPessoaJuridica" />
+
+        </id>
+        <property name="pessoa" type="int">
+            <column name="pessoa"/>
+        </property>
+        <property name="cnpj" type="string">
+            <column name="cnpj" length="45" />
+        </property>
+        <property name="inscricaoestadual" type="string">
+            <column name="inscricaoestadual" length="45" />
+        </property>
+        <property name="razaosocial" type="string">
+            <column name="razaosocial" length="45" />
+        </property>
+        <property name="nomefantasia" type="string">
+            <column name="nomefantasia" length="45" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

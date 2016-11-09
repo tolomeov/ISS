@@ -10,6 +10,7 @@ import model.Pessoa;
 import java.util.ArrayList;
 import java.util.List;
 import javax.transaction.Transactional;
+import model.PessoaJuridica;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import plasnedo.util.HibernateUtil;
@@ -129,7 +130,114 @@ public class PessoaDAO {
         return infos;
     }
     
+    //PESSOAS JURIDICAS
+    public static void createPessoaJuridica(PessoaJuridica pessoaJuridica) throws Exception{
+        Transaction trns = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            trns = session.beginTransaction();
+            session.save(pessoaJuridica);
+            session.getTransaction().commit();
+        } catch (RuntimeException e) {
+            if (trns != null) {
+                trns.rollback();
+            }
+            e.printStackTrace();
+            throw new Exception("Error ao criar PessoaJuridica");
+        } finally {
+            session.flush();
+            session.close();
+        }
+    }
+   
+    public static PessoaJuridica getPessoaJuridicaId(int id){
+                          
+        PessoaJuridica pessoaJuridica = null;                
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+             pessoaJuridica = (PessoaJuridica) session.get(PessoaJuridica.class, id);
+             
+        } finally {
+            session.flush();
+            session.close();
+        }
+
+        return pessoaJuridica;
+    }
+
+    public static void deletePessoaJuridicaId(int id) throws Exception{
+        Transaction trns = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            trns = session.beginTransaction();
+            PessoaJuridica pessoaJuridica = (PessoaJuridica) session.load(PessoaJuridica.class, id);
+            session.delete(pessoaJuridica);
+            session.getTransaction().commit();
+        } catch (RuntimeException e) {
+            if (trns != null) {
+                trns.rollback();
+            }
+            e.printStackTrace();
+            throw new Exception("Error ao excluir PessoaJuridica");
+        } finally {
+            session.flush();
+            session.close();
+        }
+    }
     
+    public static List<PessoaJuridica> pessoasJuridicaQuery(String q){
+        List<PessoaJuridica> pessoasJuridica = new ArrayList<>();                             
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            pessoasJuridica = session.createQuery(q).list();
+
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return pessoasJuridica;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public static List<PessoaJuridica> listPessoaJuridicas(){
+        List<PessoaJuridica> pessoasJuridica = new ArrayList<PessoaJuridica>();
+                                     
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            pessoasJuridica = session.createQuery("from PessoaJuridica").list();
+
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return pessoasJuridica;
+    }
+
+              
+    public static void updatePessoaJuridica(PessoaJuridica pessoaJuridica) throws Exception{
+        Transaction trns = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            trns = session.beginTransaction();
+            session.update(pessoaJuridica);
+        } catch (RuntimeException e) {
+            if (trns != null) {
+                trns.rollback();
+            }
+            e.printStackTrace();
+            throw new Exception("Error ao atualizar pessoaJuridica");
+        } finally {
+            session.flush();
+            session.close();
+        }
+    }
+
+        
+        
     //INFOS BANCÁRIAS
      @Transactional
     public static void createInformacoesBancarias(InformacoesBancarias infos) throws Exception{

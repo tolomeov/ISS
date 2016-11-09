@@ -20,7 +20,9 @@ public class PessoaControl {
     private static Matcher matcher; 
     
     public static void validarCPF(String CPF) throws Exception {
-    if (CPF.equals("00000000000") || CPF.equals("11111111111") ||
+       CPF = CPF.replace(".", "");
+       CPF = CPF.replace("-", "");
+        if (CPF.equals("00000000000") || CPF.equals("11111111111") ||
         CPF.equals("22222222222") || CPF.equals("33333333333") ||
         CPF.equals("44444444444") || CPF.equals("55555555555") ||
         CPF.equals("66666666666") || CPF.equals("77777777777") ||
@@ -73,6 +75,9 @@ public class PessoaControl {
    
    
    public static void validarCNPJ(String CNPJ) throws Exception {
+       CNPJ = CNPJ.replace(".", "");
+       CNPJ = CNPJ.replace("-", "");
+       System.out.println(CNPJ);
     if (CNPJ.equals("00000000000000") || CNPJ.equals("11111111111111") ||
         CNPJ.equals("22222222222222") || CNPJ.equals("33333333333333") ||
         CNPJ.equals("44444444444444") || CNPJ.equals("55555555555555") ||

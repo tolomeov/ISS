@@ -35,8 +35,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         pessoaMenu = new javax.swing.JMenu();
         produtoMenu = new javax.swing.JMenu();
         pedido = new javax.swing.JMenu();
-        financeiro = new javax.swing.JMenu();
-        usuario = new javax.swing.JMenu();
 
         jTextField14.setText("jTextField14");
 
@@ -76,22 +74,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         });
         plasnedoMenuBar.add(pedido);
 
-        financeiro.setText("Financeiro");
-        financeiro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                financeiroMouseClicked(evt);
-            }
-        });
-        financeiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                financeiroActionPerformed(evt);
-            }
-        });
-        plasnedoMenuBar.add(financeiro);
-
-        usuario.setText("Usuário");
-        plasnedoMenuBar.add(usuario);
-
         setJMenuBar(plasnedoMenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -128,16 +110,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         new ProdutoFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_produtoMenuActionPerformed
-
-    private void financeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_financeiroActionPerformed
-        //new FinanceiroFrame().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_financeiroActionPerformed
-
-    private void financeiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_financeiroMouseClicked
-      // new FinanceiroFrame().setVisible(true);
-       dispose();
-    }//GEN-LAST:event_financeiroMouseClicked
 
     private void pedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pedidoMouseClicked
         new PedidoFrame().setVisible(true);
@@ -184,12 +156,10 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu financeiro;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JMenu pedido;
     private javax.swing.JMenu pessoaMenu;
     private javax.swing.JMenuBar plasnedoMenuBar;
     private javax.swing.JMenu produtoMenu;
-    private javax.swing.JMenu usuario;
     // End of variables declaration//GEN-END:variables
 }

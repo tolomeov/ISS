@@ -11,5 +11,6 @@
     <property name="hibernate.connection.password">bristol</property>
     <mapping resource="model/Pessoa.hbm.xml"/>
     <mapping resource="model/InformacoesBancarias.hbm.xml"/>
+    <mapping resource="model/PessoaJuridica.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
