@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ButtonGroup;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -41,6 +42,19 @@ public class PessoaFrame extends javax.swing.JFrame {
         excluirBanco.setVisible(false);
         alterarPJ.setVisible(false);
         excluirPJ.setVisible(false);
+        
+        ButtonGroup grupo = new ButtonGroup();
+        grupo.add(clienteCadastrarPJ);
+        grupo.add(representanteCadastrarPJ);
+        grupo.add(fornecedorCadastrarPJ);
+        grupo.add(transportadoraCadastrarPJ);
+        
+        ButtonGroup grupo2 = new ButtonGroup();
+        grupo2.add(clienteConsultarPJ);
+        grupo2.add(representanteConsultarPJ);
+        grupo2.add(fornecedorConsultarPJ);
+        grupo2.add(transportadoraConsultarPJ);
+        
     }
 
     
@@ -273,7 +287,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel11)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(logradouroCadastroEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(105, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel7Layout.setVerticalGroup(
         jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,7 +324,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel12)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(numeroCadastroEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel13)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(complementoCadastroEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -359,7 +373,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel15)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(celularCadastroEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(140, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel9Layout.setVerticalGroup(
         jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -394,7 +408,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel16)
             .addGap(18, 18, 18)
             .addComponent(cidadeCadastroEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel17)
             .addGap(18, 18, 18)
             .addComponent(ufCadastroEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -441,7 +455,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel19)
             .addGap(18, 18, 18)
             .addComponent(cepCadastroEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(86, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel11Layout.setVerticalGroup(
         jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -521,7 +535,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                     .addGap(54, 54, 54)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel6Layout.createSequentialGroup()
                             .addGap(10, 10, 10)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -539,7 +553,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                     .addComponent(cadastrarEndereco)
                     .addGap(57, 57, 57)
                     .addComponent(limparEndereco)))
-            .addContainerGap(519, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel6Layout.setVerticalGroup(
         jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -549,22 +563,22 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                 .addComponent(jLabel33)
                 .addComponent(idCadastroEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(6, 6, 6)
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
-            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(3, 3, 3)
-            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
-            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(7, 7, 7)
-            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(cadastrarEndereco)
                 .addComponent(limparEndereco))
-            .addContainerGap(606, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     jTabbedPane7.addTab("Cadastrar", jPanel6);
@@ -586,7 +600,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel22)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(logradouroConsultaEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(105, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel15Layout.setVerticalGroup(
         jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -623,7 +637,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel23)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(numeroConsultaEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel24)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(complementoConsultaEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -670,7 +684,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel26)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(celularConsultaEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(140, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel17Layout.setVerticalGroup(
         jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -705,7 +719,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel27)
             .addGap(18, 18, 18)
             .addComponent(cidadeConsultaEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel28)
             .addGap(18, 18, 18)
             .addComponent(ufConsultaEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -757,7 +771,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel30)
             .addGap(18, 18, 18)
             .addComponent(cepConsultaEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(86, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel19Layout.setVerticalGroup(
         jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -872,7 +886,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                     .addGap(54, 54, 54)
                     .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel14Layout.createSequentialGroup()
                             .addGap(10, 10, 10)
                             .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -895,7 +909,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                     .addComponent(jLabel32)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(idConsultaEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(528, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel14Layout.setVerticalGroup(
         jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -905,17 +919,17 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                 .addComponent(jLabel32)
                 .addComponent(idConsultaEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(5, 5, 5)
-            .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
-            .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(3, 3, 3)
-            .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
-            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(7, 7, 7)
-            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(18, 18, 18)
             .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(ConsultarEndereco)
@@ -923,7 +937,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                 .addComponent(alterarEndereco))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(231, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     jTabbedPane7.addTab("Consultar", jPanel14);
@@ -955,7 +969,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel43)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(titularCadastroBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(79, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel29Layout.setVerticalGroup(
         jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -990,12 +1004,12 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(cadastrarBanco)
             .addGap(73, 73, 73)
             .addComponent(limparBanco)
-            .addContainerGap(250, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel32Layout.setVerticalGroup(
         jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
-            .addGap(0, 34, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(cadastrarBanco)
                 .addComponent(limparBanco)))
@@ -1078,19 +1092,20 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                     .addComponent(jLabel50)
                     .addGap(18, 18, 18)
                     .addComponent(bancoCadastroBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(159, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel33Layout.setVerticalGroup(
         jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel33Layout.createSequentialGroup()
-            .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel50)
-                .addComponent(bancoCadastroBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
-                    .addComponent(agenciaCadastroBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(agenciaCadastroBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(bancoCadastroBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(18, 18, 18)
-            .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, Short.MAX_VALUE))
     );
 
@@ -1119,7 +1134,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                     .addComponent(jLabel57)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(idCadastroBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(58, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel28Layout.setVerticalGroup(
         jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1129,12 +1144,12 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                 .addComponent(jLabel57)
                 .addComponent(idCadastroBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(6, 6, 6)
-            .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(4, 4, 4)
             .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
             .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(383, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     jTabbedPane8.addTab("Cadastrar", jPanel28);
@@ -1156,7 +1171,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel46)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(titularConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(79, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel34Layout.setVerticalGroup(
         jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1172,11 +1187,11 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
     jPanel35.setLayout(jPanel35Layout);
     jPanel35Layout.setHorizontalGroup(
         jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 678, Short.MAX_VALUE)
+        .addGap(0, 0, Short.MAX_VALUE)
     );
     jPanel35Layout.setVerticalGroup(
         jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 75, Short.MAX_VALUE)
+        .addGap(0, 0, Short.MAX_VALUE)
     );
 
     jLabel51.setText("Banco");
@@ -1215,18 +1230,19 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addComponent(jLabel52)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(contaConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(133, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel37Layout.setVerticalGroup(
         jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel37Layout.createSequentialGroup()
             .addGap(8, 8, 8)
-            .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel49)
-                .addComponent(cpfConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel52)
-                    .addComponent(contaConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(contaConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(cpfConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
@@ -1254,19 +1270,20 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                     .addComponent(jLabel51)
                     .addGap(18, 18, 18)
                     .addComponent(bancoConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(159, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel36Layout.setVerticalGroup(
         jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel36Layout.createSequentialGroup()
-            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel51)
-                .addComponent(bancoConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(agenciaConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(agenciaConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(bancoConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(18, 18, 18)
-            .addComponent(jPanel37, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, Short.MAX_VALUE))
     );
 
@@ -1354,7 +1371,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                 .addComponent(jLabel56)
                 .addComponent(idConsultaBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(5, 5, 5)
-            .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(4, 4, 4)
             .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
@@ -1465,25 +1482,26 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                     .addComponent(pjcodigoLabel2)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(codigoCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(221, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     pessoaispjAbaLayout.setVerticalGroup(
         pessoaispjAbaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(pessoaispjAbaLayout.createSequentialGroup()
             .addGap(21, 21, 21)
-            .addGroup(pessoaispjAbaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(pjcodigoLabel2)
-                .addComponent(codigoCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pessoaispjAbaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(codigoCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pjcodigoLabel2))
             .addGap(18, 18, 18)
             .addGroup(pessoaispjAbaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(pjnomeLabel2)
                 .addComponent(nomeCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18)
-            .addGroup(pessoaispjAbaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(cnpjCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(pjcnpjLabel2)
-                .addComponent(inscricaoestadualLabel2)
-                .addComponent(ieCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pessoaispjAbaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(ieCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pessoaispjAbaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cnpjCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pjcnpjLabel2)
+                    .addComponent(inscricaoestadualLabel2)))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addGroup(pessoaispjAbaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(razaoCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1595,27 +1613,32 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         .addGroup(pessoaispjAba1Layout.createSequentialGroup()
             .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pessoaispjAba1Layout.createSequentialGroup()
+                    .addGap(41, 41, 41)
+                    .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pessoaispjAba1Layout.createSequentialGroup()
+                            .addComponent(pjcnpjLabel1)
+                            .addGap(18, 18, 18)
+                            .addComponent(cnpjConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(inscricaoestadualLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ieConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pessoaispjAba1Layout.createSequentialGroup()
+                            .addComponent(razaosocialLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(razaoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pessoaispjAba1Layout.createSequentialGroup()
+                            .addComponent(pjnomeLabel1)
+                            .addGap(18, 18, 18)
+                            .addComponent(nomeConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(pessoaispjAba1Layout.createSequentialGroup()
+                    .addGap(222, 222, 222)
+                    .addComponent(pjcodigoLabel1)
+                    .addGap(18, 18, 18)
+                    .addComponent(codigoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pessoaispjAba1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pessoaispjAba1Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pessoaispjAba1Layout.createSequentialGroup()
-                                    .addComponent(pjcnpjLabel1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(cnpjConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(inscricaoestadualLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(ieConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pessoaispjAba1Layout.createSequentialGroup()
-                                    .addComponent(razaosocialLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(razaoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pessoaispjAba1Layout.createSequentialGroup()
-                                    .addComponent(pjnomeLabel1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(nomeConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(pessoaispjAba1Layout.createSequentialGroup()
                             .addGap(77, 77, 77)
                             .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1632,12 +1655,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                             .addComponent(alterarPJ)
                             .addGap(18, 18, 18)
                             .addComponent(excluirPJ))
-                        .addComponent(pjbuscaScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(pessoaispjAba1Layout.createSequentialGroup()
-                    .addGap(222, 222, 222)
-                    .addComponent(pjcodigoLabel1)
-                    .addGap(18, 18, 18)
-                    .addComponent(codigoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pjbuscaScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addContainerGap(182, Short.MAX_VALUE))
     );
     pessoaispjAba1Layout.setVerticalGroup(
@@ -1650,18 +1668,18 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addGap(18, 18, 18)
             .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(pjnomeLabel1)
-                .addComponent(nomeConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(cnpjConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(3, 3, 3)
+            .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                 .addComponent(pjcnpjLabel1)
                 .addComponent(inscricaoestadualLabel1)
-                .addComponent(ieConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(razaoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(razaosocialLabel1))
-            .addGap(18, 18, 18)
+                .addComponent(cnpjConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ieConsultarPJ))
+            .addGap(7, 7, 7)
+            .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(razaosocialLabel1)
+                .addComponent(razaoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(transportadoraConsultarPJ)
                 .addComponent(clienteConsultarPJ))
@@ -1675,7 +1693,8 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                 .addComponent(consultarPJ)
                 .addComponent(alterarPJ))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(pjbuscaScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(pjbuscaScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     dadospjAba.addTab("Consultar", pessoaispjAba1);
@@ -1728,7 +1747,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
             .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 855, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(54, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     pack();
@@ -2354,187 +2373,6 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         dispose();
     }//GEN-LAST:event_pedidoMouseClicked
 
-    private void codigoConsultarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoConsultarPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codigoConsultarPJActionPerformed
-
-    private void cnpjConsultarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnpjConsultarPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cnpjConsultarPJActionPerformed
-
-    private void excluirPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirPJActionPerformed
-        try {
-            PessoaDAO.deletePessoaJuridicaId(Integer.parseInt(codigoConsultarPJ.getText()));
-            JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+codigoConsultarPJ.getText());
-        excluirPJ.setVisible(false);
-        alterarPJ.setVisible(false);
-            
-        } catch (Exception ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao excluir pessoa com ID "+codigoConsultarPJ.getText());
-        }        // TODO add your handling code here:
-        atualizarModelPessoaJuridica();
-    }//GEN-LAST:event_excluirPJActionPerformed
-
-    private void razaoConsultarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_razaoConsultarPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_razaoConsultarPJActionPerformed
-
-    private void pessoaJuridicaTabelaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaJuridicaTabelaMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pessoaJuridicaTabelaMousePressed
-
-    private void pessoaJuridicaTabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaJuridicaTabelaMouseClicked
-DefaultTableModel model = (DefaultTableModel) pessoaJuridicaTabela.getModel();            
-        int row = pessoaJuridicaTabela.getSelectedRow();
-        int col = pessoaJuridicaTabela.getSelectedColumn();
-        try{
-        int id = (Integer)model.getValueAt(row, col);
-        PessoaJuridica pessoa = PessoaDAO.getPessoaJuridicaId(id);
-        
-        codigoConsultarPJ.setText(pessoa.getIdPessoaJuridica()+"");
-        nomeConsultarPJ.setText(pessoa.getNomefantasia());
-        ieConsultarPJ.setText(pessoa.getInscricaoestadual());
-        razaoConsultarPJ.setText(pessoa.getRazaosocial());
-        cnpjConsultarPJ.setText(pessoa.getCnpj());
-        
-        if(pessoa.getTipo().equals("cliente")){
-            clienteConsultarPJ.setSelected(true);
-        }else if(pessoa.getTipo().equals("representante")){
-            representanteConsultarPJ.setSelected(true);
-        }else if(pessoa.getTipo().equals("fornecedor")){
-            fornecedorConsultarPJ.setSelected(true);
-        }else if(pessoa.getTipo().equals("transportadora")){
-            transportadoraConsultarPJ.setSelected(true);
-        }
-        
-        excluirPJ.setVisible(true);
-        alterarPJ.setVisible(true);
-        }catch(Exception e){}        // TODO add your handling code here:
-    }//GEN-LAST:event_pessoaJuridicaTabelaMouseClicked
-
-    private void consultarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarPJActionPerformed
-            DefaultTableModel model = (DefaultTableModel) pessoaJuridicaTabela.getModel();
-        List<PessoaJuridica> lista = new ArrayList<>();
-        String query = "from PessoaJuridica where";
-        if(!codigoConsultarPJ.getText().isEmpty())
-        query = query + " idPessoaJuridica = " + codigoConsultarPJ.getText();
-        if(!codigoConsultarPJ.getText().isEmpty() && !nomeConsultarPJ.getText().isEmpty())
-        query = query + " and";
-        if(!nomeConsultarPJ.getText().isEmpty())
-        query = query + " nomefantasia like '%" + nomeConsultarPJ.getText() + "%'";
-        if(!nomeConsultarPJ.getText().isEmpty() && (!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  "))||
-                !codigoConsultarPJ.getText().isEmpty() && (!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  ")))
-        query = query + " and";
-        if(!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  "))
-        query = query + " cnpj = '" + cnpjConsultarPJ.getText() + "'";
-        if((!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  ")) && !ieConsultarPJ.getText().isEmpty() ||
-                !nomeConsultarPJ.getText().isEmpty() && !ieConsultarPJ.getText().isEmpty() ||
-                !codigoConsultarPJ.getText().isEmpty() && !ieConsultarPJ.getText().isEmpty())
-        query = query + " and";
-        if(!ieConsultarPJ.getText().isEmpty())
-        query = query + " inscricaoestadual = '" + ieConsultarPJ.getText() + "'";
-        if(!razaoConsultarPJ.getText().isEmpty() && !ieConsultarPJ.getText().isEmpty() ||
-                !razaoConsultarPJ.getText().isEmpty() && (!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  ")) ||
-                !razaoConsultarPJ.getText().isEmpty() && !nomeConsultarPJ.getText().isEmpty() || 
-                !razaoConsultarPJ.getText().isEmpty() && !codigoConsultarPJ.getText().isEmpty())
-        query = query + " and";
-        if(!razaoConsultarPJ.getText().isEmpty())
-        query = query + " razaosocial like '%'" + razaoConsultarPJ.getText() + "%'";
-        if((transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && !ieConsultarPJ.getText().isEmpty() ||
-                (transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && (!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  ")) ||
-                (transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && !razaoConsultarPJ.getText().isEmpty() ||
-                (transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && !nomeConsultarPJ.getText().isEmpty() || 
-                (transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && !codigoConsultarPJ.getText().isEmpty())
-        query = query + " and";
-        if(transportadoraConsultarPJ.isSelected()){
-        query = query + " tipo like '%transportadora%'";
-        }else if(representanteConsultarPJ.isSelected()){
-        query = query + " tipo like '%representante%'";
-        }else if(fornecedorConsultarPJ.isSelected()){
-        query = query + " tipo like '%fornecedor%'";
-        }else if(clienteConsultarPJ.isSelected()){
-        query = query + " tipo like '%cliente%'";
-        }
-        
-        lista = PessoaDAO.pessoasJuridicaQuery(query);
-        int i = 0;
-        model.setNumRows(0);
-        for(PessoaJuridica p : lista){
-            Object[] pessoa = {p.getIdPessoaJuridica(), p.getNomefantasia()};
-            model.addRow(pessoa);
-        }
-    }//GEN-LAST:event_consultarPJActionPerformed
-
-    private void alterarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarPJActionPerformed
-        if(!codigoConsultarPJ.getText().equals("")){
-            
-                    PessoaJuridica pessoa = PessoaDAO.getPessoaJuridicaId(Integer.parseInt(idConsultaEndereco.getText()));
-        
-        pessoa.setInscricaoestadual(ieConsultarPJ.getText());
-        pessoa.setNomefantasia(nomeConsultarPJ.getText());
-        pessoa.setRazaosocial(razaoConsultarPJ.getText());
-        
-        boolean faiou = false;        
-        
-        Pessoa p = PessoaDAO.getPessoaId(Integer.parseInt(codigoConsultarPJ.getText()));
-        if(p.getIdPessoa()==Integer.parseInt(codigoConsultarPJ.getText())){
-        pessoa.setIdPessoaJuridica(Integer.parseInt(codigoConsultarPJ.getText()));
-        }else{
-            faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
-        }
-        
-        String tipo;
-        if(transportadoraConsultarPJ.isSelected()){
-            tipo = "transportadora";
-        }else if(fornecedorConsultarPJ.isSelected()){
-            tipo = "fornecedor";
-        }else if(clienteConsultarPJ.isSelected()){
-            tipo = "cliente";
-        }else if(representanteConsultarPJ.isSelected()){
-            tipo = "representante";
-        }else{
-            tipo = null;
-        }
-        pessoa.setTipo(tipo);
-        
-        
-        String cnpj = cnpjConsultarPJ.getText();
-
-        try {
-            PessoaControl.validarCNPJ(cnpj);
-        } catch (Exception ex) {
-                faiou = true;
-                JOptionPane.showMessageDialog(null, "ERRO! Digite um CNPJ válido!");
-            }
-        
-        pessoa.setCnpj(cnpj);
-        
-        
-            if(!faiou){        
-        try {
-
-            PessoaDAO.updatePessoaJuridica(pessoa);
-            JOptionPane.showMessageDialog(null, "Pessoa jurídica inserida com sucesso! ");  
-            
-        codigoConsultarPJ.setText("");
-        nomeConsultarPJ.setText("");
-        cnpjConsultarPJ.setText("");
-        ieConsultarPJ.setText("");
-        razaoConsultarPJ.setText("");
-        transportadoraConsultarPJ.setSelected(false);
-        clienteConsultarPJ.setSelected(false);
-        fornecedorConsultarPJ.setSelected(false);
-        representanteConsultarPJ.setSelected(false); 
-        } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Erro de inserção! Verifique os dados e tente novamente.");  
-        }
-        }
-        }else{
-                JOptionPane.showMessageDialog(null, "Erro na alteração! É preciso manter o ID!");  
-        }
-    }//GEN-LAST:event_alterarPJActionPerformed
-
     private void limparEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparEnderecoActionPerformed
         logradouroCadastroEndereco.setText(""); 
         numeroCadastroEndereco.setText(""); 
@@ -2698,6 +2536,185 @@ DefaultTableModel model = (DefaultTableModel) pessoaJuridicaTabela.getModel();
         }
 
     }//GEN-LAST:event_cadastrarPJActionPerformed
+
+    private void alterarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarPJActionPerformed
+        if(!codigoConsultarPJ.getText().equals("")){
+
+            PessoaJuridica pessoa = PessoaDAO.getPessoaJuridicaId(Integer.parseInt(idConsultaEndereco.getText()));
+
+            pessoa.setInscricaoestadual(ieConsultarPJ.getText());
+            pessoa.setNomefantasia(nomeConsultarPJ.getText());
+            pessoa.setRazaosocial(razaoConsultarPJ.getText());
+
+            boolean faiou = false;
+
+            Pessoa p = PessoaDAO.getPessoaId(Integer.parseInt(codigoConsultarPJ.getText()));
+            if(p.getIdPessoa()==Integer.parseInt(codigoConsultarPJ.getText())){
+                pessoa.setIdPessoaJuridica(Integer.parseInt(codigoConsultarPJ.getText()));
+            }else{
+                faiou = true;
+                JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
+            }
+
+            String tipo;
+            if(transportadoraConsultarPJ.isSelected()){
+                tipo = "transportadora";
+            }else if(fornecedorConsultarPJ.isSelected()){
+                tipo = "fornecedor";
+            }else if(clienteConsultarPJ.isSelected()){
+                tipo = "cliente";
+            }else if(representanteConsultarPJ.isSelected()){
+                tipo = "representante";
+            }else{
+                tipo = null;
+            }
+            pessoa.setTipo(tipo);
+
+            String cnpj = cnpjConsultarPJ.getText();
+
+            try {
+                PessoaControl.validarCNPJ(cnpj);
+            } catch (Exception ex) {
+                faiou = true;
+                JOptionPane.showMessageDialog(null, "ERRO! Digite um CNPJ válido!");
+            }
+
+            pessoa.setCnpj(cnpj);
+
+            if(!faiou){
+                try {
+
+                    PessoaDAO.updatePessoaJuridica(pessoa);
+                    JOptionPane.showMessageDialog(null, "Pessoa jurídica inserida com sucesso! ");
+
+                    codigoConsultarPJ.setText("");
+                    nomeConsultarPJ.setText("");
+                    cnpjConsultarPJ.setText("");
+                    ieConsultarPJ.setText("");
+                    razaoConsultarPJ.setText("");
+                    transportadoraConsultarPJ.setSelected(false);
+                    clienteConsultarPJ.setSelected(false);
+                    fornecedorConsultarPJ.setSelected(false);
+                    representanteConsultarPJ.setSelected(false);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Erro de inserção! Verifique os dados e tente novamente.");
+                }
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro na alteração! É preciso manter o ID!");
+        }
+    }//GEN-LAST:event_alterarPJActionPerformed
+
+    private void consultarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarPJActionPerformed
+        DefaultTableModel model = (DefaultTableModel) pessoaJuridicaTabela.getModel();
+        List<PessoaJuridica> lista = new ArrayList<>();
+        String query = "from PessoaJuridica where";
+        if(!codigoConsultarPJ.getText().isEmpty())
+        query = query + " idPessoaJuridica = " + codigoConsultarPJ.getText();
+        if(!codigoConsultarPJ.getText().isEmpty() && !nomeConsultarPJ.getText().isEmpty())
+        query = query + " and";
+        if(!nomeConsultarPJ.getText().isEmpty())
+        query = query + " nomefantasia like '%" + nomeConsultarPJ.getText() + "%'";
+        if(!nomeConsultarPJ.getText().isEmpty() && (!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  "))||
+            !codigoConsultarPJ.getText().isEmpty() && (!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  ")))
+        query = query + " and";
+        if(!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  "))
+        query = query + " cnpj = '" + cnpjConsultarPJ.getText() + "'";
+        if((!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  ")) && !ieConsultarPJ.getText().isEmpty() ||
+            !nomeConsultarPJ.getText().isEmpty() && !ieConsultarPJ.getText().isEmpty() ||
+            !codigoConsultarPJ.getText().isEmpty() && !ieConsultarPJ.getText().isEmpty())
+        query = query + " and";
+        if(!ieConsultarPJ.getText().isEmpty())
+        query = query + " inscricaoestadual = '" + ieConsultarPJ.getText() + "'";
+        if(!razaoConsultarPJ.getText().isEmpty() && !ieConsultarPJ.getText().isEmpty() ||
+            !razaoConsultarPJ.getText().isEmpty() && (!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  ")) ||
+            !razaoConsultarPJ.getText().isEmpty() && !nomeConsultarPJ.getText().isEmpty() ||
+            !razaoConsultarPJ.getText().isEmpty() && !codigoConsultarPJ.getText().isEmpty())
+        query = query + " and";
+        if(!razaoConsultarPJ.getText().isEmpty())
+        query = query + " razaosocial like '%'" + razaoConsultarPJ.getText() + "%'";
+        if((transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && !ieConsultarPJ.getText().isEmpty() ||
+            (transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && (!cnpjConsultarPJ.getText().isEmpty() && !cnpjConsultarPJ.getText().equals("  .   .   .    -  ")) ||
+            (transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && !razaoConsultarPJ.getText().isEmpty() ||
+            (transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && !nomeConsultarPJ.getText().isEmpty() ||
+            (transportadoraConsultarPJ.isSelected() || fornecedorConsultarPJ.isSelected() || clienteConsultarPJ.isSelected() || representanteConsultarPJ.isSelected()) && !codigoConsultarPJ.getText().isEmpty())
+        query = query + " and";
+        if(transportadoraConsultarPJ.isSelected()){
+            query = query + " tipo like '%transportadora%'";
+        }else if(representanteConsultarPJ.isSelected()){
+            query = query + " tipo like '%representante%'";
+        }else if(fornecedorConsultarPJ.isSelected()){
+            query = query + " tipo like '%fornecedor%'";
+        }else if(clienteConsultarPJ.isSelected()){
+            query = query + " tipo like '%cliente%'";
+        }
+
+        lista = PessoaDAO.pessoasJuridicaQuery(query);
+        int i = 0;
+        model.setNumRows(0);
+        for(PessoaJuridica p : lista){
+            Object[] pessoa = {p.getIdPessoaJuridica(), p.getNomefantasia()};
+            model.addRow(pessoa);
+        }
+    }//GEN-LAST:event_consultarPJActionPerformed
+
+    private void pessoaJuridicaTabelaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaJuridicaTabelaMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pessoaJuridicaTabelaMousePressed
+
+    private void pessoaJuridicaTabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaJuridicaTabelaMouseClicked
+        DefaultTableModel model = (DefaultTableModel) pessoaJuridicaTabela.getModel();
+        int row = pessoaJuridicaTabela.getSelectedRow();
+        int col = pessoaJuridicaTabela.getSelectedColumn();
+        try{
+            int id = (Integer)model.getValueAt(row, col);
+            PessoaJuridica pessoa = PessoaDAO.getPessoaJuridicaId(id);
+
+            codigoConsultarPJ.setText(pessoa.getIdPessoaJuridica()+"");
+            nomeConsultarPJ.setText(pessoa.getNomefantasia());
+            ieConsultarPJ.setText(pessoa.getInscricaoestadual());
+            razaoConsultarPJ.setText(pessoa.getRazaosocial());
+            cnpjConsultarPJ.setText(pessoa.getCnpj());
+
+            if(pessoa.getTipo().equals("cliente")){
+                clienteConsultarPJ.setSelected(true);
+            }else if(pessoa.getTipo().equals("representante")){
+                representanteConsultarPJ.setSelected(true);
+            }else if(pessoa.getTipo().equals("fornecedor")){
+                fornecedorConsultarPJ.setSelected(true);
+            }else if(pessoa.getTipo().equals("transportadora")){
+                transportadoraConsultarPJ.setSelected(true);
+            }
+
+            excluirPJ.setVisible(true);
+            alterarPJ.setVisible(true);
+        }catch(Exception e){}        // TODO add your handling code here:
+    }//GEN-LAST:event_pessoaJuridicaTabelaMouseClicked
+
+    private void razaoConsultarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_razaoConsultarPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_razaoConsultarPJActionPerformed
+
+    private void excluirPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirPJActionPerformed
+        try {
+            PessoaDAO.deletePessoaJuridicaId(Integer.parseInt(codigoConsultarPJ.getText()));
+            JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+codigoConsultarPJ.getText());
+            excluirPJ.setVisible(false);
+            alterarPJ.setVisible(false);
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao excluir pessoa com ID "+codigoConsultarPJ.getText());
+        }        // TODO add your handling code here:
+        atualizarModelPessoaJuridica();
+    }//GEN-LAST:event_excluirPJActionPerformed
+
+    private void cnpjConsultarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnpjConsultarPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cnpjConsultarPJActionPerformed
+
+    private void codigoConsultarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoConsultarPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codigoConsultarPJActionPerformed
 
 
 
