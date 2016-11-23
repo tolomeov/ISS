@@ -212,22 +212,21 @@ public class ProdutoFrame extends javax.swing.JFrame {
             dimensionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dimensionPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(dimensionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dimensionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 21, Short.MAX_VALUE)
                 .addGroup(dimensionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(larguraTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(dimensionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(larguraTxtField)
                     .addComponent(alturaTxtField)
-                    .addComponent(espessuraTxtField))
+                    .addComponent(espessuraTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(dimensionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
-                .addGap(206, 206, 206))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dimensionPanelLayout.setVerticalGroup(
             dimensionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,7 +275,7 @@ public class ProdutoFrame extends javax.swing.JFrame {
                 .addComponent(criarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81)
                 .addComponent(processingLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,68 +389,10 @@ public class ProdutoFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_consultaCodigoTextFieldActionPerformed
 
-    private void alturaTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alturaTxtFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_alturaTxtFieldActionPerformed
-
     private Boolean alturaValid = true;
     private Boolean larguraValid = true;
     private Boolean espessuraValid = true;
     
-    private void alturaTxtFieldPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_alturaTxtFieldPropertyChange
-        if(alturaTxtField.getValue() == null)
-            return;
-        
-        double altura = Double.parseDouble(alturaTxtField.getValue().toString());
-        try{
-            ProdutoControl.validarAltura(altura*ProdutoControl.CM);
-            alturaWarningTxtField.setText("");
-            alturaValid = true;
-            if(larguraValid && espessuraValid && !criarBtn.isEnabled())
-                criarBtn.setEnabled(true);
-        } catch(Exception e) {
-            alturaWarningTxtField.setText(e.getMessage());
-            alturaValid = false;
-            criarBtn.setEnabled(false);
-        }
-    }//GEN-LAST:event_alturaTxtFieldPropertyChange
-
-    private void larguraTxtFieldPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_larguraTxtFieldPropertyChange
-        if(larguraTxtField.getValue() == null)
-            return;
-        
-        double largura = Double.parseDouble(larguraTxtField.getValue().toString());
-        try{
-            ProdutoControl.validarLargura(largura*ProdutoControl.CM);
-            larguraWarning.setText("");
-            larguraValid = true;
-            if(alturaValid && espessuraValid && !criarBtn.isEnabled())
-                criarBtn.setEnabled(true);
-        } catch(Exception e) {
-            larguraWarning.setText(e.getMessage());
-            larguraValid = false;
-            criarBtn.setEnabled(false);
-        }
-    }//GEN-LAST:event_larguraTxtFieldPropertyChange
-
-    private void espessuraTxtFieldPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_espessuraTxtFieldPropertyChange
-        if(espessuraTxtField.getValue() == null)
-            return;
-        
-        double espessura = Double.parseDouble(espessuraTxtField.getValue().toString());
-        try{
-            ProdutoControl.validarEspessura(espessura*ProdutoControl.MICRA);
-            espessuraWarningTxtField.setText("");
-            espessuraValid = true;
-            if(alturaValid && larguraValid && !criarBtn.isEnabled())
-                criarBtn.setEnabled(true);
-        } catch(Exception e) {
-            espessuraWarningTxtField.setText(e.getMessage());
-            espessuraValid = false;
-            criarBtn.setEnabled(false);
-        }
-    }//GEN-LAST:event_espessuraTxtFieldPropertyChange
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         List<Produto> produtos;
         
@@ -507,6 +448,64 @@ public class ProdutoFrame extends javax.swing.JFrame {
         processingLabel.setText("Produto " + produto.getNome() + " cadastrado com sucesso!");
         
     }//GEN-LAST:event_criarBtnActionPerformed
+
+    private void espessuraTxtFieldPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_espessuraTxtFieldPropertyChange
+        if(espessuraTxtField.getValue() == null)
+        return;
+
+        double espessura = Double.parseDouble(espessuraTxtField.getValue().toString());
+        try{
+            ProdutoControl.validarEspessura(espessura*ProdutoControl.MICRA);
+            espessuraWarningTxtField.setText("");
+            espessuraValid = true;
+            if(alturaValid && larguraValid && !criarBtn.isEnabled())
+            criarBtn.setEnabled(true);
+        } catch(Exception e) {
+            espessuraWarningTxtField.setText(e.getMessage());
+            espessuraValid = false;
+            criarBtn.setEnabled(false);
+        }
+    }//GEN-LAST:event_espessuraTxtFieldPropertyChange
+
+    private void larguraTxtFieldPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_larguraTxtFieldPropertyChange
+        if(larguraTxtField.getValue() == null)
+        return;
+
+        double largura = Double.parseDouble(larguraTxtField.getValue().toString());
+        try{
+            ProdutoControl.validarLargura(largura*ProdutoControl.CM);
+            larguraWarning.setText("");
+            larguraValid = true;
+            if(alturaValid && espessuraValid && !criarBtn.isEnabled())
+            criarBtn.setEnabled(true);
+        } catch(Exception e) {
+            larguraWarning.setText(e.getMessage());
+            larguraValid = false;
+            criarBtn.setEnabled(false);
+        }
+    }//GEN-LAST:event_larguraTxtFieldPropertyChange
+
+    private void alturaTxtFieldPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_alturaTxtFieldPropertyChange
+        if(alturaTxtField.getValue() == null)
+        return;
+
+        double altura = Double.parseDouble(alturaTxtField.getValue().toString());
+        try{
+            ProdutoControl.validarAltura(altura*ProdutoControl.CM);
+            alturaWarningTxtField.setText("");
+            alturaValid = true;
+            if(larguraValid && espessuraValid && !criarBtn.isEnabled())
+            criarBtn.setEnabled(true);
+        } catch(Exception e) {
+            alturaWarningTxtField.setText(e.getMessage());
+            alturaValid = false;
+            criarBtn.setEnabled(false);
+        }
+    }//GEN-LAST:event_alturaTxtFieldPropertyChange
+
+    private void alturaTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alturaTxtFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alturaTxtFieldActionPerformed
     
     /**
      * @param args the command line arguments
