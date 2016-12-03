@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/08/2016 15:51:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.PessoaFisica" table="PessoaFisica" catalog="plasnedo" optimistic-lock="version">
+        
+        <property name="idPessoaFisica" type="int">
+            <column name="idPessoaFisica" />
+        </property>
+        <property name="nome" type="string">
+            <column name="nome" length="45" />
+        </property>
+        <property name="cpf" type="string">
+            <column name="cpf" length="45" />
+        </property>
+        <property name="rg" type="string">
+            <column name="rg" length="45" />
+        </property>
+        <property name="senha" type="string">
+            <column name="senha" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

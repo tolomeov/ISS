@@ -10,6 +10,7 @@ import model.Pessoa;
 import java.util.ArrayList;
 import java.util.List;
 import javax.transaction.Transactional;
+import model.PessoaFisica;
 import model.PessoaJuridica;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -130,6 +131,114 @@ public class PessoaDAO {
         return infos;
     }
     
+          //PESSOAS FISICAS
+    public static void createPessoaFisica(PessoaFisica pessoaFisica) throws Exception{
+        Transaction trns = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            trns = session.beginTransaction();
+            session.save(pessoaFisica);
+            session.getTransaction().commit();
+        } catch (RuntimeException e) {
+            if (trns != null) {
+                trns.rollback();
+            }
+            e.printStackTrace();
+            throw new Exception("Error ao criar pessoaFisica");
+        } finally {
+            session.flush();
+            session.close();
+        }
+    }
+   
+    public static PessoaFisica getPessoaFisicaId(int id){
+                          
+        PessoaFisica pessoaFisica = null;                
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+             pessoaFisica = (PessoaFisica) session.get(PessoaFisica.class, id);
+             
+        } finally {
+            session.flush();
+            session.close();
+        }
+
+        return pessoaFisica;
+    }
+
+    public static void deletePessoaFisicaId(int id) throws Exception{
+        Transaction trns = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            trns = session.beginTransaction();
+            PessoaFisica pessoaFisica = (PessoaFisica) session.load(PessoaFisica.class, id);
+            session.delete(pessoaFisica);
+            session.getTransaction().commit();
+        } catch (RuntimeException e) {
+            if (trns != null) {
+                trns.rollback();
+            }
+            e.printStackTrace();
+            throw new Exception("Error ao excluir pessoaFisica");
+        } finally {
+            session.flush();
+            session.close();
+        }
+    }
+    
+    public static List<PessoaFisica> pessoasFisicaQuery(String q){
+        List<PessoaFisica> pessoasFisica = new ArrayList<>();                             
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            pessoasFisica = session.createQuery(q).list();
+
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return pessoasFisica;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public static List<PessoaFisica> listPessoaFisicas(){
+        List<PessoaFisica> pessoaFisicas = new ArrayList<PessoaFisica>();
+                                     
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            pessoaFisicas = session.createQuery("from PessoaFisica").list();
+
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return pessoaFisicas;
+    }
+
+              
+    public static void updatePessoaFisica(PessoaFisica pessoaFisica) throws Exception{
+        Transaction trns = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            trns = session.beginTransaction();
+            session.update(pessoaFisica);
+        } catch (RuntimeException e) {
+            if (trns != null) {
+                trns.rollback();
+            }
+            e.printStackTrace();
+            throw new Exception("Error ao atualizar pessoaFisisca");
+        } finally {
+            session.flush();
+            session.close();
+        }
+    }
+  
+        
+        
     //PESSOAS JURIDICAS
     public static void createPessoaJuridica(PessoaJuridica pessoaJuridica) throws Exception{
         Transaction trns = null;

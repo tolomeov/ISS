@@ -21,6 +21,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.MaskFormatter;
 import model.InformacoesBancarias;
 import model.Pessoa;
+import model.PessoaFisica;
 import model.PessoaJuridica;
 import org.hibernate.Session;
 import plasnedo.util.HibernateUtil;
@@ -42,6 +43,12 @@ public class PessoaFrame extends javax.swing.JFrame {
         excluirBanco.setVisible(false);
         alterarPJ.setVisible(false);
         excluirPJ.setVisible(false);
+        alterarPF.setVisible(false);
+        consultarPF.setVisible(false);
+        idConsultaBanco.setEditable(true);
+        idConsultaEndereco.setEditable(true);
+        codigoConsultarPF.setEditable(true);
+        codigoConsultarPJ.setEditable(true);
         
         ButtonGroup grupo = new ButtonGroup();
         grupo.add(clienteCadastrarPJ);
@@ -235,6 +242,35 @@ pjbuscaScrollPane1 = new javax.swing.JScrollPane();
 pessoaJuridicaTabela = new javax.swing.JTable();
 consultarPJ = new javax.swing.JButton();
 alterarPJ = new javax.swing.JButton();
+dadospjAba1 = new javax.swing.JTabbedPane();
+pessoaispjAba2 = new javax.swing.JPanel();
+cadastrarPF = new javax.swing.JButton();
+limparPF = new javax.swing.JButton();
+senhaCadastrarPF = new javax.swing.JPasswordField();
+razaosocialLabel3 = new javax.swing.JLabel();
+pjcnpjLabel3 = new javax.swing.JLabel();
+cpfCadastrarPf = new javax.swing.JFormattedTextField(Mascara("###.###.###-##"));
+inscricaoestadualLabel3 = new javax.swing.JLabel();
+rgCadastrarPF = new javax.swing.JTextField();
+nomeCadastrarPF = new javax.swing.JTextField();
+pjnomeLabel3 = new javax.swing.JLabel();
+codigoCadastrarPF = new javax.swing.JTextField();
+pjcodigoLabel3 = new javax.swing.JLabel();
+pessoaispjAba3 = new javax.swing.JPanel();
+excluirPF = new javax.swing.JButton();
+pjbuscaScrollPane2 = new javax.swing.JScrollPane();
+pessoaFisicaTabela = new javax.swing.JTable();
+consultarPF = new javax.swing.JButton();
+alterarPF = new javax.swing.JButton();
+pjcnpjLabel5 = new javax.swing.JLabel();
+cpfConsultarPf = new javax.swing.JFormattedTextField(Mascara("###.###.###-##"));
+rgConsultarPF = new javax.swing.JTextField();
+inscricaoestadualLabel5 = new javax.swing.JLabel();
+nomeConsultarPF = new javax.swing.JTextField();
+codigoConsultarPF = new javax.swing.JTextField();
+pjcodigoLabel5 = new javax.swing.JLabel();
+pjnomeLabel5 = new javax.swing.JLabel();
+alterarPJ2 = new javax.swing.JButton();
 plasnedoMenuBar = new javax.swing.JMenuBar();
 pessoaMenu = new javax.swing.JMenu();
 produtoMenu = new javax.swing.JMenu();
@@ -1613,32 +1649,27 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         .addGroup(pessoaispjAba1Layout.createSequentialGroup()
             .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pessoaispjAba1Layout.createSequentialGroup()
-                    .addGap(41, 41, 41)
-                    .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pessoaispjAba1Layout.createSequentialGroup()
-                            .addComponent(pjcnpjLabel1)
-                            .addGap(18, 18, 18)
-                            .addComponent(cnpjConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(inscricaoestadualLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(ieConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pessoaispjAba1Layout.createSequentialGroup()
-                            .addComponent(razaosocialLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(razaoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pessoaispjAba1Layout.createSequentialGroup()
-                            .addComponent(pjnomeLabel1)
-                            .addGap(18, 18, 18)
-                            .addComponent(nomeConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(pessoaispjAba1Layout.createSequentialGroup()
-                    .addGap(222, 222, 222)
-                    .addComponent(pjcodigoLabel1)
-                    .addGap(18, 18, 18)
-                    .addComponent(codigoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(pessoaispjAba1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pessoaispjAba1Layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pessoaispjAba1Layout.createSequentialGroup()
+                                    .addComponent(pjcnpjLabel1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(cnpjConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(inscricaoestadualLabel1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ieConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(pessoaispjAba1Layout.createSequentialGroup()
+                                    .addComponent(razaosocialLabel1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(razaoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pessoaispjAba1Layout.createSequentialGroup()
+                                    .addComponent(pjnomeLabel1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(nomeConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(pessoaispjAba1Layout.createSequentialGroup()
                             .addGap(77, 77, 77)
                             .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1655,8 +1686,13 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                             .addComponent(alterarPJ)
                             .addGap(18, 18, 18)
                             .addComponent(excluirPJ))
-                        .addComponent(pjbuscaScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addContainerGap(182, Short.MAX_VALUE))
+                        .addComponent(pjbuscaScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(pessoaispjAba1Layout.createSequentialGroup()
+                    .addGap(222, 222, 222)
+                    .addComponent(pjcodigoLabel1)
+                    .addGap(18, 18, 18)
+                    .addComponent(codigoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     pessoaispjAba1Layout.setVerticalGroup(
         pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1670,16 +1706,17 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                 .addComponent(pjnomeLabel1)
                 .addComponent(nomeConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(3, 3, 3)
-            .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                .addComponent(pjcnpjLabel1)
-                .addComponent(inscricaoestadualLabel1)
+            .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                 .addComponent(cnpjConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(ieConsultarPJ))
-            .addGap(7, 7, 7)
+                .addComponent(ieConsultarPJ)
+                .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pjcnpjLabel1)
+                    .addComponent(inscricaoestadualLabel1)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addComponent(razaosocialLabel1)
                 .addComponent(razaoConsultarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addGroup(pessoaispjAba1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(transportadoraConsultarPJ)
                 .addComponent(clienteConsultarPJ))
@@ -1693,13 +1730,275 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                 .addComponent(consultarPJ)
                 .addComponent(alterarPJ))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(pjbuscaScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(pjbuscaScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
     dadospjAba.addTab("Consultar", pessoaispjAba1);
 
     jTabbedPane4.addTab("Pessoa Jurídica", dadospjAba);
+
+    cadastrarPF.setText("Cadastrar");
+    cadastrarPF.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            cadastrarPFActionPerformed(evt);
+        }
+    });
+
+    limparPF.setText("Limpar");
+    limparPF.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            limparPFActionPerformed(evt);
+        }
+    });
+
+    senhaCadastrarPF.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            senhaCadastrarPFActionPerformed(evt);
+        }
+    });
+
+    razaosocialLabel3.setText("Senha*");
+
+    pjcnpjLabel3.setText("CPF*");
+
+    cpfCadastrarPf.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            cpfCadastrarPfActionPerformed(evt);
+        }
+    });
+
+    inscricaoestadualLabel3.setText("RG");
+
+    pjnomeLabel3.setText("Nome*");
+
+    codigoCadastrarPF.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            codigoCadastrarPFActionPerformed(evt);
+        }
+    });
+
+    pjcodigoLabel3.setText("ID*");
+
+    javax.swing.GroupLayout pessoaispjAba2Layout = new javax.swing.GroupLayout(pessoaispjAba2);
+    pessoaispjAba2.setLayout(pessoaispjAba2Layout);
+    pessoaispjAba2Layout.setHorizontalGroup(
+        pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(pessoaispjAba2Layout.createSequentialGroup()
+            .addGroup(pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pessoaispjAba2Layout.createSequentialGroup()
+                    .addGap(34, 34, 34)
+                    .addGroup(pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pessoaispjAba2Layout.createSequentialGroup()
+                            .addComponent(razaosocialLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(senhaCadastrarPF))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pessoaispjAba2Layout.createSequentialGroup()
+                            .addComponent(pjnomeLabel3)
+                            .addGap(18, 18, 18)
+                            .addComponent(nomeCadastrarPF))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pessoaispjAba2Layout.createSequentialGroup()
+                            .addGap(26, 26, 26)
+                            .addComponent(pjcnpjLabel3)
+                            .addGap(18, 18, 18)
+                            .addComponent(cpfCadastrarPf, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inscricaoestadualLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(rgCadastrarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pessoaispjAba2Layout.createSequentialGroup()
+                            .addGap(198, 198, 198)
+                            .addComponent(pjcodigoLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(codigoCadastrarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(183, 183, 183))))
+                .addGroup(pessoaispjAba2Layout.createSequentialGroup()
+                    .addGap(144, 144, 144)
+                    .addComponent(cadastrarPF)
+                    .addGap(63, 63, 63)
+                    .addComponent(limparPF)))
+            .addContainerGap(234, Short.MAX_VALUE))
+    );
+    pessoaispjAba2Layout.setVerticalGroup(
+        pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(pessoaispjAba2Layout.createSequentialGroup()
+            .addGap(21, 21, 21)
+            .addGroup(pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(codigoCadastrarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pjcodigoLabel3))
+            .addGap(18, 18, 18)
+            .addGroup(pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(pjnomeLabel3)
+                .addComponent(nomeCadastrarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(18, 18, 18)
+            .addGroup(pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(rgCadastrarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cpfCadastrarPf, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pjcnpjLabel3)
+                    .addComponent(inscricaoestadualLabel3)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(senhaCadastrarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(razaosocialLabel3))
+            .addGap(47, 47, 47)
+            .addGroup(pessoaispjAba2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(limparPF)
+                .addComponent(cadastrarPF))
+            .addContainerGap())
+    );
+
+    dadospjAba1.addTab("Cadastrar", pessoaispjAba2);
+
+    excluirPF.setText("Excluir");
+    excluirPF.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            excluirPFActionPerformed(evt);
+        }
+    });
+
+    pessoaFisicaTabela.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+
+        },
+        new String [] {
+            "Código", "Nome"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    pessoaFisicaTabela.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            pessoaFisicaTabelaMouseClicked(evt);
+        }
+        public void mousePressed(java.awt.event.MouseEvent evt) {
+            pessoaFisicaTabelaMousePressed(evt);
+        }
+    });
+    pjbuscaScrollPane2.setViewportView(pessoaFisicaTabela);
+
+    consultarPF.setText("Consultar");
+    consultarPF.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            consultarPFActionPerformed(evt);
+        }
+    });
+
+    alterarPF.setText("Alterar");
+    alterarPF.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            alterarPFActionPerformed(evt);
+        }
+    });
+
+    pjcnpjLabel5.setText("CPF");
+
+    cpfConsultarPf.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            cpfConsultarPfActionPerformed(evt);
+        }
+    });
+
+    inscricaoestadualLabel5.setText("RG");
+
+    codigoConsultarPF.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            codigoConsultarPFActionPerformed(evt);
+        }
+    });
+
+    pjcodigoLabel5.setText("ID");
+
+    pjnomeLabel5.setText("Nome");
+
+    alterarPJ2.setText("Alterar Senha");
+    alterarPJ2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            alterarPJ2ActionPerformed(evt);
+        }
+    });
+
+    javax.swing.GroupLayout pessoaispjAba3Layout = new javax.swing.GroupLayout(pessoaispjAba3);
+    pessoaispjAba3.setLayout(pessoaispjAba3Layout);
+    pessoaispjAba3Layout.setHorizontalGroup(
+        pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(pessoaispjAba3Layout.createSequentialGroup()
+            .addGroup(pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pessoaispjAba3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pessoaispjAba3Layout.createSequentialGroup()
+                            .addGap(118, 118, 118)
+                            .addComponent(consultarPF)
+                            .addGap(18, 18, 18)
+                            .addComponent(alterarPF)
+                            .addGap(18, 18, 18)
+                            .addComponent(excluirPF))
+                        .addComponent(pjbuscaScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(pessoaispjAba3Layout.createSequentialGroup()
+                    .addGap(59, 59, 59)
+                    .addGroup(pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pessoaispjAba3Layout.createSequentialGroup()
+                            .addComponent(pjnomeLabel5)
+                            .addGap(18, 18, 18)
+                            .addComponent(nomeConsultarPF))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pessoaispjAba3Layout.createSequentialGroup()
+                            .addGap(26, 26, 26)
+                            .addComponent(pjcnpjLabel5)
+                            .addGap(18, 18, 18)
+                            .addComponent(cpfConsultarPf, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inscricaoestadualLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(rgConsultarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pessoaispjAba3Layout.createSequentialGroup()
+                            .addGap(198, 198, 198)
+                            .addComponent(pjcodigoLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(codigoConsultarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(183, 183, 183))))
+                .addGroup(pessoaispjAba3Layout.createSequentialGroup()
+                    .addGap(237, 237, 237)
+                    .addComponent(alterarPJ2)))
+            .addContainerGap(182, Short.MAX_VALUE))
+    );
+    pessoaispjAba3Layout.setVerticalGroup(
+        pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(pessoaispjAba3Layout.createSequentialGroup()
+            .addGap(50, 50, 50)
+            .addGroup(pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(codigoConsultarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pjcodigoLabel5))
+            .addGap(18, 18, 18)
+            .addGroup(pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(pjnomeLabel5)
+                .addComponent(nomeConsultarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(18, 18, 18)
+            .addGroup(pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(rgConsultarPF, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cpfConsultarPf, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pjcnpjLabel5)
+                    .addComponent(inscricaoestadualLabel5)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+            .addComponent(alterarPJ2)
+            .addGap(48, 48, 48)
+            .addGroup(pessoaispjAba3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(excluirPF)
+                .addComponent(consultarPF)
+                .addComponent(alterarPF))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(pjbuscaScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
+
+    dadospjAba1.addTab("Consultar", pessoaispjAba3);
+
+    jTabbedPane4.addTab("Pessoa Física", dadospjAba1);
 
     pessoaMenu.setText("Pessoa");
     pessoaMenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1759,594 +2058,6 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
 
-    private void emailCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailCadastroEnderecoActionPerformed
-
-    private void cepCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cepCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cepCadastroEnderecoActionPerformed
-
-    private void bairroCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bairroCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bairroCadastroEnderecoActionPerformed
-
-    private void cidadeCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cidadeCadastroEnderecoActionPerformed
-
-    private void celularCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_celularCadastroEnderecoActionPerformed
-
-    private void telefoneCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefoneCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_telefoneCadastroEnderecoActionPerformed
-
-    private void complementoCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_complementoCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_complementoCadastroEnderecoActionPerformed
-
-    private void numeroCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_numeroCadastroEnderecoActionPerformed
-
-    private void logradouroCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logradouroCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logradouroCadastroEnderecoActionPerformed
-
-    private void logradouroConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logradouroConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logradouroConsultaEnderecoActionPerformed
-
-    private void numeroConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_numeroConsultaEnderecoActionPerformed
-
-    private void complementoConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_complementoConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_complementoConsultaEnderecoActionPerformed
-
-    private void telefoneConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefoneConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_telefoneConsultaEnderecoActionPerformed
-
-    private void celularConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_celularConsultaEnderecoActionPerformed
-
-    private void cidadeConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cidadeConsultaEnderecoActionPerformed
-
-    private void bairroConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bairroConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bairroConsultaEnderecoActionPerformed
-
-    private void cepConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cepConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cepConsultaEnderecoActionPerformed
-
-    private void emailConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailConsultaEnderecoActionPerformed
-
-    private void excluirEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirEnderecoActionPerformed
-        try {
-            PessoaDAO.deletePessoaId(Integer.parseInt(idConsultaEndereco.getText()));
-            JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+idConsultaEndereco.getText());
-        excluirEndereco.setVisible(false);
-        alterarEndereco.setVisible(false);
-            
-        } catch (Exception ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao excluir pessoa com ID "+idConsultaEndereco.getText());
-        }        // TODO add your handling code here:
-        atualizarModelPessoa();
-        
-    }//GEN-LAST:event_excluirEnderecoActionPerformed
-
-    private void idConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idConsultaEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idConsultaEnderecoActionPerformed
-
-    private void contaCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contaCadastroBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contaCadastroBancoActionPerformed
-
-    private void agenciaCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agenciaCadastroBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_agenciaCadastroBancoActionPerformed
-
-    private void bancoCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancoCadastroBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bancoCadastroBancoActionPerformed
-
-    private void cpfCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfCadastroBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cpfCadastroBancoActionPerformed
-
-    private void titularCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titularCadastroBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_titularCadastroBancoActionPerformed
-
-    private void titularConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titularConsultaBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_titularConsultaBancoActionPerformed
-
-    private void cpfConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfConsultaBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cpfConsultaBancoActionPerformed
-
-    private void excluirBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirBancoActionPerformed
-        try {
-            PessoaDAO.deleteInformacoesBancariasId(Integer.parseInt(idConsultaBanco.getText()));
-            JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+idConsultaBanco.getText());
-        excluirBanco.setVisible(false);
-        alterarBanco.setVisible(false);
-        } catch (Exception ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao excluir informações com ID "+idConsultaBanco.getText());
-        }
-        atualizarModelBanco();
-    }//GEN-LAST:event_excluirBancoActionPerformed
-
-    private void idConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idConsultaBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idConsultaBancoActionPerformed
-
-    private void cadastrarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarEnderecoActionPerformed
-        Pessoa pessoa = new Pessoa();
-        pessoa.setBairro(bairroCadastroEndereco.getText());
-        pessoa.setEndereco(logradouroCadastroEndereco.getText());
-        pessoa.setComplemento(complementoCadastroEndereco.getText());
-        pessoa.setNumero(numeroCadastroEndereco.getText());
-        pessoa.setCep(cepCadastroEndereco.getText());
-        pessoa.setCidade(cidadeCadastroEndereco.getText());
-        pessoa.setEstado(ufCadastroEndereco.getSelectedItem().toString());
-        pessoa.setTelefone(telefoneCadastroEndereco.getText());
-        pessoa.setCelular(celularCadastroEndereco.getText());
-        boolean faiou = false;
-        
-        try{
-           PessoaControl.validarEmail(emailCadastroEndereco.getText()); 
-           pessoa.setEmail(emailCadastroEndereco.getText());
-        }catch(Exception e){
-            faiou = true;
-           JOptionPane.showMessageDialog(null, "Email inválido! ");
-                }
-        try{
-        pessoa.setIdPessoa(Integer.parseInt(idCadastroEndereco.getText()));
-        }catch(Exception e){
-            faiou = true;
-            JOptionPane.showMessageDialog(null, "Erro! O campo ID deve conter apenas números e não pode ficar em branco! ");
-        }
-        PessoaDAO dao = new PessoaDAO();
-        try {
-        if(!faiou){
-            
-            PessoaDAO.createPessoa(pessoa);
-            JOptionPane.showMessageDialog(null, "Endereço inserido com sucesso! ");  
-            
-        logradouroCadastroEndereco.setText(""); 
-        numeroCadastroEndereco.setText(""); 
-        complementoCadastroEndereco.setText(""); 
-        telefoneCadastroEndereco.setText("");
-        celularCadastroEndereco.setText(""); 
-        cidadeCadastroEndereco.setText(""); 
-        ufCadastroEndereco.setSelectedIndex(0); 
-        bairroCadastroEndereco.setText("");
-        cepCadastroEndereco.setText(""); 
-        emailCadastroEndereco.setText(""); 
-        idCadastroEndereco.setText("");
-        }} catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Erro de inserção! Este ID já existe na base de dados!");  
-        }
-
-    
-
-
-    }//GEN-LAST:event_cadastrarEnderecoActionPerformed
-
-    private void cadastrarBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBancoActionPerformed
-        InformacoesBancarias banc = new InformacoesBancarias();
-        banc.setIdInformacoesBancarias(Integer.parseInt(idCadastroBanco.getText()));
-        banc.setAgencia(agenciaCadastroBanco.getText());
-        banc.setBanco(bancoCadastroBanco.getText());
-        banc.setContaCorrente(contaCadastroBanco.getText());
-        banc.setTitular(titularCadastroBanco.getText());
-        
-        String cpf = cpfCadastroBanco.getText();
-        String cnpj = "";
-        boolean faiou = false;
-
-        int id = 0;
-        try{
-            id = Integer.parseInt(idCadastroBanco.getText());
-        }catch(Exception e){
-            faiou = true;
-        JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
-        }
-        
-        Pessoa p = PessoaDAO.getPessoaId(id);
-        int i = -1;
-        try{
-           i = p.getIdPessoa(); 
-        }catch(Exception e){
-            faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa deve corresponder ao código cadastrado no endereço!");
-        }
-        if(i==id){
-        banc.setIdInformacoesBancarias(id);
-        }else{
-            faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
-        }
-
-        
-        
-        try {
-            PessoaControl.validarCPF(cpf);
-        } catch (Exception ex) {
-            cnpj = cpf;
-            cpf = "";
-            try {
-                PessoaControl.validarCNPJ(cnpj);
-            } catch (Exception ex1) {
-                faiou = true;
-                JOptionPane.showMessageDialog(null, "ERRO! Digite um CPF/CNPJ válido!");
-            }
-        }
-        banc.setCpf(cpf);
-        banc.setCnpj(cnpj);
-        
-        
-
-            if(!faiou){        
-        try {
-
-            PessoaDAO.createInformacoesBancarias(banc);
-            JOptionPane.showMessageDialog(null, "Dados Bancários inseridos com sucesso! ");  
-            
-        titularCadastroBanco.setText(""); 
-        agenciaCadastroBanco.setText(""); 
-        idCadastroBanco.setText("");
-        contaCadastroBanco.setText(""); 
-        cpfCadastroBanco.setText("");
-        bancoCadastroBanco.setText(""); 
-        
-        } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Erro de inserção! Verifique os dados e tente novamente.");  
-        }
-        }
-    }//GEN-LAST:event_cadastrarBancoActionPerformed
-
-    private void idCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idCadastroEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idCadastroEnderecoActionPerformed
-
-    private void idCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idCadastroBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idCadastroBancoActionPerformed
-
-    private void consultarBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBancoActionPerformed
-
-        query = "from InformacoesBancarias where";
-
-	if(!idConsultaBanco.getText().isEmpty())
-            query = query + " idInformacoesBancarias = " + idConsultaBanco.getText();
-        if(!idConsultaBanco.getText().isEmpty() && !bancoConsultaBanco.getText().isEmpty())
-           query = query + " and";
-        if(!bancoConsultaBanco.getText().isEmpty())
-            query = query + " banco like '%" + bancoConsultaBanco.getText() + "%'";
-        if(!bancoConsultaBanco.getText().isEmpty() && !agenciaConsultaBanco.getText().isEmpty() || 
- !idConsultaBanco.getText().isEmpty() && !agenciaConsultaBanco.getText().isEmpty())
-           query = query + " and";
-        if(!agenciaConsultaBanco.getText().isEmpty())
-            query = query + " agencia like '%" + agenciaConsultaBanco.getText() + "%'";
-	if(!contaConsultaBanco.getText().isEmpty() && !agenciaConsultaBanco.getText().isEmpty() ||
-	!bancoConsultaBanco.getText().isEmpty() && !contaConsultaBanco.getText().isEmpty() ||
-	!idConsultaBanco.getText().isEmpty() && !contaConsultaBanco.getText().isEmpty())
-	   query = query + " and";
-        if(!contaConsultaBanco.getText().isEmpty())
-            query = query + " contaCorrente like '%" + contaConsultaBanco.getText() + "%'";
-	if(!cpfConsultaBanco.getText().isEmpty() && !agenciaConsultaBanco.getText().isEmpty() || 
-	!bancoConsultaBanco.getText().isEmpty() && !cpfConsultaBanco.getText().isEmpty() ||
-	!contaConsultaBanco.getText().isEmpty() && !cpfConsultaBanco.getText().isEmpty() ||
-	!idConsultaBanco.getText().isEmpty() && !cpfConsultaBanco.getText().isEmpty())
-            query = query + " and";
-        if(!cpfConsultaBanco.getText().isEmpty())
-            query = query + " (cpf like '%" + cpfConsultaBanco.getText() + "%' or cnpj like '%"+cpfConsultaBanco.getText()+"%')";
-        
-        atualizarModelBanco();
-
-        
-    
-    }//GEN-LAST:event_consultarBancoActionPerformed
-
-    private void ConsultarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarEnderecoActionPerformed
-        query = "from Pessoa where";
-
-  	if(!idConsultaEndereco.getText().isEmpty())
-            query = query + " idPessoa = " + idConsultaEndereco.getText();
-        if(!idConsultaEndereco.getText().isEmpty() && !logradouroConsultaEndereco.getText().isEmpty())
-            query = query + " and";
-        if(!logradouroConsultaEndereco.getText().isEmpty())
-            query = query + " endereco like '%" + logradouroConsultaEndereco.getText() + "%'";
-        if(!logradouroConsultaEndereco.getText().isEmpty() && !numeroConsultaEndereco.getText().isEmpty() || 
-!idConsultaEndereco.getText().isEmpty() && !numeroConsultaEndereco.getText().isEmpty())
-           query = query + " and";
-        if(!numeroConsultaEndereco.getText().isEmpty())
-            query = query + " numero like '%" + numeroConsultaEndereco.getText() + "%'";
-        if(!numeroConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() || 
-!logradouroConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() ||
- !idConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty())
-           query = query + " and";
-        if(!complementoConsultaEndereco.getText().isEmpty())
-            query = query + " complemento like '%" + complementoConsultaEndereco.getText() + "%'";
-	if(!bairroConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() || 
-	!logradouroConsultaEndereco.getText().isEmpty() && !bairroConsultaEndereco.getText().isEmpty() || 
-	!numeroConsultaEndereco.getText().isEmpty() && !bairroConsultaEndereco.getText().isEmpty() ||
-	!idConsultaEndereco.getText().isEmpty() && !bairroConsultaEndereco.getText().isEmpty())
-	   query = query + " and";
-        if(!bairroConsultaEndereco.getText().isEmpty())
-            query = query + " bairro like '%" + bairroConsultaEndereco.getText() + "%'";
-	if(!cepConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() || 
-	!logradouroConsultaEndereco.getText().isEmpty() && !cepConsultaEndereco.getText().isEmpty() || 
-	!numeroConsultaEndereco.getText().isEmpty() && !cepConsultaEndereco.getText().isEmpty() ||
-	!bairroConsultaEndereco.getText().isEmpty() && !cepConsultaEndereco.getText().isEmpty() ||
-	!idConsultaEndereco.getText().isEmpty() && !cepConsultaEndereco.getText().isEmpty())
-            query = query + " and";
-        if(!cepConsultaEndereco.getText().isEmpty())
-            query = query + " cep like '%" + cepConsultaEndereco.getText()+ "%'";
-	if(!cidadeConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() || 
-	!logradouroConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty() || 
-	!numeroConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty() ||
-	!bairroConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty() ||
-	!cepConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty() ||
-	!idConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty())
-            query = query + " and";
-      if(!cidadeConsultaEndereco.getText().isEmpty())
-            query = query + " cidade like '%" + cidadeConsultaEndereco.getText()+ "%'";
-	if(ufConsultaEndereco.getSelectedIndex()!=0 && !complementoConsultaEndereco.getText().isEmpty() || 
-	!logradouroConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 || 
-	!numeroConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 ||
-	!bairroConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 ||
-	!cepConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 ||
-	!cidadeConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 ||
-	!idConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0)
-            query = query + " and";
-      if(ufConsultaEndereco.getSelectedIndex()!=0)
-            query = query + " estado like '%" + ufConsultaEndereco.getSelectedItem().toString()+ "%'";
-	if(!telefoneConsultaEndereco.getText().equals("(  )    -    ") && !complementoConsultaEndereco.getText().isEmpty() || 
-	!logradouroConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") || 
-	!numeroConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
-	!bairroConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
-	!cepConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
-	!cidadeConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
-	ufConsultaEndereco.getSelectedIndex()!=0 && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
-	!idConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    "))
-            query = query + " and";
-      if(!telefoneConsultaEndereco.getText().equals("(  )    -    "))
-            query = query + " telefone like '%" + telefoneConsultaEndereco.getText()+ "%'";
-	if(!celularConsultaEndereco.getText().equals("(  )     -    ") && !complementoConsultaEndereco.getText().isEmpty() || 
-	!logradouroConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") || 
-	!numeroConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
-	!bairroConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
-	!cepConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
-	!cidadeConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
-	ufConsultaEndereco.getSelectedIndex()!=0 && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
-	!telefoneConsultaEndereco.getText().equals("(  )    -    ") && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
-	!idConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    "))
-            query = query + " and";
-      if(!celularConsultaEndereco.getText().equals("(  )     -    "))
-            query = query + " celular like '%" + celularConsultaEndereco.getText()+ "%'";
-	if(!emailConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() || 
-	!logradouroConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() || 
-	!numeroConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() ||
-	!bairroConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() ||
-	!cepConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() ||
-	!cidadeConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() ||
-	ufConsultaEndereco.getSelectedIndex()!=0 && !emailConsultaEndereco.getText().isEmpty() ||
-	!telefoneConsultaEndereco.getText().equals("(  )    -    ") && !emailConsultaEndereco.getText().isEmpty() ||
-	!celularConsultaEndereco.getText().equals("(  )     -    ") && !emailConsultaEndereco.getText().isEmpty() ||
-	!idConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty())
-            query = query + " and";
-      if(!emailConsultaEndereco.getText().isEmpty())
-            query = query + " email like '%" + emailConsultaEndereco.getText()+ "%'";
-
-    atualizarModelPessoa();
-        
-    }//GEN-LAST:event_ConsultarEnderecoActionPerformed
-
-    private void tabelaEnderecoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tabelaEnderecoFocusGained
-        
-    }//GEN-LAST:event_tabelaEnderecoFocusGained
-
-    private void tabelaEnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaEnderecoMouseClicked
-        DefaultTableModel model = (DefaultTableModel) tabelaEndereco.getModel();            
-        int row = tabelaEndereco.getSelectedRow();
-        int col = tabelaEndereco.getSelectedColumn();
-        try{
-        int id = (Integer)model.getValueAt(row, col);
-        Pessoa pessoa = PessoaDAO.getPessoaId(id);
-        
-        idConsultaEndereco.setText(pessoa.getIdPessoa().toString());
-        logradouroConsultaEndereco.setText(pessoa.getEndereco());
-        numeroConsultaEndereco.setText(pessoa.getNumero());
-        bairroConsultaEndereco.setText(pessoa.getBairro());
-        celularConsultaEndereco.setText(pessoa.getCelular());
-        cepConsultaEndereco.setText(pessoa.getCep());
-        cidadeConsultaEndereco.setText(pessoa.getCidade());
-        complementoConsultaEndereco.setText(pessoa.getComplemento());
-        emailConsultaEndereco.setText(pessoa.getEmail());
-        telefoneConsultaEndereco.setText(pessoa.getTelefone());
-        ufConsultaEndereco.setSelectedItem((Object)pessoa.getEstado());
-
-        excluirEndereco.setVisible(true);
-        alterarEndereco.setVisible(true);
-        }catch(Exception e){}
-    }//GEN-LAST:event_tabelaEnderecoMouseClicked
-
-    private void tabelaBancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaBancoMouseClicked
-        DefaultTableModel model = (DefaultTableModel) tabelaBanco.getModel();            
-        int row = tabelaBanco.getSelectedRow();
-        int col = tabelaBanco.getSelectedColumn();
-        try{
-        int id = (Integer)model.getValueAt(row, col);
-        InformacoesBancarias banco = PessoaDAO.getInformacoesBancariasId(id);
-        
-        idConsultaBanco.setText(""+banco.getIdInformacoesBancarias());
-        titularConsultaBanco.setText(banco.getTitular());
-        agenciaConsultaBanco.setText(banco.getAgencia());
-        bancoConsultaBanco.setText(banco.getBanco());
-        contaConsultaBanco.setText(banco.getContaCorrente());        
-        
-        if(banco.getCnpj().equals("")){
-            cpfConsultaBanco.setText(banco.getCpf());        
-        }else{
-            cpfConsultaBanco.setText(banco.getCnpj());            
-        }
-        alterarBanco.setVisible(true);
-        excluirBanco.setVisible(true);        
-        }catch(Exception e){}
-        
-    }//GEN-LAST:event_tabelaBancoMouseClicked
-
-    private void alterarBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarBancoActionPerformed
-        if(!idConsultaBanco.getText().equals("")){
-        
-        InformacoesBancarias banc = PessoaDAO.getInformacoesBancariasId(Integer.parseInt(idConsultaBanco.getText()));
-        boolean faiou = false;
-        banc.setAgencia(agenciaConsultaBanco.getText());
-        banc.setBanco(bancoConsultaBanco.getText());
-        banc.setContaCorrente(contaConsultaBanco.getText());
-        banc.setTitular(titularConsultaBanco.getText());
-        
-        String cpf = cpfConsultaBanco.getText();
-        String cnpj = "";
-        
-        
-        
-        int id = 0;
-        try{
-            id = Integer.parseInt(idConsultaBanco.getText());
-        }catch(Exception e){
-            faiou = true;
-        JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
-        }
-        
-        Pessoa p = PessoaDAO.getPessoaId(id);
-        int i = -1;
-        try{
-           i = p.getIdPessoa(); 
-        }catch(Exception e){
-            faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa deve corresponder ao código cadastrado no endereço!");
-        }
-        if(i==id){
-        banc.setIdInformacoesBancarias(id);
-        }else{
-            faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
-        }
-
-        
-        
-        try {
-            PessoaControl.validarCPF(cpf);
-        } catch (Exception ex) {
-            cnpj = cpf;
-            cpf = "";
-            try {
-                PessoaControl.validarCNPJ(cnpj);
-            } catch (Exception ex1) {
-                faiou = true;
-                JOptionPane.showMessageDialog(null, "ERRO! Digite um CPF/CNPJ válido!");
-            }
-        }
-        banc.setCpf(cpf);
-        banc.setCnpj(cnpj);
-        
-        
-
-            if(!faiou){        
-        try {
-
-            PessoaDAO.updateInformacoesBancarias(banc);
-            JOptionPane.showMessageDialog(null, "Dados Bancários alterados com sucesso! ");  
-            
-        titularConsultaBanco.setText(""); 
-        agenciaConsultaBanco.setText(""); 
-        idConsultaBanco.setText("");
-        contaConsultaBanco.setText(""); 
-        cpfConsultaBanco.setText("");
-        bancoConsultaBanco.setText(""); 
-        
-        } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Erro de inserção! ID repetido!");  
-        }
-        }
-            atualizarModelBanco();
-        
-        }else{
-                    JOptionPane.showMessageDialog(null, "Erro! É preciso manter o ID!");  
-        }
-    }//GEN-LAST:event_alterarBancoActionPerformed
-
-    private void alterarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarEnderecoActionPerformed
-        
-            if(!idConsultaEndereco.getText().equals("")){
-            
-                    Pessoa pessoa = PessoaDAO.getPessoaId(Integer.parseInt(idConsultaEndereco.getText()));
-        pessoa.setBairro(bairroConsultaEndereco.getText());
-        pessoa.setEndereco(logradouroConsultaEndereco.getText());
-        pessoa.setComplemento(complementoConsultaEndereco.getText());
-        pessoa.setNumero(numeroConsultaEndereco.getText());
-        pessoa.setCep(cepConsultaEndereco.getText());
-        pessoa.setCidade(cidadeConsultaEndereco.getText());
-        pessoa.setEstado(ufConsultaEndereco.getSelectedItem().toString());
-        pessoa.setTelefone(telefoneConsultaEndereco.getText());
-        pessoa.setCelular(celularConsultaEndereco.getText());
-        boolean faiou = false;
-        try{
-           PessoaControl.validarEmail(emailConsultaEndereco.getText()); 
-           pessoa.setEmail(emailConsultaEndereco.getText());
-        }catch(Exception e){
-           JOptionPane.showMessageDialog(null, "Email inválido! ");
-           faiou = true;
-                }
-
-       
-
-        
-        PessoaDAO dao = new PessoaDAO();
-        try {
-            if(!faiou){
-            PessoaDAO.updatePessoa(pessoa);
-            JOptionPane.showMessageDialog(null, "Endereço alterado com sucesso! ");  
-            
-        logradouroConsultaEndereco.setText(""); 
-        numeroConsultaEndereco.setText(""); 
-        complementoConsultaEndereco.setText(""); 
-        telefoneConsultaEndereco.setText("");
-        celularConsultaEndereco.setText(""); 
-        cidadeConsultaEndereco.setText(""); 
-        ufConsultaEndereco.setSelectedIndex(0); 
-        bairroConsultaEndereco.setText("");
-        cepConsultaEndereco.setText(""); 
-        emailConsultaEndereco.setText(""); 
-        idConsultaEndereco.setText("");
-        }} catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Erro de alteração! Verifique os dados e tente novamente.");  
-        }
-
-            atualizarModelPessoa();
-
-        }else{
-                    JOptionPane.showMessageDialog(null, "Erro! É preciso manter o ID!");  
-        }
-            
-    }//GEN-LAST:event_alterarEnderecoActionPerformed
-
     private void pessoaMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaMenuMouseClicked
         dispose();
         new PessoaFrame().setVisible(true);
@@ -2373,174 +2084,10 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         dispose();
     }//GEN-LAST:event_pedidoMouseClicked
 
-    private void limparEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparEnderecoActionPerformed
-        logradouroCadastroEndereco.setText(""); 
-        numeroCadastroEndereco.setText(""); 
-        complementoCadastroEndereco.setText(""); 
-        telefoneCadastroEndereco.setText("");
-        celularCadastroEndereco.setText(""); 
-        cidadeCadastroEndereco.setText(""); 
-        ufCadastroEndereco.setSelectedIndex(0); 
-        bairroCadastroEndereco.setText("");
-        cepCadastroEndereco.setText(""); 
-        emailCadastroEndereco.setText(""); 
-        idCadastroEndereco.setText("");
-    }//GEN-LAST:event_limparEnderecoActionPerformed
-
-    private void limparBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparBancoActionPerformed
-        titularCadastroBanco.setText(""); 
-        agenciaCadastroBanco.setText(""); 
-        idCadastroBanco.setText("");
-        contaCadastroBanco.setText(""); 
-        cpfCadastroBanco.setText("");
-        bancoCadastroBanco.setText(""); 
-        
-    }//GEN-LAST:event_limparBancoActionPerformed
-
-    private void contaConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contaConsultaBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contaConsultaBancoActionPerformed
-
-    private void agenciaConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agenciaConsultaBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_agenciaConsultaBancoActionPerformed
-
-    private void bancoConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancoConsultaBancoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bancoConsultaBancoActionPerformed
-
-    private void idConsultaEnderecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idConsultaEnderecoKeyTyped
-        String muda = idConsultaEndereco.getText();
-        idConsultaBanco.setText(muda);
-        codigoConsultarPJ.setText(muda);
-    }//GEN-LAST:event_idConsultaEnderecoKeyTyped
-
-    private void idCadastroEnderecoKeyTyped(java.awt.event.KeyEvent evt) {                                            
-        String muda = idCadastroEndereco.getText();
-        idCadastroBanco.setText(muda);
-        codigoCadastrarPJ.setText(muda);
-    }   
-    
-    private void idConsultaEnderecoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idConsultaEnderecoFocusLost
-        String muda = idConsultaEndereco.getText();
-        idConsultaBanco.setText(muda);
-        codigoConsultarPJ.setText(muda);        
-    }//GEN-LAST:event_idConsultaEnderecoFocusLost
-
-    private void idCadastroEnderecoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idCadastroEnderecoFocusLost
-               
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idCadastroEnderecoFocusLost
-
-    private void jTabbedPane8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTabbedPane8FocusGained
-        String muda = idCadastroEndereco.getText();
-        idCadastroBanco.setText(muda);
-    }//GEN-LAST:event_jTabbedPane8FocusGained
-
-    private void codigoCadastrarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoCadastrarPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codigoCadastrarPJActionPerformed
-
-    private void cnpjCadastrarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnpjCadastrarPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cnpjCadastrarPJActionPerformed
-
-    private void razaoCadastrarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_razaoCadastrarPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_razaoCadastrarPJActionPerformed
-
-    private void limparPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparPJActionPerformed
-        codigoConsultarPJ.setText("");
-        nomeConsultarPJ.setText("");
-        cnpjConsultarPJ.setText("");
-        ieConsultarPJ.setText("");
-        razaoConsultarPJ.setText("");
-        transportadoraConsultarPJ.setSelected(false);
-        clienteConsultarPJ.setSelected(false);
-        fornecedorConsultarPJ.setSelected(false);
-        representanteConsultarPJ.setSelected(false);
-    }//GEN-LAST:event_limparPJActionPerformed
-
-    private void cadastrarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarPJActionPerformed
-        PessoaJuridica pessoa = new PessoaJuridica();
-        pessoa.setInscricaoestadual(ieCadastrarPJ.getText());
-        pessoa.setNomefantasia(nomeCadastrarPJ.getText());
-        pessoa.setRazaosocial(razaoCadastrarPJ.getText());
-        int id = 0;
-        boolean faiou = false;
-        try{
-            id = Integer.parseInt(codigoCadastrarPJ.getText());
-        }catch(Exception e){
-            faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
-        }
-
-        Pessoa p = PessoaDAO.getPessoaId(id);
-        int i = -1;
-        try{
-            i = p.getIdPessoa();
-        }catch(Exception e){
-            faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
-        }
-        if(i==id){
-            pessoa.setIdPessoaJuridica(id);
-        }else{
-            faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
-        }
-
-        String tipo;
-        if(transportadoraCadastrarPJ.isSelected()){
-            tipo = "transportadora";
-        }else if(fornecedorCadastrarPJ.isSelected()){
-            tipo = "fornecedor";
-        }else if(clienteCadastrarPJ.isSelected()){
-            tipo = "cliente";
-        }else if(representanteCadastrarPJ.isSelected()){
-            tipo = "representante";
-        }else{
-            tipo = null;
-        }
-        pessoa.setTipo(tipo);
-
-        String cnpj = cnpjCadastrarPJ.getText();
-
-        try {
-            PessoaControl.validarCNPJ(cnpj);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "ERRO! Digite um CNPJ válido!");
-            faiou = true;
-        }
-
-        pessoa.setCnpj(cnpj);
-
-        if(!faiou){
-            try {
-
-                PessoaDAO.createPessoaJuridica(pessoa);
-                JOptionPane.showMessageDialog(null, "Pessoa jurídica inserida com sucesso! ");
-
-                codigoCadastrarPJ.setText("");
-                nomeCadastrarPJ.setText("");
-                cnpjCadastrarPJ.setText("");
-                ieCadastrarPJ.setText("");
-                razaoCadastrarPJ.setText("");
-                transportadoraCadastrarPJ.setSelected(false);
-                clienteCadastrarPJ.setSelected(false);
-                fornecedorCadastrarPJ.setSelected(false);
-                representanteCadastrarPJ.setSelected(false);
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Erro de inserção! Verifique os dados e tente novamente.");
-            }
-        }
-
-    }//GEN-LAST:event_cadastrarPJActionPerformed
-
     private void alterarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarPJActionPerformed
         if(!codigoConsultarPJ.getText().equals("")){
 
-            PessoaJuridica pessoa = PessoaDAO.getPessoaJuridicaId(Integer.parseInt(idConsultaEndereco.getText()));
+            PessoaJuridica pessoa = PessoaDAO.getPessoaJuridicaId(Integer.parseInt(codigoConsultarPJ.getText()));
 
             pessoa.setInscricaoestadual(ieConsultarPJ.getText());
             pessoa.setNomefantasia(nomeConsultarPJ.getText());
@@ -2688,6 +2235,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
 
             excluirPJ.setVisible(true);
             alterarPJ.setVisible(true);
+            codigoConsultarPJ.setEditable(false);
         }catch(Exception e){}        // TODO add your handling code here:
     }//GEN-LAST:event_pessoaJuridicaTabelaMouseClicked
 
@@ -2701,7 +2249,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+codigoConsultarPJ.getText());
             excluirPJ.setVisible(false);
             alterarPJ.setVisible(false);
-
+            codigoConsultarPJ.setEditable(false);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Erro ao excluir pessoa com ID "+codigoConsultarPJ.getText());
         }        // TODO add your handling code here:
@@ -2716,6 +2264,949 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         // TODO add your handling code here:
     }//GEN-LAST:event_codigoConsultarPJActionPerformed
 
+    private void codigoCadastrarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoCadastrarPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codigoCadastrarPJActionPerformed
+
+    private void cnpjCadastrarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnpjCadastrarPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cnpjCadastrarPJActionPerformed
+
+    private void razaoCadastrarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_razaoCadastrarPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_razaoCadastrarPJActionPerformed
+
+    private void limparPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparPJActionPerformed
+        codigoConsultarPJ.setText("");
+        nomeConsultarPJ.setText("");
+        cnpjConsultarPJ.setText("");
+        ieConsultarPJ.setText("");
+        razaoConsultarPJ.setText("");
+        transportadoraConsultarPJ.setSelected(false);
+        clienteConsultarPJ.setSelected(false);
+        fornecedorConsultarPJ.setSelected(false);
+        representanteConsultarPJ.setSelected(false);
+    }//GEN-LAST:event_limparPJActionPerformed
+
+    private void cadastrarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarPJActionPerformed
+        PessoaJuridica pessoa = new PessoaJuridica();
+        pessoa.setInscricaoestadual(ieCadastrarPJ.getText());
+        pessoa.setNomefantasia(nomeCadastrarPJ.getText());
+        pessoa.setRazaosocial(razaoCadastrarPJ.getText());
+        int id = 0;
+        boolean faiou = false;
+        try{
+            id = Integer.parseInt(codigoCadastrarPJ.getText());
+        }catch(Exception e){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
+        }
+
+        Pessoa p = PessoaDAO.getPessoaId(id);
+        int i = -1;
+        try{
+            i = p.getIdPessoa();
+        }catch(Exception e){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
+        }
+        if(i==id){
+            pessoa.setIdPessoaJuridica(id);
+        }else{
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
+        }
+
+        String tipo;
+        if(transportadoraCadastrarPJ.isSelected()){
+            tipo = "transportadora";
+        }else if(fornecedorCadastrarPJ.isSelected()){
+            tipo = "fornecedor";
+        }else if(clienteCadastrarPJ.isSelected()){
+            tipo = "cliente";
+        }else if(representanteCadastrarPJ.isSelected()){
+            tipo = "representante";
+        }else{
+            tipo = null;
+        }
+        pessoa.setTipo(tipo);
+
+        String cnpj = cnpjCadastrarPJ.getText();
+
+        try {
+            PessoaControl.validarCNPJ(cnpj);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "ERRO! Digite um CNPJ válido!");
+            faiou = true;
+        }
+
+        pessoa.setCnpj(cnpj);
+
+        if(!faiou){
+            try {
+
+                PessoaDAO.createPessoaJuridica(pessoa);
+                JOptionPane.showMessageDialog(null, "Pessoa jurídica inserida com sucesso! ");
+
+                codigoCadastrarPJ.setText("");
+                nomeCadastrarPJ.setText("");
+                cnpjCadastrarPJ.setText("");
+                ieCadastrarPJ.setText("");
+                razaoCadastrarPJ.setText("");
+                transportadoraCadastrarPJ.setSelected(false);
+                clienteCadastrarPJ.setSelected(false);
+                fornecedorCadastrarPJ.setSelected(false);
+                representanteCadastrarPJ.setSelected(false);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro de inserção! Verifique os dados e tente novamente.");
+            }
+        }
+    }//GEN-LAST:event_cadastrarPJActionPerformed
+
+    private void jTabbedPane8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTabbedPane8FocusGained
+        String muda = idCadastroEndereco.getText();
+        idCadastroBanco.setText(muda);
+    }//GEN-LAST:event_jTabbedPane8FocusGained
+
+    private void tabelaBancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaBancoMouseClicked
+        DefaultTableModel model = (DefaultTableModel) tabelaBanco.getModel();
+        int row = tabelaBanco.getSelectedRow();
+        int col = tabelaBanco.getSelectedColumn();
+        try{
+            int id = (Integer)model.getValueAt(row, col);
+            InformacoesBancarias banco = PessoaDAO.getInformacoesBancariasId(id);
+
+            idConsultaBanco.setText(""+banco.getIdInformacoesBancarias());
+            titularConsultaBanco.setText(banco.getTitular());
+            agenciaConsultaBanco.setText(banco.getAgencia());
+            bancoConsultaBanco.setText(banco.getBanco());
+            contaConsultaBanco.setText(banco.getContaCorrente());
+
+            if(banco.getCnpj().equals("")){
+                cpfConsultaBanco.setText(banco.getCpf());
+            }else{
+                cpfConsultaBanco.setText(banco.getCnpj());
+            }
+            alterarBanco.setVisible(true);
+            excluirBanco.setVisible(true);
+            idConsultaBanco.setEditable(false);
+        }catch(Exception e){}
+
+    }//GEN-LAST:event_tabelaBancoMouseClicked
+
+    private void idConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idConsultaBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idConsultaBancoActionPerformed
+
+    private void alterarBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarBancoActionPerformed
+        if(!idConsultaBanco.getText().equals("")){
+
+            InformacoesBancarias banc = PessoaDAO.getInformacoesBancariasId(Integer.parseInt(idConsultaBanco.getText()));
+            boolean faiou = false;
+            banc.setAgencia(agenciaConsultaBanco.getText());
+            banc.setBanco(bancoConsultaBanco.getText());
+            banc.setContaCorrente(contaConsultaBanco.getText());
+            banc.setTitular(titularConsultaBanco.getText());
+
+            String cpf = cpfConsultaBanco.getText();
+            String cnpj = "";
+
+            int id = 0;
+            try{
+                id = Integer.parseInt(idConsultaBanco.getText());
+            }catch(Exception e){
+                faiou = true;
+                JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
+            }
+
+            Pessoa p = PessoaDAO.getPessoaId(id);
+            int i = -1;
+            try{
+                i = p.getIdPessoa();
+            }catch(Exception e){
+                faiou = true;
+                JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa deve corresponder ao código cadastrado no endereço!");
+            }
+            if(i==id){
+                banc.setIdInformacoesBancarias(id);
+            }else{
+                faiou = true;
+                JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
+            }
+
+            try {
+                PessoaControl.validarCPF(cpf);
+            } catch (Exception ex) {
+                cnpj = cpf;
+                cpf = "";
+                try {
+                    PessoaControl.validarCNPJ(cnpj);
+                } catch (Exception ex1) {
+                    faiou = true;
+                    JOptionPane.showMessageDialog(null, "ERRO! Digite um CPF/CNPJ válido!");
+                }
+            }
+            banc.setCpf(cpf);
+            banc.setCnpj(cnpj);
+
+            if(!faiou){
+                try {
+
+                    PessoaDAO.updateInformacoesBancarias(banc);
+                    JOptionPane.showMessageDialog(null, "Dados Bancários alterados com sucesso! ");
+
+                    titularConsultaBanco.setText("");
+                    agenciaConsultaBanco.setText("");
+                    idConsultaBanco.setText("");
+                    contaConsultaBanco.setText("");
+                    cpfConsultaBanco.setText("");
+                    bancoConsultaBanco.setText("");
+
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Erro de inserção! ID repetido!");
+                }
+            }
+            atualizarModelBanco();
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro! É preciso manter o ID!");
+        }
+    }//GEN-LAST:event_alterarBancoActionPerformed
+
+    private void excluirBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirBancoActionPerformed
+        try {
+            PessoaDAO.deleteInformacoesBancariasId(Integer.parseInt(idConsultaBanco.getText()));
+            JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+idConsultaBanco.getText());
+            excluirBanco.setVisible(false);
+            alterarBanco.setVisible(false);
+            idConsultaBanco.setEditable(true);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao excluir informações com ID "+idConsultaBanco.getText());
+        }
+        atualizarModelBanco();
+    }//GEN-LAST:event_excluirBancoActionPerformed
+
+    private void consultarBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBancoActionPerformed
+
+        query = "from InformacoesBancarias where";
+
+        if(!idConsultaBanco.getText().isEmpty())
+        query = query + " idInformacoesBancarias = " + idConsultaBanco.getText();
+        if(!idConsultaBanco.getText().isEmpty() && !bancoConsultaBanco.getText().isEmpty())
+        query = query + " and";
+        if(!bancoConsultaBanco.getText().isEmpty())
+        query = query + " banco like '%" + bancoConsultaBanco.getText() + "%'";
+        if(!bancoConsultaBanco.getText().isEmpty() && !agenciaConsultaBanco.getText().isEmpty() ||
+            !idConsultaBanco.getText().isEmpty() && !agenciaConsultaBanco.getText().isEmpty())
+        query = query + " and";
+        if(!agenciaConsultaBanco.getText().isEmpty())
+        query = query + " agencia like '%" + agenciaConsultaBanco.getText() + "%'";
+        if(!contaConsultaBanco.getText().isEmpty() && !agenciaConsultaBanco.getText().isEmpty() ||
+            !bancoConsultaBanco.getText().isEmpty() && !contaConsultaBanco.getText().isEmpty() ||
+            !idConsultaBanco.getText().isEmpty() && !contaConsultaBanco.getText().isEmpty())
+        query = query + " and";
+        if(!contaConsultaBanco.getText().isEmpty())
+        query = query + " contaCorrente like '%" + contaConsultaBanco.getText() + "%'";
+        if(!cpfConsultaBanco.getText().isEmpty() && !agenciaConsultaBanco.getText().isEmpty() ||
+            !bancoConsultaBanco.getText().isEmpty() && !cpfConsultaBanco.getText().isEmpty() ||
+            !contaConsultaBanco.getText().isEmpty() && !cpfConsultaBanco.getText().isEmpty() ||
+            !idConsultaBanco.getText().isEmpty() && !cpfConsultaBanco.getText().isEmpty())
+        query = query + " and";
+        if(!cpfConsultaBanco.getText().isEmpty())
+        query = query + " (cpf like '%" + cpfConsultaBanco.getText() + "%' or cnpj like '%"+cpfConsultaBanco.getText()+"%')";
+
+        atualizarModelBanco();
+
+    }//GEN-LAST:event_consultarBancoActionPerformed
+
+    private void agenciaConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agenciaConsultaBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agenciaConsultaBancoActionPerformed
+
+    private void cpfConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfConsultaBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpfConsultaBancoActionPerformed
+
+    private void contaConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contaConsultaBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contaConsultaBancoActionPerformed
+
+    private void bancoConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancoConsultaBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bancoConsultaBancoActionPerformed
+
+    private void titularConsultaBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titularConsultaBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_titularConsultaBancoActionPerformed
+
+    private void idCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idCadastroBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idCadastroBancoActionPerformed
+
+    private void agenciaCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agenciaCadastroBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agenciaCadastroBancoActionPerformed
+
+    private void cpfCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfCadastroBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpfCadastroBancoActionPerformed
+
+    private void contaCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contaCadastroBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contaCadastroBancoActionPerformed
+
+    private void bancoCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bancoCadastroBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bancoCadastroBancoActionPerformed
+
+    private void cadastrarBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBancoActionPerformed
+        InformacoesBancarias banc = new InformacoesBancarias();
+        banc.setIdInformacoesBancarias(Integer.parseInt(idCadastroBanco.getText()));
+        banc.setAgencia(agenciaCadastroBanco.getText());
+        banc.setBanco(bancoCadastroBanco.getText());
+        banc.setContaCorrente(contaCadastroBanco.getText());
+        banc.setTitular(titularCadastroBanco.getText());
+
+        String cpf = cpfCadastroBanco.getText();
+        String cnpj = "";
+        boolean faiou = false;
+
+        int id = 0;
+        try{
+            id = Integer.parseInt(idCadastroBanco.getText());
+        }catch(Exception e){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
+        }
+
+        Pessoa p = PessoaDAO.getPessoaId(id);
+        int i = -1;
+        try{
+            i = p.getIdPessoa();
+        }catch(Exception e){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa deve corresponder ao código cadastrado no endereço!");
+        }
+        if(i==id){
+            banc.setIdInformacoesBancarias(id);
+        }else{
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Jurídica deve corresponder ao código cadastrado no endereço!");
+        }
+
+        try {
+            PessoaControl.validarCPF(cpf);
+        } catch (Exception ex) {
+            cnpj = cpf;
+            cpf = "";
+            try {
+                PessoaControl.validarCNPJ(cnpj);
+            } catch (Exception ex1) {
+                faiou = true;
+                JOptionPane.showMessageDialog(null, "ERRO! Digite um CPF/CNPJ válido!");
+            }
+        }
+        banc.setCpf(cpf);
+        banc.setCnpj(cnpj);
+
+        if(!faiou){
+            try {
+
+                PessoaDAO.createInformacoesBancarias(banc);
+                JOptionPane.showMessageDialog(null, "Dados Bancários inseridos com sucesso! ");
+
+                titularCadastroBanco.setText("");
+                agenciaCadastroBanco.setText("");
+                idCadastroBanco.setText("");
+                contaCadastroBanco.setText("");
+                cpfCadastroBanco.setText("");
+                bancoCadastroBanco.setText("");
+
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro de inserção! Verifique os dados e tente novamente.");
+            }
+        }
+    }//GEN-LAST:event_cadastrarBancoActionPerformed
+
+    private void limparBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparBancoActionPerformed
+        titularCadastroBanco.setText("");
+        agenciaCadastroBanco.setText("");
+        idCadastroBanco.setText("");
+        contaCadastroBanco.setText("");
+        cpfCadastroBanco.setText("");
+        bancoCadastroBanco.setText("");
+
+    }//GEN-LAST:event_limparBancoActionPerformed
+
+    private void titularCadastroBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titularCadastroBancoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_titularCadastroBancoActionPerformed
+
+    private void tabelaEnderecoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tabelaEnderecoFocusGained
+
+    }//GEN-LAST:event_tabelaEnderecoFocusGained
+
+    private void tabelaEnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaEnderecoMouseClicked
+        DefaultTableModel model = (DefaultTableModel) tabelaEndereco.getModel();
+        int row = tabelaEndereco.getSelectedRow();
+        int col = tabelaEndereco.getSelectedColumn();
+        try{
+            int id = (Integer)model.getValueAt(row, col);
+            Pessoa pessoa = PessoaDAO.getPessoaId(id);
+
+            idConsultaEndereco.setText(pessoa.getIdPessoa().toString());
+            logradouroConsultaEndereco.setText(pessoa.getEndereco());
+            numeroConsultaEndereco.setText(pessoa.getNumero());
+            bairroConsultaEndereco.setText(pessoa.getBairro());
+            celularConsultaEndereco.setText(pessoa.getCelular());
+            cepConsultaEndereco.setText(pessoa.getCep());
+            cidadeConsultaEndereco.setText(pessoa.getCidade());
+            complementoConsultaEndereco.setText(pessoa.getComplemento());
+            emailConsultaEndereco.setText(pessoa.getEmail());
+            telefoneConsultaEndereco.setText(pessoa.getTelefone());
+            ufConsultaEndereco.setSelectedItem((Object)pessoa.getEstado());
+
+            excluirEndereco.setVisible(true);
+            alterarEndereco.setVisible(true);
+            idConsultaEndereco.setEditable(false);
+            
+        }catch(Exception e){}
+    }//GEN-LAST:event_tabelaEnderecoMouseClicked
+
+    private void idConsultaEnderecoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idConsultaEnderecoKeyTyped
+        String muda = idConsultaEndereco.getText();
+        idConsultaBanco.setText(muda);
+        codigoConsultarPJ.setText(muda);
+    }//GEN-LAST:event_idConsultaEnderecoKeyTyped
+
+    private void idConsultaEnderecoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idConsultaEnderecoFocusLost
+        String muda = idConsultaEndereco.getText();
+        idConsultaBanco.setText(muda);
+        codigoConsultarPJ.setText(muda);
+    }//GEN-LAST:event_idConsultaEnderecoFocusLost
+
+    private void idConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idConsultaEnderecoActionPerformed
+
+    private void alterarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarEnderecoActionPerformed
+
+        if(!idConsultaEndereco.getText().equals("")){
+
+            Pessoa pessoa = PessoaDAO.getPessoaId(Integer.parseInt(idConsultaEndereco.getText()));
+            pessoa.setBairro(bairroConsultaEndereco.getText());
+            pessoa.setEndereco(logradouroConsultaEndereco.getText());
+            pessoa.setComplemento(complementoConsultaEndereco.getText());
+            pessoa.setNumero(numeroConsultaEndereco.getText());
+            pessoa.setCep(cepConsultaEndereco.getText());
+            pessoa.setCidade(cidadeConsultaEndereco.getText());
+            pessoa.setEstado(ufConsultaEndereco.getSelectedItem().toString());
+            pessoa.setTelefone(telefoneConsultaEndereco.getText());
+            pessoa.setCelular(celularConsultaEndereco.getText());
+            boolean faiou = false;
+            try{
+                PessoaControl.validarEmail(emailConsultaEndereco.getText());
+                pessoa.setEmail(emailConsultaEndereco.getText());
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Email inválido! ");
+                faiou = true;
+            }
+
+            PessoaDAO dao = new PessoaDAO();
+            try {
+                if(!faiou){
+                    PessoaDAO.updatePessoa(pessoa);
+                    JOptionPane.showMessageDialog(null, "Endereço alterado com sucesso! ");
+
+                    logradouroConsultaEndereco.setText("");
+                    numeroConsultaEndereco.setText("");
+                    complementoConsultaEndereco.setText("");
+                    telefoneConsultaEndereco.setText("");
+                    celularConsultaEndereco.setText("");
+                    cidadeConsultaEndereco.setText("");
+                    ufConsultaEndereco.setSelectedIndex(0);
+                    bairroConsultaEndereco.setText("");
+                    cepConsultaEndereco.setText("");
+                    emailConsultaEndereco.setText("");
+                    idConsultaEndereco.setText("");
+                }} catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Erro de alteração! Verifique os dados e tente novamente.");
+                }
+
+                atualizarModelPessoa();
+
+            }else{
+                JOptionPane.showMessageDialog(null, "Erro! É preciso manter o ID!");
+            }
+
+    }//GEN-LAST:event_alterarEnderecoActionPerformed
+
+    private void excluirEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirEnderecoActionPerformed
+        try {
+            PessoaDAO.deletePessoaId(Integer.parseInt(idConsultaEndereco.getText()));
+            JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+idConsultaEndereco.getText());
+            excluirEndereco.setVisible(false);
+            alterarEndereco.setVisible(false);
+            idConsultaEndereco.setEditable(true);
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao excluir pessoa com ID "+idConsultaEndereco.getText());
+        }        // TODO add your handling code here:
+        atualizarModelPessoa();
+
+    }//GEN-LAST:event_excluirEnderecoActionPerformed
+
+    private void ConsultarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarEnderecoActionPerformed
+        query = "from Pessoa where";
+
+        if(!idConsultaEndereco.getText().isEmpty())
+        query = query + " idPessoa = " + idConsultaEndereco.getText();
+        if(!idConsultaEndereco.getText().isEmpty() && !logradouroConsultaEndereco.getText().isEmpty())
+        query = query + " and";
+        if(!logradouroConsultaEndereco.getText().isEmpty())
+        query = query + " endereco like '%" + logradouroConsultaEndereco.getText() + "%'";
+        if(!logradouroConsultaEndereco.getText().isEmpty() && !numeroConsultaEndereco.getText().isEmpty() ||
+            !idConsultaEndereco.getText().isEmpty() && !numeroConsultaEndereco.getText().isEmpty())
+        query = query + " and";
+        if(!numeroConsultaEndereco.getText().isEmpty())
+        query = query + " numero like '%" + numeroConsultaEndereco.getText() + "%'";
+        if(!numeroConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() ||
+            !logradouroConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() ||
+            !idConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty())
+        query = query + " and";
+        if(!complementoConsultaEndereco.getText().isEmpty())
+        query = query + " complemento like '%" + complementoConsultaEndereco.getText() + "%'";
+        if(!bairroConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() ||
+            !logradouroConsultaEndereco.getText().isEmpty() && !bairroConsultaEndereco.getText().isEmpty() ||
+            !numeroConsultaEndereco.getText().isEmpty() && !bairroConsultaEndereco.getText().isEmpty() ||
+            !idConsultaEndereco.getText().isEmpty() && !bairroConsultaEndereco.getText().isEmpty())
+        query = query + " and";
+        if(!bairroConsultaEndereco.getText().isEmpty())
+        query = query + " bairro like '%" + bairroConsultaEndereco.getText() + "%'";
+        if(!cepConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() ||
+            !logradouroConsultaEndereco.getText().isEmpty() && !cepConsultaEndereco.getText().isEmpty() ||
+            !numeroConsultaEndereco.getText().isEmpty() && !cepConsultaEndereco.getText().isEmpty() ||
+            !bairroConsultaEndereco.getText().isEmpty() && !cepConsultaEndereco.getText().isEmpty() ||
+            !idConsultaEndereco.getText().isEmpty() && !cepConsultaEndereco.getText().isEmpty())
+        query = query + " and";
+        if(!cepConsultaEndereco.getText().isEmpty())
+        query = query + " cep like '%" + cepConsultaEndereco.getText()+ "%'";
+        if(!cidadeConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() ||
+            !logradouroConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty() ||
+            !numeroConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty() ||
+            !bairroConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty() ||
+            !cepConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty() ||
+            !idConsultaEndereco.getText().isEmpty() && !cidadeConsultaEndereco.getText().isEmpty())
+        query = query + " and";
+        if(!cidadeConsultaEndereco.getText().isEmpty())
+        query = query + " cidade like '%" + cidadeConsultaEndereco.getText()+ "%'";
+        if(ufConsultaEndereco.getSelectedIndex()!=0 && !complementoConsultaEndereco.getText().isEmpty() ||
+            !logradouroConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 ||
+            !numeroConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 ||
+            !bairroConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 ||
+            !cepConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 ||
+            !cidadeConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0 ||
+            !idConsultaEndereco.getText().isEmpty() && ufConsultaEndereco.getSelectedIndex()!=0)
+        query = query + " and";
+        if(ufConsultaEndereco.getSelectedIndex()!=0)
+        query = query + " estado like '%" + ufConsultaEndereco.getSelectedItem().toString()+ "%'";
+        if(!telefoneConsultaEndereco.getText().equals("(  )    -    ") && !complementoConsultaEndereco.getText().isEmpty() ||
+            !logradouroConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
+            !numeroConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
+            !bairroConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
+            !cepConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
+            !cidadeConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
+            ufConsultaEndereco.getSelectedIndex()!=0 && !telefoneConsultaEndereco.getText().equals("(  )    -    ") ||
+            !idConsultaEndereco.getText().isEmpty() && !telefoneConsultaEndereco.getText().equals("(  )    -    "))
+        query = query + " and";
+        if(!telefoneConsultaEndereco.getText().equals("(  )    -    "))
+        query = query + " telefone like '%" + telefoneConsultaEndereco.getText()+ "%'";
+        if(!celularConsultaEndereco.getText().equals("(  )     -    ") && !complementoConsultaEndereco.getText().isEmpty() ||
+            !logradouroConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
+            !numeroConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
+            !bairroConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
+            !cepConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
+            !cidadeConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
+            ufConsultaEndereco.getSelectedIndex()!=0 && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
+            !telefoneConsultaEndereco.getText().equals("(  )    -    ") && !celularConsultaEndereco.getText().equals("(  )     -    ") ||
+            !idConsultaEndereco.getText().isEmpty() && !celularConsultaEndereco.getText().equals("(  )     -    "))
+        query = query + " and";
+        if(!celularConsultaEndereco.getText().equals("(  )     -    "))
+        query = query + " celular like '%" + celularConsultaEndereco.getText()+ "%'";
+        if(!emailConsultaEndereco.getText().isEmpty() && !complementoConsultaEndereco.getText().isEmpty() ||
+            !logradouroConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() ||
+            !numeroConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() ||
+            !bairroConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() ||
+            !cepConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() ||
+            !cidadeConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty() ||
+            ufConsultaEndereco.getSelectedIndex()!=0 && !emailConsultaEndereco.getText().isEmpty() ||
+            !telefoneConsultaEndereco.getText().equals("(  )    -    ") && !emailConsultaEndereco.getText().isEmpty() ||
+            !celularConsultaEndereco.getText().equals("(  )     -    ") && !emailConsultaEndereco.getText().isEmpty() ||
+            !idConsultaEndereco.getText().isEmpty() && !emailConsultaEndereco.getText().isEmpty())
+        query = query + " and";
+        if(!emailConsultaEndereco.getText().isEmpty())
+        query = query + " email like '%" + emailConsultaEndereco.getText()+ "%'";
+
+        atualizarModelPessoa();
+
+    }//GEN-LAST:event_ConsultarEnderecoActionPerformed
+
+    private void emailConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailConsultaEnderecoActionPerformed
+
+    private void cepConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cepConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cepConsultaEnderecoActionPerformed
+
+    private void bairroConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bairroConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bairroConsultaEnderecoActionPerformed
+
+    private void cidadeConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cidadeConsultaEnderecoActionPerformed
+
+    private void celularConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_celularConsultaEnderecoActionPerformed
+
+    private void telefoneConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefoneConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_telefoneConsultaEnderecoActionPerformed
+
+    private void complementoConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_complementoConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_complementoConsultaEnderecoActionPerformed
+
+    private void numeroConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numeroConsultaEnderecoActionPerformed
+
+    private void logradouroConsultaEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logradouroConsultaEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logradouroConsultaEnderecoActionPerformed
+
+    private void limparEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparEnderecoActionPerformed
+        logradouroCadastroEndereco.setText("");
+        numeroCadastroEndereco.setText("");
+        complementoCadastroEndereco.setText("");
+        telefoneCadastroEndereco.setText("");
+        celularCadastroEndereco.setText("");
+        cidadeCadastroEndereco.setText("");
+        ufCadastroEndereco.setSelectedIndex(0);
+        bairroCadastroEndereco.setText("");
+        cepCadastroEndereco.setText("");
+        emailCadastroEndereco.setText("");
+        idCadastroEndereco.setText("");
+    }//GEN-LAST:event_limparEnderecoActionPerformed
+
+    private void idCadastroEnderecoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idCadastroEnderecoFocusLost
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idCadastroEnderecoFocusLost
+
+    private void idCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idCadastroEnderecoActionPerformed
+
+    private void cadastrarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarEnderecoActionPerformed
+        Pessoa pessoa = new Pessoa();
+        pessoa.setBairro(bairroCadastroEndereco.getText());
+        pessoa.setEndereco(logradouroCadastroEndereco.getText());
+        pessoa.setComplemento(complementoCadastroEndereco.getText());
+        pessoa.setNumero(numeroCadastroEndereco.getText());
+        pessoa.setCep(cepCadastroEndereco.getText());
+        pessoa.setCidade(cidadeCadastroEndereco.getText());
+        pessoa.setEstado(ufCadastroEndereco.getSelectedItem().toString());
+        pessoa.setTelefone(telefoneCadastroEndereco.getText());
+        pessoa.setCelular(celularCadastroEndereco.getText());
+        boolean faiou = false;
+
+        try{
+            PessoaControl.validarEmail(emailCadastroEndereco.getText());
+            pessoa.setEmail(emailCadastroEndereco.getText());
+        }catch(Exception e){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "Email inválido! ");
+        }
+        try{
+            pessoa.setIdPessoa(Integer.parseInt(idCadastroEndereco.getText()));
+        }catch(Exception e){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "Erro! O campo ID deve conter apenas números e não pode ficar em branco! ");
+        }
+        PessoaDAO dao = new PessoaDAO();
+        try {
+            if(!faiou){
+
+                PessoaDAO.createPessoa(pessoa);
+                JOptionPane.showMessageDialog(null, "Endereço inserido com sucesso! ");
+
+                logradouroCadastroEndereco.setText("");
+                numeroCadastroEndereco.setText("");
+                complementoCadastroEndereco.setText("");
+                telefoneCadastroEndereco.setText("");
+                celularCadastroEndereco.setText("");
+                cidadeCadastroEndereco.setText("");
+                ufCadastroEndereco.setSelectedIndex(0);
+                bairroCadastroEndereco.setText("");
+                cepCadastroEndereco.setText("");
+                emailCadastroEndereco.setText("");
+                idCadastroEndereco.setText("");
+            }} catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro de inserção! Este ID já existe na base de dados!");
+            }
+
+    }//GEN-LAST:event_cadastrarEnderecoActionPerformed
+
+    private void emailCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailCadastroEnderecoActionPerformed
+
+    private void cepCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cepCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cepCadastroEnderecoActionPerformed
+
+    private void bairroCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bairroCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bairroCadastroEnderecoActionPerformed
+
+    private void cidadeCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cidadeCadastroEnderecoActionPerformed
+
+    private void celularCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_celularCadastroEnderecoActionPerformed
+
+    private void telefoneCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefoneCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_telefoneCadastroEnderecoActionPerformed
+
+    private void complementoCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_complementoCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_complementoCadastroEnderecoActionPerformed
+
+    private void numeroCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numeroCadastroEnderecoActionPerformed
+
+    private void logradouroCadastroEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logradouroCadastroEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logradouroCadastroEnderecoActionPerformed
+
+    private void cadastrarPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarPFActionPerformed
+        PessoaFisica pessoa = new PessoaFisica();
+        pessoa.setNome(nomeCadastrarPF.getText());
+        pessoa.setRg(rgCadastrarPF.getText());
+        pessoa.setSenha(senhaCadastrarPF.getText());
+        int id = 0;
+        boolean faiou = false;
+        try{
+            id = Integer.parseInt(codigoCadastrarPF.getText());
+        }catch(Exception e){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
+        }
+
+        Pessoa p = PessoaDAO.getPessoaId(id);
+        int i = -1;
+        try{
+            i = p.getIdPessoa();
+        }catch(Exception e){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Fisica deve corresponder ao código cadastrado no endereço!");
+        }
+        if(i==id){
+            pessoa.setIdPessoaFisica(id);
+        }else{
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Fisica deve corresponder ao código cadastrado no endereço!");
+        }
+
+        String cpf = cpfCadastrarPf.getText();
+
+        try {
+            PessoaControl.validarCPF(cpf);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "ERRO! Digite um CNPJ válido!");
+            faiou = true;
+        }
+
+        pessoa.setCpf(cpf);
+
+        if(!faiou){
+            try {
+
+                PessoaDAO.createPessoaFisica(pessoa);
+                JOptionPane.showMessageDialog(null, "Pessoa Fisica inserida com sucesso! ");
+
+                codigoCadastrarPF.setText("");
+                nomeCadastrarPF.setText("");
+                cpfCadastrarPf.setText("");
+                rgCadastrarPF.setText("");
+                senhaCadastrarPF.setText("");
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro de inserção! Verifique os dados e tente novamente.");
+            }
+        }
+
+
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastrarPFActionPerformed
+
+    private void limparPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparPFActionPerformed
+
+
+        codigoCadastrarPF.setText("");
+        nomeCadastrarPF.setText("");
+        cpfCadastrarPf.setText("");
+        rgCadastrarPF.setText("");
+        senhaCadastrarPF.setText("");
+    }//GEN-LAST:event_limparPFActionPerformed
+
+    private void senhaCadastrarPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaCadastrarPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_senhaCadastrarPFActionPerformed
+
+    private void cpfCadastrarPfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfCadastrarPfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpfCadastrarPfActionPerformed
+
+    private void codigoCadastrarPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoCadastrarPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codigoCadastrarPFActionPerformed
+
+    private void alterarPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarPFActionPerformed
+
+        if(!codigoConsultarPF.getText().equals("")){
+
+            PessoaFisica pessoa = PessoaDAO.getPessoaFisicaId(Integer.parseInt(codigoConsultarPF.getText()));
+
+            pessoa.setRg(rgConsultarPF.getText());
+            pessoa.setNome(nomeConsultarPF.getText());
+
+            boolean faiou = false;
+
+            Pessoa p = PessoaDAO.getPessoaId(Integer.parseInt(codigoConsultarPF.getText()));
+            if(p.getIdPessoa()==Integer.parseInt(codigoConsultarPF.getText())){
+                pessoa.setIdPessoaFisica(Integer.parseInt(codigoConsultarPF.getText()));
+            }else{
+                faiou = true;
+                JOptionPane.showMessageDialog(null, "ERRO! O código de Pessoa Fisica deve corresponder ao código cadastrado no endereço!");
+            }
+
+            String cpf = cpfConsultarPf.getText();
+
+            try {
+                PessoaControl.validarCPF(cpf);
+            } catch (Exception ex) {
+                faiou = true;
+                JOptionPane.showMessageDialog(null, "ERRO! Digite um CPF válido!");
+            }
+
+            pessoa.setCpf(cpf);
+
+            if(!faiou){
+                try {
+
+                    PessoaDAO.updatePessoaFisica(pessoa);
+                    JOptionPane.showMessageDialog(null, "Pessoa fisica alterada com sucesso! ");
+
+                    codigoConsultarPF.setText("");
+                    nomeConsultarPF.setText("");
+                    cpfConsultarPf.setText("");
+                    rgConsultarPF.setText("");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Erro de inserção! Verifique os dados e tente novamente.");
+                }
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro na alteração! É preciso manter o ID!");
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alterarPFActionPerformed
+
+    private void consultarPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarPFActionPerformed
+        DefaultTableModel model = (DefaultTableModel) pessoaFisicaTabela.getModel();
+        List<PessoaFisica> lista = new ArrayList<>();
+        String query = "from PessoaFisica where";
+        if(!codigoConsultarPF.getText().isEmpty())
+        query = query + " idPessoaFisica = " + codigoConsultarPF.getText();
+        if(!codigoConsultarPF.getText().isEmpty() && !nomeConsultarPF.getText().isEmpty())
+        query = query + " and";
+        if(!nomeConsultarPF.getText().isEmpty())
+        query = query + " nome like '%" + nomeConsultarPF.getText() + "%'";
+        if(!nomeConsultarPF.getText().isEmpty() && (!cpfConsultarPf.getText().isEmpty() && !cpfConsultarPf.getText().equals("   .   .   -  "))||
+            !codigoConsultarPF.getText().isEmpty() && (!cpfConsultarPf.getText().isEmpty() && !cpfConsultarPf.getText().equals("   .   .   -  ")))
+        query = query + " and";
+        if(!cpfConsultarPf.getText().isEmpty() && !cpfConsultarPf.getText().equals("   .   .   -  "))
+        query = query + " cpf = '" + cpfConsultarPf.getText() + "'";
+        if((!cpfConsultarPf.getText().isEmpty() && !cpfConsultarPf.getText().equals("   .   .   -  ")) && !rgConsultarPF.getText().isEmpty() ||
+            !nomeConsultarPF.getText().isEmpty() && !rgConsultarPF.getText().isEmpty() ||
+            !codigoConsultarPF.getText().isEmpty() && !rgConsultarPF.getText().isEmpty())
+        query = query + " and";
+        if(!rgConsultarPF.getText().isEmpty())
+        query = query + " rg = '" + rgConsultarPF.getText() + "'";
+
+        lista = PessoaDAO.pessoasFisicaQuery(query);
+        int i = 0;
+        model.setNumRows(0);
+        for(PessoaFisica p : lista){
+            Object[] pessoa = {p.getIdPessoaFisica(), p.getNome()};
+            model.addRow(pessoa);
+        }
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consultarPFActionPerformed
+
+    private void pessoaFisicaTabelaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaFisicaTabelaMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pessoaFisicaTabelaMousePressed
+
+    private void pessoaFisicaTabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaFisicaTabelaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pessoaFisicaTabelaMouseClicked
+
+    private void excluirPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirPFActionPerformed
+try {
+            PessoaDAO.deletePessoaFisicaId(Integer.parseInt(codigoConsultarPF.getText()));
+            JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+codigoConsultarPF.getText());
+            excluirPF.setVisible(false);
+            alterarPF.setVisible(false);
+            codigoConsultarPF.setEditable(true);
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao excluir pessoa com ID "+codigoConsultarPF.getText());
+        }        // TODO add your handling code here:
+        atualizarModelPessoaFisica();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_excluirPFActionPerformed
+
+    private void cpfConsultarPfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfConsultarPfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpfConsultarPfActionPerformed
+
+    private void codigoConsultarPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoConsultarPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codigoConsultarPFActionPerformed
+
+    private void alterarPJ2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarPJ2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alterarPJ2ActionPerformed
+
+    private void idCadastroEnderecoKeyTyped(java.awt.event.KeyEvent evt) {                                            
+        String muda = idCadastroEndereco.getText();
+        idCadastroBanco.setText(muda);
+        codigoCadastrarPJ.setText(muda);
+    }   
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2724,13 +3215,16 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JTextField agenciaConsultaBanco;
     private javax.swing.JButton alterarBanco;
     private javax.swing.JButton alterarEndereco;
+    private javax.swing.JButton alterarPF;
     private javax.swing.JButton alterarPJ;
+    private javax.swing.JButton alterarPJ2;
     private javax.swing.JTextField bairroCadastroEndereco;
     private javax.swing.JTextField bairroConsultaEndereco;
     private javax.swing.JTextField bancoCadastroBanco;
     private javax.swing.JTextField bancoConsultaBanco;
     private javax.swing.JButton cadastrarBanco;
     private javax.swing.JButton cadastrarEndereco;
+    private javax.swing.JButton cadastrarPF;
     private javax.swing.JButton cadastrarPJ;
     private javax.swing.JTextField celularCadastroEndereco;
     private javax.swing.JTextField celularConsultaEndereco;
@@ -2742,21 +3236,28 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JRadioButton clienteConsultarPJ;
     private javax.swing.JTextField cnpjCadastrarPJ;
     private javax.swing.JTextField cnpjConsultarPJ;
+    private javax.swing.JTextField codigoCadastrarPF;
     private javax.swing.JTextField codigoCadastrarPJ;
+    private javax.swing.JTextField codigoConsultarPF;
     private javax.swing.JTextField codigoConsultarPJ;
     private javax.swing.JTextField complementoCadastroEndereco;
     private javax.swing.JTextField complementoConsultaEndereco;
     private javax.swing.JButton consultarBanco;
+    private javax.swing.JButton consultarPF;
     private javax.swing.JButton consultarPJ;
     private javax.swing.JTextField contaCadastroBanco;
     private javax.swing.JTextField contaConsultaBanco;
+    private javax.swing.JTextField cpfCadastrarPf;
     private javax.swing.JTextField cpfCadastroBanco;
     private javax.swing.JTextField cpfConsultaBanco;
+    private javax.swing.JTextField cpfConsultarPf;
     private javax.swing.JTabbedPane dadospjAba;
+    private javax.swing.JTabbedPane dadospjAba1;
     private javax.swing.JTextField emailCadastroEndereco;
     private javax.swing.JTextField emailConsultaEndereco;
     private javax.swing.JButton excluirBanco;
     private javax.swing.JButton excluirEndereco;
+    private javax.swing.JButton excluirPF;
     private javax.swing.JButton excluirPJ;
     private javax.swing.JRadioButton fornecedorCadastrarPJ;
     private javax.swing.JRadioButton fornecedorConsultarPJ;
@@ -2768,6 +3269,8 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JTextField ieConsultarPJ;
     private javax.swing.JLabel inscricaoestadualLabel1;
     private javax.swing.JLabel inscricaoestadualLabel2;
+    private javax.swing.JLabel inscricaoestadualLabel3;
+    private javax.swing.JLabel inscricaoestadualLabel5;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -2837,33 +3340,50 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JTextField jTextField10;
     private javax.swing.JButton limparBanco;
     private javax.swing.JButton limparEndereco;
+    private javax.swing.JButton limparPF;
     private javax.swing.JButton limparPJ;
     private javax.swing.JTextField logradouroCadastroEndereco;
     private javax.swing.JTextField logradouroConsultaEndereco;
+    private javax.swing.JTextField nomeCadastrarPF;
     private javax.swing.JTextField nomeCadastrarPJ;
+    private javax.swing.JTextField nomeConsultarPF;
     private javax.swing.JTextField nomeConsultarPJ;
     private javax.swing.JTextField numeroCadastroEndereco;
     private javax.swing.JTextField numeroConsultaEndereco;
     private javax.swing.JMenu pedido;
+    private javax.swing.JTable pessoaFisicaTabela;
     private javax.swing.JTable pessoaJuridicaTabela;
     private javax.swing.JMenu pessoaMenu;
     private javax.swing.JPanel pessoaispjAba;
     private javax.swing.JPanel pessoaispjAba1;
+    private javax.swing.JPanel pessoaispjAba2;
+    private javax.swing.JPanel pessoaispjAba3;
     private javax.swing.JScrollPane pjbuscaScrollPane1;
+    private javax.swing.JScrollPane pjbuscaScrollPane2;
     private javax.swing.JLabel pjcnpjLabel1;
     private javax.swing.JLabel pjcnpjLabel2;
+    private javax.swing.JLabel pjcnpjLabel3;
+    private javax.swing.JLabel pjcnpjLabel5;
     private javax.swing.JLabel pjcodigoLabel1;
     private javax.swing.JLabel pjcodigoLabel2;
+    private javax.swing.JLabel pjcodigoLabel3;
+    private javax.swing.JLabel pjcodigoLabel5;
     private javax.swing.JLabel pjnomeLabel1;
     private javax.swing.JLabel pjnomeLabel2;
+    private javax.swing.JLabel pjnomeLabel3;
+    private javax.swing.JLabel pjnomeLabel5;
     private javax.swing.JMenuBar plasnedoMenuBar;
     private javax.swing.JMenu produtoMenu;
     private javax.swing.JTextField razaoCadastrarPJ;
     private javax.swing.JTextField razaoConsultarPJ;
     private javax.swing.JLabel razaosocialLabel1;
     private javax.swing.JLabel razaosocialLabel2;
+    private javax.swing.JLabel razaosocialLabel3;
     private javax.swing.JRadioButton representanteCadastrarPJ;
     private javax.swing.JRadioButton representanteConsultarPJ;
+    private javax.swing.JTextField rgCadastrarPF;
+    private javax.swing.JTextField rgConsultarPF;
+    private javax.swing.JTextField senhaCadastrarPF;
     private javax.swing.JTable tabelaBanco;
     private javax.swing.JTable tabelaEndereco;
     private javax.swing.JTextField telefoneCadastroEndereco;
@@ -2952,5 +3472,16 @@ private void atualizarModelPessoaJuridica() {
         }
     }
 
+private void atualizarModelPessoaFisica() {
+        DefaultTableModel model = (DefaultTableModel) pessoaFisicaTabela.getModel();
+        List<PessoaFisica> lista = new ArrayList<>();
+        System.out.println("QUERY AQUI "+query);
+        lista = PessoaDAO.pessoasFisicaQuery(query);
+        model.setNumRows(0);
+        for(PessoaFisica p : lista){ 
+            Object[] pessoa = {p.getIdPessoaFisica(), p.getNome()};
+            model.addRow(pessoa);
+        }
+    }
 
 }
