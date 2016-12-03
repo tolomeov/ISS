@@ -306,7 +306,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-    jLabel11.setText("Logradouro");
+    jLabel11.setText("Logradouro*");
 
     logradouroCadastroEndereco.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -335,7 +335,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
-    jLabel12.setText("Número");
+    jLabel12.setText("Número*");
 
     numeroCadastroEndereco.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -423,7 +423,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
-    jLabel16.setText("Cidade");
+    jLabel16.setText("Cidade*");
 
     cidadeCadastroEndereco.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -431,7 +431,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         }
     });
 
-    jLabel17.setText("UF");
+    jLabel17.setText("UF*");
 
     ufCadastroEndereco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"-", "AC", "AL", "MP", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RS", "RO", "RR", "SC", "SE", "SP", "TO" }));
 
@@ -505,7 +505,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
-    jLabel21.setText("Email");
+    jLabel21.setText("Email*");
 
     emailCadastroEndereco.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -552,7 +552,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         }
     });
 
-    jLabel33.setText("ID");
+    jLabel33.setText("ID*");
 
     limparEndereco.setText("Limpar");
     limparEndereco.addActionListener(new java.awt.event.ActionListener() {
@@ -1051,7 +1051,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
                 .addComponent(limparBanco)))
     );
 
-    jLabel50.setText("Banco");
+    jLabel50.setText("Banco*");
 
     bancoCadastroBanco.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1065,7 +1065,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         }
     });
 
-    jLabel45.setText("Conta");
+    jLabel45.setText("Conta*");
 
     cpfCadastroBanco.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1111,7 +1111,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         }
     });
 
-    jLabel44.setText("Agência");
+    jLabel44.setText("Agência*");
 
     javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
     jPanel33.setLayout(jPanel33Layout);
@@ -1151,7 +1151,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         }
     });
 
-    jLabel57.setText("ID");
+    jLabel57.setText("ID*");
 
     javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
     jPanel28.setLayout(jPanel28Layout);
@@ -1456,7 +1456,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
 
     razaosocialLabel2.setText("Razão social");
 
-    pjcnpjLabel2.setText("CNPJ");
+    pjcnpjLabel2.setText("CNPJ*");
 
     cnpjCadastrarPJ.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1466,7 +1466,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
 
     inscricaoestadualLabel2.setText("Inscrição estadual");
 
-    pjnomeLabel2.setText("Nome");
+    pjnomeLabel2.setText("Nome*");
 
     codigoCadastrarPJ.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1474,7 +1474,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         }
     });
 
-    pjcodigoLabel2.setText("ID");
+    pjcodigoLabel2.setText("ID*");
 
     javax.swing.GroupLayout pessoaispjAbaLayout = new javax.swing.GroupLayout(pessoaispjAba);
     pessoaispjAba.setLayout(pessoaispjAbaLayout);
@@ -2295,11 +2295,19 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         pessoa.setRazaosocial(razaoCadastrarPJ.getText());
         int id = 0;
         boolean faiou = false;
+        
+        if(nomeCadastrarPF.getText().equals("") || cnpjCadastrarPJ.getText().equals("") || 
+                codigoCadastrarPJ.getText().equals("")){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! Há campos obrigatórios em branco!");            
+        }
+        
+
         try{
             id = Integer.parseInt(codigoCadastrarPJ.getText());
         }catch(Exception e){
             faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
+            JOptionPane.showMessageDialog(null, "ERRO! O campo ID deve conter apenas numeros!");
         }
 
         Pessoa p = PessoaDAO.getPessoaId(id);
@@ -2571,12 +2579,19 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         String cnpj = "";
         boolean faiou = false;
 
+                if(idCadastroBanco.getText().equals("") || agenciaCadastroBanco.getText().equals("") || 
+                bancoCadastroBanco.getText().equals("") || contaCadastroBanco.getText().equals("")){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! Há campos obrigatórios em branco!");            
+        }
+        
+        
         int id = 0;
         try{
             id = Integer.parseInt(idCadastroBanco.getText());
         }catch(Exception e){
             faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
+            JOptionPane.showMessageDialog(null, "ERRO! O campo ID deve conter apenas números!");
         }
 
         Pessoa p = PessoaDAO.getPessoaId(id);
@@ -2923,6 +2938,13 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         pessoa.setCelular(celularCadastroEndereco.getText());
         boolean faiou = false;
 
+         if(idCadastroEndereco.getText().equals("") || logradouroCadastroEndereco.getText().equals("") || 
+                cidadeCadastroEndereco.getText().equals("") || numeroCadastroEndereco.getText().equals("")|| 
+                emailCadastroEndereco.getText().equals("") || ufCadastroEndereco.getSelectedItem().toString().equals("")){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! Há campos obrigatórios em branco!");            
+        }
+        
         try{
             PessoaControl.validarEmail(emailCadastroEndereco.getText());
             pessoa.setEmail(emailCadastroEndereco.getText());
@@ -2934,7 +2956,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             pessoa.setIdPessoa(Integer.parseInt(idCadastroEndereco.getText()));
         }catch(Exception e){
             faiou = true;
-            JOptionPane.showMessageDialog(null, "Erro! O campo ID deve conter apenas números e não pode ficar em branco! ");
+            JOptionPane.showMessageDialog(null, "Erro! O campo ID deve conter apenas números! ");
         }
         PessoaDAO dao = new PessoaDAO();
         try {
@@ -3003,11 +3025,18 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         pessoa.setSenha(senhaCadastrarPF.getText());
         int id = 0;
         boolean faiou = false;
+        
+        if(nomeCadastrarPF.getText().equals("") || cpfCadastrarPf.getText().equals("") || 
+                senhaCadastrarPF.getText().equals("") || codigoCadastrarPF.getText().equals("")){
+            faiou = true;
+            JOptionPane.showMessageDialog(null, "ERRO! Há campos obrigatórios em branco!");            
+        }
+        
         try{
             id = Integer.parseInt(codigoCadastrarPF.getText());
         }catch(Exception e){
             faiou = true;
-            JOptionPane.showMessageDialog(null, "ERRO! O campo ID é obrigatório!");
+            JOptionPane.showMessageDialog(null, "ERRO! O campo ID deve conter apenas números!");
         }
 
         Pessoa p = PessoaDAO.getPessoaId(id);

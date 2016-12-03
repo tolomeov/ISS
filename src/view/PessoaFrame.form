@@ -235,7 +235,7 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="jLabel11">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Logradouro"/>
+                            <Property name="text" type="java.lang.String" value="Logradouro*"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="logradouroCadastroEndereco">
@@ -285,7 +285,7 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="jLabel12">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
+                            <Property name="text" type="java.lang.String" value="N&#xfa;mero*"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="numeroCadastroEndereco">
@@ -403,7 +403,7 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="jLabel16">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Cidade"/>
+                            <Property name="text" type="java.lang.String" value="Cidade*"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="cidadeCadastroEndereco">
@@ -413,7 +413,7 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel17">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="UF"/>
+                            <Property name="text" type="java.lang.String" value="UF*"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="ufCadastroEndereco">
@@ -517,7 +517,7 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="jLabel21">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Email"/>
+                            <Property name="text" type="java.lang.String" value="Email*"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="emailCadastroEndereco">
@@ -543,7 +543,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel33">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="ID"/>
+                        <Property name="text" type="java.lang.String" value="ID*"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="limparEndereco">
@@ -1245,7 +1245,7 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel50">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Banco"/>
+                        <Property name="text" type="java.lang.String" value="Banco*"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="bancoCadastroBanco">
@@ -1299,7 +1299,7 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel45">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Conta"/>
+                            <Property name="text" type="java.lang.String" value="Conta*"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="cpfCadastroBanco">
@@ -1321,7 +1321,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel44">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Ag&#xea;ncia"/>
+                        <Property name="text" type="java.lang.String" value="Ag&#xea;ncia*"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -1333,7 +1333,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel57">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="ID"/>
+                    <Property name="text" type="java.lang.String" value="ID*"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1838,7 +1838,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="pjcnpjLabel2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="CNPJ"/>
+                    <Property name="text" type="java.lang.String" value="CNPJ*"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cnpjCadastrarPJ">
@@ -1860,7 +1860,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="pjnomeLabel2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Nome"/>
+                    <Property name="text" type="java.lang.String" value="Nome*"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="codigoCadastrarPJ">
@@ -1870,7 +1870,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="pjcodigoLabel2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="ID"/>
+                    <Property name="text" type="java.lang.String" value="ID*"/>
                   </Properties>
                 </Component>
               </SubComponents>
