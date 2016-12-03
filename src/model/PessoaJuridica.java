@@ -19,7 +19,8 @@ public class PessoaJuridica  implements java.io.Serializable {
      private String razaosocial;
      private String nomefantasia;
      private String tipo;
-
+     private boolean excluido;
+     
     public PessoaJuridica() {
     }
 
@@ -28,7 +29,7 @@ public class PessoaJuridica  implements java.io.Serializable {
         this.pessoa = pessoa;
     }
     
-    public PessoaJuridica(int idPessoaJuridica, int pessoa, String cnpj, String inscricaoestadual, String razaosocial, String nomefantasia, String tipo) {
+    public PessoaJuridica(int idPessoaJuridica, int pessoa, String cnpj, String inscricaoestadual, String razaosocial, String nomefantasia, String tipo, boolean excluido) {
        this.idPessoaJuridica = idPessoaJuridica;
        this.cnpj = cnpj;
        this.pessoa = pessoa;
@@ -36,6 +37,7 @@ public class PessoaJuridica  implements java.io.Serializable {
        this.razaosocial = razaosocial;
        this.nomefantasia = nomefantasia;
        this.tipo = tipo;
+       this.excluido = excluido;
     }
     
    
@@ -49,6 +51,15 @@ public class PessoaJuridica  implements java.io.Serializable {
     public int getPessoa() {
         return this.pessoa;
     }
+
+    public boolean isExcluido() {
+        return excluido;
+    }
+
+    public void setExcluido(boolean excluido) {
+        this.excluido = excluido;
+    }
+    
     
     public void setPessoa(int pessoa) {
         this.pessoa = pessoa;

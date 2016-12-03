@@ -24,9 +24,10 @@ public class Pessoa  implements java.io.Serializable {
      private String telefone;
      private String celular; 
      private String email;
+     private boolean excluido;
 
      
-    public Pessoa(Integer idPessoa, String endereco, String complemento, String numero, String bairro, String cep, String cidade, String estado, String email, String telefone, String celular) {
+    public Pessoa(Integer idPessoa, String endereco, String complemento, String numero, String bairro, String cep, String cidade, String estado, String email, String telefone, String celular, boolean excluido) {
         this.idPessoa = idPessoa;
         this.endereco = endereco;
         this.complemento = complemento;
@@ -38,6 +39,15 @@ public class Pessoa  implements java.io.Serializable {
         this.email = email;
         this.telefone = telefone;
         this.celular = celular;
+        this.excluido = excluido;
+    }
+
+    public boolean isExcluido() {
+        return excluido;
+    }
+
+    public void setExcluido(boolean excluido) {
+        this.excluido = excluido;
     }
 
     

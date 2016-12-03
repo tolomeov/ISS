@@ -25,6 +25,15 @@ public class InformacoesBancarias  implements java.io.Serializable {
      private String titular;
      private String cnpj;
      private String cpf;
+     private boolean excluido;
+
+    public boolean isExcluido() {
+        return excluido;
+    }
+
+    public void setExcluido(boolean excluido) {
+        this.excluido = excluido;
+    }
 
     public InformacoesBancarias() {
     }
@@ -34,7 +43,7 @@ public class InformacoesBancarias  implements java.io.Serializable {
         this.pessoa = pessoa;
     }
     
-    public InformacoesBancarias(int idInformacoesBancarias, int pessoa, String banco, String agencia, String contaCorrente, String titular, String cnpj, String cpf) {
+    public InformacoesBancarias(int idInformacoesBancarias, int pessoa, String banco, String agencia, String contaCorrente, String titular, String cnpj, String cpf, boolean excluido) {
        this.idInformacoesBancarias = idInformacoesBancarias;
        this.pessoa = pessoa;
        this.banco = banco;
@@ -43,6 +52,7 @@ public class InformacoesBancarias  implements java.io.Serializable {
        this.titular = titular;
        this.cnpj = cnpj;
        this.cpf = cpf;
+       this.excluido = excluido;
     }
    
    

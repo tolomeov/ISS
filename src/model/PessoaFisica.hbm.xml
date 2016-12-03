@@ -20,5 +20,8 @@
         <property name="senha" type="string">
             <column name="senha" length="45" />
         </property>
+        <property name="excluido" type="boolean">
+            <column name="excluido" />
+        </property>
     </class>
 </hibernate-mapping>

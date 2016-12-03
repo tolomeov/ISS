@@ -31,90 +31,77 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField14 = new javax.swing.JTextField();
-        plasnedoMenuBar = new javax.swing.JMenuBar();
-        pessoaMenu = new javax.swing.JMenu();
-        produtoMenu = new javax.swing.JMenu();
-        pedido = new javax.swing.JMenu();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         jTextField14.setText("jTextField14");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pessoaMenu.setText("Pessoa");
-        pessoaMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pessoaMenuMouseClicked(evt);
-            }
-        });
-        pessoaMenu.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Pessoa");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pessoaMenuActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        plasnedoMenuBar.add(pessoaMenu);
 
-        produtoMenu.setText("Produto");
-        produtoMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                produtoMenuMouseClicked(evt);
-            }
-        });
-        produtoMenu.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Produto");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                produtoMenuActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        plasnedoMenuBar.add(produtoMenu);
 
-        pedido.setText("Pedido");
-        pedido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pedidoMouseClicked(evt);
+        jButton3.setText("Pedido");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
-        plasnedoMenuBar.add(pedido);
-
-        setJMenuBar(plasnedoMenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 810, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(304, 304, 304)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
+                .addContainerGap(379, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 527, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jButton1)
+                .addGap(92, 92, 92)
+                .addComponent(jButton2)
+                .addGap(90, 90, 90)
+                .addComponent(jButton3)
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pessoaMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaMenuMouseClicked
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
         dispose(); 
-        new PessoaFrame().setVisible(true);
-                // TODO add your handling code here:
-    }//GEN-LAST:event_pessoaMenuMouseClicked
+        new PessoaFrame().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void produtoMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_produtoMenuMouseClicked
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose(); 
-        new ProdutoFrame().setVisible(true);             // TODO add your handling code here:
-    }//GEN-LAST:event_produtoMenuMouseClicked
+        new ProdutoFrame().setVisible(true);                   // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void pessoaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pessoaMenuActionPerformed
-        new PessoaFrame().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_pessoaMenuActionPerformed
-
-    private void produtoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoMenuActionPerformed
-        new ProdutoFrame().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_produtoMenuActionPerformed
-
-    private void pedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pedidoMouseClicked
-        new PedidoFrame().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_pedidoMouseClicked
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        dispose(); 
+        new PedidoFrame().setVisible(true);                   // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,17 +136,15 @@ public class PrincipalFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PrincipalFrame().setVisible(true);
                 Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JMenu pedido;
-    private javax.swing.JMenu pessoaMenu;
-    private javax.swing.JMenuBar plasnedoMenuBar;
-    private javax.swing.JMenu produtoMenu;
     // End of variables declaration//GEN-END:variables
 }

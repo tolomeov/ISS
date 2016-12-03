@@ -2201,7 +2201,9 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         model.setNumRows(0);
         for(PessoaJuridica p : lista){
             Object[] pessoa = {p.getIdPessoaJuridica(), p.getNomefantasia()};
+            if(!p.isExcluido()){
             model.addRow(pessoa);
+            }
         }
     }//GEN-LAST:event_consultarPJActionPerformed
 
@@ -2245,7 +2247,9 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
 
     private void excluirPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirPJActionPerformed
         try {
-            PessoaDAO.deletePessoaJuridicaId(Integer.parseInt(codigoConsultarPJ.getText()));
+            PessoaJuridica p = PessoaDAO.getPessoaJuridicaId(Integer.parseInt(codigoConsultarPJ.getText()));
+            p.setExcluido(true);
+            PessoaDAO.updatePessoaJuridica(p);
             JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+codigoConsultarPJ.getText());
             excluirPJ.setVisible(false);
             alterarPJ.setVisible(false);
@@ -2293,6 +2297,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         pessoa.setInscricaoestadual(ieCadastrarPJ.getText());
         pessoa.setNomefantasia(nomeCadastrarPJ.getText());
         pessoa.setRazaosocial(razaoCadastrarPJ.getText());
+        pessoa.setExcluido(false);
         int id = 0;
         boolean faiou = false;
         
@@ -2483,7 +2488,10 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
 
     private void excluirBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirBancoActionPerformed
         try {
-            PessoaDAO.deleteInformacoesBancariasId(Integer.parseInt(idConsultaBanco.getText()));
+            InformacoesBancarias p = PessoaDAO.getInformacoesBancariasId(Integer.parseInt(idConsultaBanco.getText()));
+            p.setExcluido(true);
+            PessoaDAO.updateInformacoesBancarias(p);
+
             JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+idConsultaBanco.getText());
             excluirBanco.setVisible(false);
             alterarBanco.setVisible(false);
@@ -2574,7 +2582,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         banc.setBanco(bancoCadastroBanco.getText());
         banc.setContaCorrente(contaCadastroBanco.getText());
         banc.setTitular(titularCadastroBanco.getText());
-
+        banc.setExcluido(false);
         String cpf = cpfCadastroBanco.getText();
         String cnpj = "";
         boolean faiou = false;
@@ -2758,7 +2766,9 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
 
     private void excluirEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirEnderecoActionPerformed
         try {
-            PessoaDAO.deletePessoaId(Integer.parseInt(idConsultaEndereco.getText()));
+            Pessoa p = PessoaDAO.getPessoaId(Integer.parseInt(idConsultaEndereco.getText()));
+            p.setExcluido(true);
+            PessoaDAO.updatePessoa(p);
             JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+idConsultaEndereco.getText());
             excluirEndereco.setVisible(false);
             alterarEndereco.setVisible(false);
@@ -2936,6 +2946,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         pessoa.setEstado(ufCadastroEndereco.getSelectedItem().toString());
         pessoa.setTelefone(telefoneCadastroEndereco.getText());
         pessoa.setCelular(celularCadastroEndereco.getText());
+        pessoa.setExcluido(false);
         boolean faiou = false;
 
          if(idCadastroEndereco.getText().equals("") || logradouroCadastroEndereco.getText().equals("") || 
@@ -3023,6 +3034,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         pessoa.setNome(nomeCadastrarPF.getText());
         pessoa.setRg(rgCadastrarPF.getText());
         pessoa.setSenha(senhaCadastrarPF.getText());
+        pessoa.setExcluido(false);
         int id = 0;
         boolean faiou = false;
         
@@ -3187,7 +3199,10 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         model.setNumRows(0);
         for(PessoaFisica p : lista){
             Object[] pessoa = {p.getIdPessoaFisica(), p.getNome()};
+            if(!p.isExcluido()){
             model.addRow(pessoa);
+            }
+            
         }
 
 
@@ -3204,7 +3219,9 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
 
     private void excluirPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirPFActionPerformed
 try {
-            PessoaDAO.deletePessoaFisicaId(Integer.parseInt(codigoConsultarPF.getText()));
+            PessoaFisica p = PessoaDAO.getPessoaFisicaId(Integer.parseInt(codigoConsultarPF.getText()));
+            p.setExcluido(true);
+            PessoaDAO.updatePessoaFisica(p);
             JOptionPane.showMessageDialog(null, "Excluido com sucesso! ID -"+codigoConsultarPF.getText());
             excluirPF.setVisible(false);
             alterarPF.setVisible(false);
@@ -3227,6 +3244,9 @@ try {
     }//GEN-LAST:event_codigoConsultarPFActionPerformed
 
     private void alterarPJ2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarPJ2ActionPerformed
+
+        new SenhaFrame(Integer.parseInt(codigoConsultarPF.getText())).setVisible(true);
+
         // TODO add your handling code here:
     }//GEN-LAST:event_alterarPJ2ActionPerformed
 
@@ -3473,7 +3493,9 @@ try {
         model.setNumRows(0);
         for(InformacoesBancarias p : lista){ 
             Object[] pessoa = {p.getIdInformacoesBancarias(), p.getContaCorrente()};
+            if(!p.isExcluido()){
             model.addRow(pessoa);
+            }
         }
     }
     
@@ -3485,7 +3507,9 @@ private void atualizarModelPessoa() {
         model.setNumRows(0);
         for(Pessoa p : lista){ 
             Object[] pessoa = {p.getIdPessoa(), p.getEmail()};
+            if(!p.isExcluido()){
             model.addRow(pessoa);
+            }
         }
     }
 
@@ -3497,7 +3521,9 @@ private void atualizarModelPessoaJuridica() {
         model.setNumRows(0);
         for(PessoaJuridica p : lista){ 
             Object[] pessoa = {p.getIdPessoaJuridica(), p.getNomefantasia()};
+            if(!p.isExcluido()){
             model.addRow(pessoa);
+            }
         }
     }
 
@@ -3509,7 +3535,9 @@ private void atualizarModelPessoaFisica() {
         model.setNumRows(0);
         for(PessoaFisica p : lista){ 
             Object[] pessoa = {p.getIdPessoaFisica(), p.getNome()};
+            if(!p.isExcluido()){
             model.addRow(pessoa);
+            }
         }
     }
 

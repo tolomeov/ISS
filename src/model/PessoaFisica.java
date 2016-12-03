@@ -17,18 +17,30 @@ public class PessoaFisica  implements java.io.Serializable {
      private String cpf;
      private String rg;
      private String senha;
+     private boolean excluido;
 
     public PessoaFisica() {
     }
 
-	
+	public PessoaFisica(int pessoa) {
+        this.idPessoaFisica = pessoa;
+    }
     
-    public PessoaFisica(int idPessoaFisica, String nome, String cpf, String rg, String senha) {
+    public PessoaFisica(int idPessoaFisica, String nome, String cpf, String rg, String senha, boolean excluido) {
        this.idPessoaFisica = idPessoaFisica;
        this.nome = nome;
        this.cpf = cpf;
        this.rg = rg;
        this.senha = senha;
+       this.excluido = excluido;
+    }
+
+    public boolean isExcluido() {
+        return excluido;
+    }
+
+    public void setExcluido(boolean excluido) {
+        this.excluido = excluido;
     }
     
    

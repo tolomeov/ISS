@@ -37,5 +37,8 @@
         <property name="email" type="string">
             <column name="email" length="100" />
         </property>
+                <property name="excluido" type="boolean">
+            <column name="excluido" />
+        </property>
     </class>
 </hibernate-mapping>
