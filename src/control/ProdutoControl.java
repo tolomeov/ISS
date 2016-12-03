@@ -6,6 +6,8 @@
 package control;
 
 import model.Produto;
+import plasnedo.settings.Settings;
+import static plasnedo.settings.Settings.SettingIds.*;
 
 /**
  * Implementa funções de controle de produto.
@@ -16,45 +18,32 @@ public class ProdutoControl {
     public static final double CM = 0.01;
     public static final double MICRA = 0.000001;
     
-    /*
-    Valores de dimensões para os produtos
-    Estes valores são deliberadamente acima ou abaixo do que algo que existiria na vida real
-    São utilizados na validação do produto.
-    */
-    private static final double LARGURA_MIN = 1*CM;
-    private static final double LARGURA_MAX = 1000*CM;
-    private static final double ALTURA_MIN = 1*CM;
-    private static final double ALTURA_MAX = 1000*CM;
-    private static final double ESPESSURA_MIN = 0.1 * MICRA;
-    private static final double ESPESSURA_MAX = 1000 * MICRA;
-    
-    
     public static void validarLargura(double largura) throws Exception {
-        if(largura < LARGURA_MIN) {
+        if(largura < (double)Settings.getSetting(LARGURA_MIN)) {
             throw new Exception("Erro de validação: Largura do produto muito pequena: " + largura/CM + "cm" );
         }
         
-        if(largura > LARGURA_MAX) {
+        if(largura > (double)Settings.getSetting(LARGURA_MAX)) {
             throw new Exception("Erro de validação: Largura do produto muito grande: " + largura/CM + "cm");
         }
     }
     
     public static void validarAltura(double altura) throws Exception {
-        if(altura < ALTURA_MIN) {
+        if(altura < (double)Settings.getSetting(ALTURA_MIN)) {
             throw new Exception("Erro de validação: Altura do produto muito pequena: " + altura/CM + "cm");
         }
         
-        if(altura > ALTURA_MAX) {
+        if(altura > (double)Settings.getSetting(ALTURA_MAX)) {
             throw new Exception("Erro de validação: Altura do produto muito grande: " + altura/CM + "cm");
         }
     }
     
     public static void validarEspessura(double espessura) throws Exception {
-        if(espessura < ESPESSURA_MIN) {
+        if(espessura < (double)Settings.getSetting(ESPESSURA_MIN)) {
             throw new Exception("Erro de validação: Espessura do produto muito pequena: " + espessura/MICRA + "μm");
         }
         
-        if(espessura > ESPESSURA_MAX) {
+        if(espessura > (double)Settings.getSetting(ESPESSURA_MAX)) {
             throw new Exception("Erro de validação: Espessura do produto muito grande: " + espessura/MICRA + "μm");
         }
     }
