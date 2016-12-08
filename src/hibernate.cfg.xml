@@ -13,5 +13,8 @@
     <mapping resource="model/Produto.hbm.xml"/>
     <mapping resource="model/PessoaJuridica.hbm.xml"/>
     <mapping resource="model/PessoaFisica.hbm.xml"/>
+    <mapping resource="model/ContaPagar.hbm.xml"/>
+    <mapping resource="model/ParcelaPagar.hbm.xml"/>
+    
   </session-factory>
 </hibernate-configuration>
