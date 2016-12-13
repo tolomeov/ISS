@@ -26,8 +26,8 @@
         <property name="tipo" type="string">
             <column name="tipo" length="45" />
         </property>
-                <property name="excluido" type="boolean">
-            <column name="excluido" />
+        <property name="excluido" type="boolean">
+            <column name="excluido" not-null="false" default="false"/>
         </property>
     </class>
 </hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.ContaReceber" table="ContaReceber" catalog="plasnedo" optimistic-lock="version">
+     
+        <id name="idContaReceber" type="int">
+            <column name="idContaReceber" />
+            <generator class="identity" />
+        </id>
+        <property name="valor" type="big_decimal">
+            <column name="valor" precision="22" scale="2" />
+        </property>
+        <property name="qtdparcelas" type="int">
+            <column name="qtdparcelas" />
+        </property>
+        <property name="descricao" type="string">
+            <column name="descricao" length="256" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" />
+        </property>
+        
+        <many-to-one name="pessoa" class="model.Pessoa" column="pessoa" cascade="all"/>
+        
+        <list name="parcelas" cascade="all">
+            <key column="contaReceber_id"/>
+            <list-index column="numeroparcela"/>
+            <one-to-many class="model.ParcelaReceber" not-found="ignore" />
+        </list>
+    </class>
+</hibernate-mapping>
+

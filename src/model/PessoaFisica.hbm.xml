@@ -5,9 +5,9 @@
 <hibernate-mapping>
     <class name="model.PessoaFisica" table="PessoaFisica" catalog="plasnedo" optimistic-lock="version">
         
-        <property name="idPessoaFisica" type="int">
+        <id name="idPessoaFisica" type="int">
             <column name="idPessoaFisica" />
-        </property>
+        </id>
         <property name="nome" type="string">
             <column name="nome" length="45" />
         </property>
@@ -21,7 +21,7 @@
             <column name="senha" length="45" />
         </property>
         <property name="excluido" type="boolean">
-            <column name="excluido" />
+            <column name="excluido" not-null="false" default="false" />
         </property>
     </class>
 </hibernate-mapping>

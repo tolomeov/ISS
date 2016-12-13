@@ -8,13 +8,15 @@
     <property name="hibernate.connection.username">plasnedo</property>
     <property name="hibernate.connection.password">bristol</property>
     <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.hbm2ddl.auto">validate</property>
     <mapping resource="model/Pessoa.hbm.xml"/>
     <mapping resource="model/InformacoesBancarias.hbm.xml"/>
     <mapping resource="model/Produto.hbm.xml"/>
     <mapping resource="model/PessoaJuridica.hbm.xml"/>
     <mapping resource="model/PessoaFisica.hbm.xml"/>
+    <mapping resource="model/ParcelaReceber.hbm.xml"/>
+    <mapping resource="model/ContaReceber.hbm.xml"/>
+    <mapping resource="model/ParcelasPagar.hbm.xml"/>
     <mapping resource="model/ContaPagar.hbm.xml"/>
-    <mapping resource="model/ParcelaPagar.hbm.xml"/>
-    
   </session-factory>
 </hibernate-configuration>

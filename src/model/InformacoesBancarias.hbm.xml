@@ -30,7 +30,7 @@
         <property name="cpf" type="string">
             <column name="cpf" length="15" />
         </property>
-                <property name="excluido" type="boolean">
+        <property name="excluido" type="boolean">
             <column name="excluido" />
         </property>
     </class>
