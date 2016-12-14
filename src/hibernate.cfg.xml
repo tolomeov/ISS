@@ -8,7 +8,7 @@
     <property name="hibernate.connection.username">plasnedo</property>
     <property name="hibernate.connection.password">bristol</property>
     <property name="hibernate.show_sql">true</property>
-    <property name="hibernate.hbm2ddl.auto">validate</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping resource="model/Pessoa.hbm.xml"/>
     <mapping resource="model/InformacoesBancarias.hbm.xml"/>
     <mapping resource="model/Produto.hbm.xml"/>

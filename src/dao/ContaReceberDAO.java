@@ -59,17 +59,32 @@ public class ContaReceberDAO {
         return id;
     }
     
+    static public Optional<ContaReceber> getContaReceberById(int idContaReceber) {
+        Optional<ContaReceber> conta = Optional.empty();
+        Optional<Transaction> trns = Optional.empty();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        try {
+            conta = Optional.ofNullable((ContaReceber) session.get(ContaReceber.class, idContaReceber));
+            
+        } catch(HibernateException e) {
+            System.err.println("Erro buscando ContaReceber por id: " + e.getMessage());
+        } finally {
+            session.close();
+        }
+        return conta;
+    }
+    
     static public void main(String... args) {
-        Pessoa p = PessoaDAO.getPessoaId(1);
-        
-        BigDecimal valorTotal = BigDecimal.valueOf(100);
-        int numeroParcelas = 6;
-        String descr = "";
-        Date primeiroVencimento = Calendar.getInstance().getTime();
-        
-        Optional<Integer> id = createContaReceber(p, valorTotal, numeroParcelas, descr, primeiroVencimento);
-        System.out.println("id == " + id.orElse(-1));
-        
+        ContaReceber cr = getContaReceberById(2).orElse(null);
+        if(cr == null) {
+            System.out.println("null");
+        } else {
+            System.out.println("Pessoa = " + cr.getPessoa().getIdPessoa());
+            cr.getParcelas().forEach((parcela) -> {
+                System.out.println(parcela);
+            });
+        }
     }
     
 }

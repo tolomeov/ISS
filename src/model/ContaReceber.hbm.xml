@@ -22,7 +22,7 @@
         
         <many-to-one name="pessoa" class="model.Pessoa" column="pessoa" cascade="all"/>
         
-        <list name="parcelas" cascade="all">
+        <list name="parcelas" cascade="all" lazy="false">
             <key column="contaReceber_id"/>
             <list-index column="numeroparcela"/>
             <one-to-many class="model.ParcelaReceber" not-found="ignore" />
