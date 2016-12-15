@@ -6,14 +6,10 @@
 package dao;
 
 import control.ContaReceberControl;
-import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import model.ContaReceber;
 import model.ParcelaReceber;
-import model.Pessoa;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -34,10 +30,10 @@ public class ContaReceberDAO {
      * @param primeiroVencimento
      * @return 
      */
-    static public Optional<Integer> createContaReceber(Pessoa comprador,
-            BigDecimal valorTotal, 
+    static public Optional<Integer> createContaReceber(model.Pessoa comprador,
+            java.math.BigDecimal valorTotal, 
             int numeroParcelas, String descricao,
-            Date primeiroVencimento) {
+            java.util.Date primeiroVencimento) {
         
         Optional<Transaction> trns = Optional.empty();
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -61,7 +57,6 @@ public class ContaReceberDAO {
     
     static public Optional<ContaReceber> getContaReceberById(int idContaReceber) {
         Optional<ContaReceber> conta = Optional.empty();
-        Optional<Transaction> trns = Optional.empty();
         Session session = HibernateUtil.getSessionFactory().openSession();
         
         try {

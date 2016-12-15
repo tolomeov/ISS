@@ -6,6 +6,7 @@
 package view;
 
 import dao.PessoaDAO;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -100,8 +101,8 @@ public class SenhaFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-    String antiga = senhaAntiga.getText();
-    String nova = novaSenha.getText();
+    char[] antiga = senhaAntiga.getPassword();
+    char[] nova = novaSenha.getPassword();
     
     if(antiga.equals("") || nova.equals("")){
         JOptionPane.showMessageDialog(rootPane, "Erro! Digite a senha antiga e uma senha válida para a senha nova!");
@@ -110,7 +111,7 @@ public class SenhaFrame extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, "Erro! Senha antiga incorreta!");            
         }else{
         PessoaFisica p = PessoaDAO.getPessoaFisicaId(id);
-        p.setSenha(nova);
+        p.setSenha(Arrays.toString(nova));
             try {
                 PessoaDAO.updatePessoaFisica(p);
         JOptionPane.showMessageDialog(rootPane, "Senha alterada com sucesso!");

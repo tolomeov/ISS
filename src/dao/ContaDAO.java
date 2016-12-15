@@ -112,11 +112,12 @@ public class ContaDAO {
         }
     }
     
+    @SuppressWarnings("unchecked")
     public static List<ContaPagar> contaPagarQuery(String q){
         List<ContaPagar> conta = new ArrayList<>();                             
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            conta = session.createQuery(q).list();
+            conta = (List<ContaPagar>) session.createQuery(q).list();
 
         } catch (RuntimeException e) {
             e.printStackTrace();
