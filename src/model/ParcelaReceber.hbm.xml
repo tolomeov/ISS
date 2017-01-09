@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.ParcelaReceber" catalog="plasnedo" optimistic-lock="version" table="ParcelaReceber">
+        <id name="idParcela" type="int">
+          <column name="idParcela"/>
+          <generator class="identity"/>
+        </id>
+        <property name="datavencimento" type="date">
+          <column name="datavencimento"/>
+        </property>
+        <property name="datapagamento" type="date">
+          <column name="datapagamento"/>
+        </property>
+        <property name="valor" type="big_decimal">
+          <column name="valor" precision="22" scale="2"/>
+        </property>
+        <property name="status" type="boolean">
+          <column name="status"/>
+        </property>
+    </class>
+</hibernate-mapping>

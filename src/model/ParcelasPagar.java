@@ -21,7 +21,7 @@ public class ParcelasPagar  implements java.io.Serializable {
     }
 
 	
-        public ParcelasPagar(int contaPagar, Integer numeroparcela, String datavencimento, String datapagamento, Double valor, boolean status) {
+    public ParcelasPagar(int contaPagar, Integer numeroparcela, String datavencimento, String datapagamento, Double valor, boolean status) {
        this.contaPagar = contaPagar;
        this.numeroparcela = numeroparcela;
        this.datavencimento = datavencimento;

@@ -115,12 +115,12 @@ public class PessoaDAO {
         }
     }
     
-    
-        public static List<Pessoa> pessoaQuery(String q){
+    @SuppressWarnings("unchecked")
+    public static List<Pessoa> pessoaQuery(String q){
         List<Pessoa> infos = new ArrayList<>();                             
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            infos = session.createQuery(q).list();
+            infos = (List<Pessoa>) session.createQuery(q).list();
 
         } catch (RuntimeException e) {
             System.err.println("Erro buscando pessoas: " + e.getMessage());
@@ -186,11 +186,12 @@ public class PessoaDAO {
         }
     }
     
+    @SuppressWarnings("unchecked")
     public static List<PessoaFisica> pessoasFisicaQuery(String q){
         List<PessoaFisica> pessoasFisica = new ArrayList<>();                             
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            pessoasFisica = session.createQuery(q).list();
+            pessoasFisica = (List<PessoaFisica>) session.createQuery(q).list();
 
         } catch (RuntimeException e) {
             e.printStackTrace();
@@ -294,11 +295,12 @@ public class PessoaDAO {
         }
     }
     
+    @SuppressWarnings("unchecked")
     public static List<PessoaJuridica> pessoasJuridicaQuery(String q){
         List<PessoaJuridica> pessoasJuridica = new ArrayList<>();                             
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            pessoasJuridica = session.createQuery(q).list();
+            pessoasJuridica = (List<PessoaJuridica>) session.createQuery(q).list();
 
         } catch (RuntimeException e) {
             e.printStackTrace();
@@ -403,6 +405,7 @@ public class PessoaDAO {
         }
     }
     
+    @SuppressWarnings("unchecked")
     public static List<InformacoesBancarias> informacoesBancariasQuery(String q){
         List<InformacoesBancarias> infos = new ArrayList<>();                             
         Session session = HibernateUtil.getSessionFactory().openSession();

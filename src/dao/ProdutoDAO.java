@@ -92,6 +92,7 @@ public class ProdutoDAO {
      * @return Retorna uma lista de todos os Produtos no banco de dados
      * Se ocorrer uma exceção, retorna uma lista vazia imutável
      */
+    @SuppressWarnings("unchecked")
     public static List<Produto> listProdutos() {
         Optional<List<Produto>> produtos = Optional.empty();
         Optional<Session> sessionopt = Optional.empty();
@@ -136,6 +137,7 @@ public class ProdutoDAO {
         }
     }
     
+    @SuppressWarnings("unchecked")
     public static List<Produto> listProdutosWhereNomeLike(String nome) {
         Optional<List<Produto>> produtos = Optional.empty();
         Optional<Session> sessionopt = Optional.empty();
@@ -159,6 +161,7 @@ public class ProdutoDAO {
         return produtos.orElse(Collections.emptyList());
     }
     
+    @SuppressWarnings("unchecked")
     public static List<Produto> listProdutosWhereCodigoEquals(int codigo) {
         Optional<List<Produto>> produtos = Optional.empty();
         Optional<Session> sessionopt = Optional.empty();
