@@ -33,7 +33,7 @@ public class ContaReceberDAO {
     static public Optional<Integer> createContaReceber(model.Pessoa comprador,
             java.math.BigDecimal valorTotal, 
             int numeroParcelas, String descricao,
-            java.util.Date primeiroVencimento) {
+            java.util.Date primeiroVencimento) throws Exception {
         
         Optional<Transaction> trns = Optional.empty();
         Session session = HibernateUtil.getSessionFactory().openSession();

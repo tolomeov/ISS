@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/08/2016 15:51:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Estoque" table="Estoque" catalog="plasnedo" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+        </id>
+        <property name="fator" type="double">
+            <column name="fator" />
+        </property>
+        <property name="valor" type="double">
+            <column name="valor" length="11" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="4" />
+        </property>
+        <property name="deleted" type="int">
+            <column name="deleted" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>
