@@ -4,8 +4,11 @@ package control;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.ContaReceber;
 import model.ParcelaReceber;
 
@@ -26,19 +29,33 @@ public class ContaReceberControl {
      */
     static public boolean validateContaReceber(ContaReceber cr)
     {
-        BigDecimal acc = BigDecimal.ZERO;
-        for(Object parcelaObject : cr.getParcelas()){
-            ParcelaReceber parcela = (ParcelaReceber)parcelaObject;
-            acc = acc.add(parcela.getValor());
-        }
+        BigDecimal acc = cr.getParcelas()
+                .stream()
+                .map(parcela -> parcela.getValor())
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
         
         return acc.compareTo(cr.getValor()) == 0;
     }
     
     
-    static public List<ParcelaReceber> createParcelasFromValor(BigDecimal valorTotal, int numParcelas, Date primeiroVencimento)
+    static public List<ParcelaReceber> 
+        createParcelasFromValor
+        (BigDecimal valorTotal, int numParcelas, Date primeiroVencimento) 
+                throws Exception
     {
-        assert(valorTotal != BigDecimal.ZERO);
+        if(numParcelas == 0){ 
+            return Collections.emptyList();
+        }
+        
+        
+        if(valorTotal.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new Exception("parcela deve ter um valor positivo");
+        }
+        
+        if(primeiroVencimento == null) {
+            throw new NullPointerException("primeiroVencimento == null");
+        }
+        
         
         List<ParcelaReceber> ret = new ArrayList<>(numParcelas);
         
@@ -64,7 +81,7 @@ public class ContaReceberControl {
         return ret;
     }
     
-    /*
+    
     static public void main(String... args) {
         ContaReceber cr = new ContaReceber(null, BigDecimal.valueOf(10000, 2), 6, "bla", false);
         Calendar cal = Calendar.getInstance();
@@ -73,11 +90,16 @@ public class ContaReceberControl {
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
         
-        List<ParcelaReceber> parcelas = createParcelasFromValor(cr.getValor(), cr.getQtdparcelas(), cal.getTime());
-        cr.setParcelas(parcelas);
-        parcelas.forEach((p) -> System.out.println(p));
+        List<ParcelaReceber> parcelas;
+        try {
+            parcelas = createParcelasFromValor(cr.getValor(), cr.getQtdparcelas(), cal.getTime());
+            cr.setParcelas(parcelas);
+            parcelas.forEach((p) -> System.out.println(p));
+        } catch (Exception ex) {
+            Logger.getLogger(ContaReceberControl.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
-    */
+    
     
 }
