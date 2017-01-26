@@ -12,17 +12,32 @@ public class ContaPagar  implements java.io.Serializable {
      private Integer qtdparcelas;
      private String descricao;
      private boolean status;
+     private String vencimento;
 
     public ContaPagar() {
     }
 
-    public ContaPagar(int pessoa, Double valor, Integer qtdparcelas, String descricao, boolean status) {
+    public ContaPagar(int pessoa, Double valor, Integer qtdparcelas, String descricao, boolean status, String vencimento) {
        this.pessoa = pessoa;
        this.valor = valor;
        this.qtdparcelas = qtdparcelas;
        this.descricao = descricao;
        this.status = status;
+       this.vencimento = vencimento;
     }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public String getVencimento() {
+        return vencimento;
+    }
+
+    public void setVencimento(String vencimento) {
+        this.vencimento = vencimento;
+    }
+    
     
     public Integer getIdContaPagar() {
         return this.idContaPagar;

@@ -5,7 +5,13 @@
  */
 package view;
 
+import dao.ContaDAO;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
+import model.ContaPagar;
 
 /**
  *
@@ -13,6 +19,7 @@ import javax.swing.text.MaskFormatter;
  */
 public class ContaPagarFrame extends javax.swing.JFrame {
 
+    String query;
     /**
      * Creates new form ContaPagarFrame
      */
@@ -42,7 +49,7 @@ public class ContaPagarFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        data1 = new javax.swing.JFormattedTextField(Mascara("##/##/####"));
+        data1 = new javax.swing.JTextField();
         descricao = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -52,16 +59,23 @@ public class ContaPagarFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         valor1 = new javax.swing.JTextField();
-        data2 = new javax.swing.JFormattedTextField(Mascara("##/##/####"));
+        data2 = new javax.swing.JTextField();
         valor2 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         resultado = new javax.swing.JTable();
         Pesquisar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
+        novaConta = new javax.swing.JButton();
+        plasnedoMenuBar = new javax.swing.JMenuBar();
+        pessoaMenu = new javax.swing.JMenu();
+        produtoMenu = new javax.swing.JMenu();
+        pedido = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        data1.setEditable(false);
         data1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 data1ActionPerformed(evt);
@@ -88,6 +102,7 @@ public class ContaPagarFrame extends javax.swing.JFrame {
             }
         });
 
+        data2.setEditable(false);
         data2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 data2ActionPerformed(evt);
@@ -108,14 +123,31 @@ public class ContaPagarFrame extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Vencimento", "Valor", "Paga?"
             }
         ));
+        resultado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                resultadoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(resultado);
 
         Pesquisar.setText("Pesquisar");
+        Pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PesquisarActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Código");
+
+        novaConta.setText("Nova conta");
+        novaConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novaContaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -123,40 +155,42 @@ public class ContaPagarFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(data2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(data1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(91, 91, 91)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(valor2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(valor1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(51, 51, 51)
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Pesquisar)
+                            .addGap(113, 113, 113)
+                            .addComponent(novaConta)
+                            .addGap(43, 43, 43))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(44, 44, 44)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(data2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(data1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(91, 91, 91)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel5))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(valor2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(valor1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(129, 129, 129)
                         .addComponent(jLabel6)
                         .addGap(259, 259, 259)
                         .addComponent(jLabel7))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(311, 311, 311)
-                        .addComponent(Pesquisar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -195,11 +229,57 @@ public class ContaPagarFrame extends javax.swing.JFrame {
                     .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addComponent(Pesquisar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Pesquisar)
+                    .addComponent(novaConta))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        pessoaMenu.setText("Pessoa");
+        pessoaMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pessoaMenuMouseClicked(evt);
+            }
+        });
+        pessoaMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pessoaMenuActionPerformed(evt);
+            }
+        });
+        plasnedoMenuBar.add(pessoaMenu);
+
+        produtoMenu.setText("Produto");
+        produtoMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                produtoMenuMouseClicked(evt);
+            }
+        });
+        produtoMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                produtoMenuActionPerformed(evt);
+            }
+        });
+        plasnedoMenuBar.add(produtoMenu);
+
+        pedido.setText("Pedido");
+        pedido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pedidoMouseClicked(evt);
+            }
+        });
+        plasnedoMenuBar.add(pedido);
+
+        jMenu1.setText("Contas a pagar");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
+        plasnedoMenuBar.add(jMenu1);
+
+        setJMenuBar(plasnedoMenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,7 +293,7 @@ public class ContaPagarFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 12, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -236,9 +316,103 @@ public class ContaPagarFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_valor2ActionPerformed
 
+    private void novaContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novaContaActionPerformed
+    
+        new NovaContaFrame().setVisible(true);
+    }//GEN-LAST:event_novaContaActionPerformed
+
+    private void resultadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultadoMouseClicked
+        DefaultTableModel model = (DefaultTableModel) resultado.getModel();
+        int row = resultado.getSelectedRow();
+        try{
+            int id = (Integer)model.getValueAt(row, 0);
+            System.out.println(id);
+            ContaPagar conta = ContaDAO.getContaPagarId(id);
+            new NovaContaFrame(conta).setVisible(true);
+            
+        }catch(Exception e){}
+                        JOptionPane.showMessageDialog(null, "Erro! Opção inválida!");
+                        atualizarModel();
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resultadoMouseClicked
+
+    private void PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesquisarActionPerformed
+        query = "from ContaPagar where";
+                if(!id.getText().isEmpty())
+        query = query + " id = " + id.getText();
+        if(!id.getText().isEmpty() && !descricao.getText().isEmpty())
+        query = query + " and";
+        if(!descricao.getText().isEmpty())
+        query = query + " descricao like '%" + descricao.getText() + "%'";
+        if(!descricao.getText().isEmpty() && (!valor1.getText().isEmpty()) ||
+            !id.getText().isEmpty() && (!valor1.getText().isEmpty()))
+        query = query + " and";
+        if(!valor1.getText().isEmpty())
+        query = query + " valor >=" + valor1.getText() + "";
+        if(!descricao.getText().isEmpty() && (!valor2.getText().isEmpty()) ||
+            !id.getText().isEmpty() && (!valor2.getText().isEmpty())||
+                !valor1.getText().isEmpty() && !valor2.getText().isEmpty())
+        query = query + " and";
+        if(!valor2.getText().isEmpty())
+        query = query + " valor <=" + valor2.getText() + ")";
+
+        atualizarModel();
+
+    }//GEN-LAST:event_PesquisarActionPerformed
+
+    private void pessoaMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaMenuMouseClicked
+        dispose();
+        new PessoaFrame().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pessoaMenuMouseClicked
+
+    private void pessoaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pessoaMenuActionPerformed
+        dispose();
+        new PessoaFrame().setVisible(true);
+        
+    }//GEN-LAST:event_pessoaMenuActionPerformed
+
+    private void produtoMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_produtoMenuMouseClicked
+        dispose();
+        new ProdutoFrame().setVisible(true);             // TODO add your handling code here:
+    }//GEN-LAST:event_produtoMenuMouseClicked
+
+    private void produtoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoMenuActionPerformed
+        dispose();
+        new ProdutoFrame().setVisible(true);
+        
+    }//GEN-LAST:event_produtoMenuActionPerformed
+
+    private void pedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pedidoMouseClicked
+        dispose();
+        new PedidoFrame().setVisible(true);
+        
+    }//GEN-LAST:event_pedidoMouseClicked
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        dispose();
+        new ContaPagarFrame().setVisible(true);
+        
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void atualizarModel() {
+        DefaultTableModel model = (DefaultTableModel) resultado.getModel();
+        List<ContaPagar> lista = new ArrayList<>();
+        lista = ContaDAO.contaPagarQuery(query);
+        model.setNumRows(0);
+        for(ContaPagar p : lista){ 
+            Object[] conta = {p.getIdContaPagar(), p.getVencimento(), p.getValor(), p.getStatus()};
+            model.addRow(conta);
+        }
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -285,8 +459,14 @@ public class ContaPagarFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton novaConta;
+    private javax.swing.JMenu pedido;
+    private javax.swing.JMenu pessoaMenu;
+    private javax.swing.JMenuBar plasnedoMenuBar;
+    private javax.swing.JMenu produtoMenu;
     private javax.swing.JTable resultado;
     private javax.swing.JTextField valor1;
     private javax.swing.JTextField valor2;

@@ -99,7 +99,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
     String log = login.getText();
-    char[] nova = novaSenha.getPassword();
+    String nova = String.valueOf(novaSenha.getPassword());
     int usuario = -1;
     if(log.equals("") || nova.equals("")){
         JOptionPane.showMessageDialog(rootPane, "Erro! Digite usuário e senha!");

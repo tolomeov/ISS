@@ -19,7 +19,7 @@ public class PessoaControl {
     private static Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     private static Matcher matcher; 
     
-    public static void validarCPF(String CPF) throws Exception {
+    public static boolean validarCPF(String CPF) throws Exception {
        CPF = CPF.replace(".", "");
        CPF = CPF.replace("-", "");
         if (CPF.equals("00000000000") || CPF.equals("11111111111") ||
@@ -71,10 +71,11 @@ public class PessoaControl {
     } catch (InputMismatchException erro) {
         throw new Exception("entrada de cpf invalido");
     }
+    return true;
   }
    
    
-   public static void validarCNPJ(String CNPJ) throws Exception {
+   public static boolean validarCNPJ(String CNPJ) throws Exception {
        CNPJ = CNPJ.replace(".", "");
        CNPJ = CNPJ.replace("-", "");
        System.out.println(CNPJ);
@@ -84,7 +85,7 @@ public class PessoaControl {
         CNPJ.equals("66666666666666") || CNPJ.equals("77777777777777") ||
         CNPJ.equals("88888888888888") || CNPJ.equals("99999999999999") ||
        (CNPJ.length() != 14))
-       throw new Exception("cnpj invalido");;
+       throw new Exception("cnpj invalido");
 
     char dig13, dig14;
     int sm, i, r, num, peso;
@@ -131,13 +132,15 @@ public class PessoaControl {
     } catch (InputMismatchException erro) {
         throw new Exception("entrada de cnpj invalido");
     }
+    return true;
   }
       
-    public static void validarEmail(final String hex) throws Exception {
+    public static boolean validarEmail(final String hex) throws Exception {
 
             matcher = pattern.matcher(hex);
             if(!matcher.matches())
                 throw new Exception("email invalido");
+            return true;
     }
 
 }

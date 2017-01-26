@@ -275,6 +275,7 @@ plasnedoMenuBar = new javax.swing.JMenuBar();
 pessoaMenu = new javax.swing.JMenu();
 produtoMenu = new javax.swing.JMenu();
 pedido = new javax.swing.JMenu();
+jMenu1 = new javax.swing.JMenu();
 
 jLabel20.setText("Logradouro");
 
@@ -2034,6 +2035,14 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
     });
     plasnedoMenuBar.add(pedido);
 
+    jMenu1.setText("Contas a pagar");
+    jMenu1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jMenu1ActionPerformed(evt);
+        }
+    });
+    plasnedoMenuBar.add(jMenu1);
+
     setJMenuBar(plasnedoMenuBar);
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -2061,17 +2070,22 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
     private void pessoaMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pessoaMenuMouseClicked
         dispose();
         new PessoaFrame().setVisible(true);
+        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_pessoaMenuMouseClicked
 
     private void pessoaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pessoaMenuActionPerformed
-        new PessoaFrame().setVisible(true);
         dispose();
+        new PessoaFrame().setVisible(true);
+        
     }//GEN-LAST:event_pessoaMenuActionPerformed
 
     private void produtoMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_produtoMenuMouseClicked
         dispose();
+
         new ProdutoFrame().setVisible(true);             // TODO add your handling code here:
+        
     }//GEN-LAST:event_produtoMenuMouseClicked
 
     private void produtoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoMenuActionPerformed
@@ -2301,7 +2315,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
         int id = 0;
         boolean faiou = false;
         
-        if(nomeCadastrarPF.getText().equals("") || cnpjCadastrarPJ.getText().equals("") || 
+        if(nomeCadastrarPJ.getText().equals("") || cnpjCadastrarPJ.getText().equals("") || 
                 codigoCadastrarPJ.getText().equals("")){
             faiou = true;
             JOptionPane.showMessageDialog(null, "ERRO! Há campos obrigatórios em branco!");            
@@ -2448,7 +2462,7 @@ jTextField10.addActionListener(new java.awt.event.ActionListener() {
             }
 
             try {
-                PessoaControl.validarCPF(cpf);
+                boolean b = PessoaControl.validarCPF(cpf);
             } catch (Exception ex) {
                 cnpj = cpf;
                 cpf = "";
@@ -3250,6 +3264,11 @@ try {
         // TODO add your handling code here:
     }//GEN-LAST:event_alterarPJ2ActionPerformed
 
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+    dispose();
+    new ContaPagarFrame().setVisible(true);
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
     private void idCadastroEnderecoKeyTyped(java.awt.event.KeyEvent evt) {                                            
         String muda = idCadastroEndereco.getText();
         idCadastroBanco.setText(muda);
@@ -3355,6 +3374,7 @@ try {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
